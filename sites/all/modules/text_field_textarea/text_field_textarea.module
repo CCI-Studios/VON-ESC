@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function text_field_textarea_field_widget_info_alter(&$info) {
+  if (isset($info['text_textarea'])) {
+    $info['text_textarea']['field types'][] = 'text';
+  }
+}
+
+?>

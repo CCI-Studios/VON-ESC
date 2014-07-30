@@ -1,0 +1,5 @@
+name = Custom Webform Paypal payment
+core = 7.x
+package = Webform
+dependencies[] = webform
+version = "7.x-1.0"

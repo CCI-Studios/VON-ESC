@@ -1,0 +1,1488 @@
+body
+{
+    background:$navy;
+    color:$navy;
+}
+
+p
+{
+    margin-bottom:0.75em;
+}
+
+hr
+{
+    border-color:$navy;
+    border-style:solid;
+    border-width:1px 0 0 0;
+}
+
+.button
+{
+    display: inline-block;
+    background:#f48800;
+    overflow: hidden;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 100%;
+    padding:8px 13px;
+    text-shadow:1px 1px 0 rgba(0,0,0,0.35);
+    font-size:11px;
+    letter-spacing:-0.5px;
+    border-radius:7px;
+    cursor:pointer;
+    border:0;
+
+    $color1: #ffa700;
+    $color2: #e96900;
+    background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
+    background: -webkit-linear-gradient(top, $color1 0%,$color2 100%);
+    background: -o-linear-gradient(top, $color1 0%,$color2 100%);
+    background: -ms-linear-gradient(top, $color1 0%,$color2 100%);
+    background: linear-gradient(to bottom, $color1 0%,$color2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa700', endColorstr='#e96900',GradientType=0 );
+
+    &:hover
+    {
+        background:white;
+        color:$orange;
+        text-shadow:none;
+        filter:none;
+    }
+}
+
+#page-wrapper
+{
+    background:white;
+}
+
+#logo
+{
+    display: block;
+    padding-top:10px;
+    float: left;
+    position: relative;
+    z-index: 1;
+
+    img
+    {
+        width:208px;
+        height: auto;
+        display: block;
+    }
+}
+
+#navigation
+{
+    background:$navy;
+    border-bottom:5px solid $lightblue;
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+
+    & > div
+    {
+        border-bottom:5px solid white;
+        height: 70px;
+
+        & > div
+        {
+            width:100%;
+            max-width: 980px;
+            margin:0 auto;
+
+            & > div
+            {
+                padding:0 20px;
+            }
+        }
+    }
+
+    #block-system-main-menu .content
+    {
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing:-0.5px;
+        text-shadow:1px 1px 0 black;
+        @extend .font-condensed;
+
+        & > ul
+        {
+            list-style:none;
+            margin: 0;
+            padding: 0;
+
+            & > li
+            {
+                list-style:none;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                position: relative;
+
+                & > a
+                {
+                    display: block;
+                    color:$lightblue;
+                    text-decoration:none;
+                    padding:45px 12px 16px 12px;
+                    line-height:100%;
+                    background-repeat:no-repeat;
+                    background-position:center 10px;
+
+                    &:hover
+                    {
+                        color:white;
+                    }
+
+                    &.chatham-kent
+                    {
+                        background-image:url(../images/icon-ck-white-small.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-ck-orange-small.png);
+                        }
+                    }
+
+                    &.sarnia-lambton
+                    {
+                        background-image:url(../images/icon-sl-white-small.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-sl-orange-small.png);
+                        }
+                    }
+
+                    &.windsor-essex
+                    {
+                        background-image:url(../images/icon-we-white-small.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-we-orange-small.png);
+                        }
+                    }
+
+                    &.belle-river
+                    {
+                        background-image:url(../images/icon-br-white-small.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-br-orange-small.png);
+                        }
+                    }
+
+                    &.pelee-island
+                    {
+                        background-image:url(../images/icon-pi-white-small.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-pi-orange-small.png);
+                        }
+                    }
+
+                    &:after
+                    {
+                        content:"";
+                        display: block;
+                        position: absolute;
+                        left: -99999px;
+                    }
+                }
+
+                & > ul
+                {
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    border:3px solid $lightblue;
+                    background: white;
+                    list-style:none;
+                    margin:0;
+                    padding: 0;
+                    width: 147px;
+                    z-index: 999;
+
+                    & > li
+                    {
+                        list-style:none;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+
+                        & > a
+                        {
+                            display: block;
+                            color: $lightblue;
+                            text-decoration:none;
+                            line-height:100%;
+                            padding:8px 28px 7px 6px;
+                            text-align:left;
+                            text-shadow:1px 1px 0 rgba(0,0,0,0.2);
+
+                            &:hover
+                            {
+                                background:$navy;
+                                color:white;
+                                text-shadow:1px 1px 0 black;
+                            }
+                        }
+
+                        &:after
+                        {
+                            content:"";
+                            display: block;
+                            border-bottom:1px solid #3f5b98;
+                            position: absolute;
+                            top: 100%;
+                            left: 6px;
+                            right: 6px;
+                        }
+                        &.last:after,
+                        &:hover:after
+                        {
+                            display: none;
+                        }
+                    }
+                }
+                &:hover > ul
+                {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+#secondary-navigation
+{
+    padding:16px 0;
+
+    & > div
+    {
+        width: 100%;
+        max-width: 980px;
+        margin:0 auto;
+
+        & > div
+        {
+            padding:0 20px;
+
+            & > div
+            {
+                position: relative;
+            }
+        }
+    }
+
+
+    #block-search-form
+    {
+        position: absolute;
+        right:192px;
+        padding-top:2px;
+
+        #edit-search-block-form--2
+        {
+            display: block;
+            line-height:30px;
+            height: 30px;
+            width: 145px;
+            padding: 0 30px 0 15px;
+            border-radius:15px;
+            border:1px solid #d1d1d1;
+            float: left;
+            margin:0;
+            box-shadow:none;
+            box-sizing:inherit;
+            font-size:inherit;
+            font-weight: inherit;
+
+            &:focus
+            {
+                border:1px solid $lightblue;
+            }
+        }
+
+        .form-actions input
+        {
+            float: left;
+            margin-left:-30px;
+            border:0;
+            font-size:0;
+            color:transparent;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background:transparent url(../images/icon-search.png) no-repeat left center;
+            cursor:pointer;
+        }
+    }
+
+    #block-menu-menu-social-menu
+    {
+        float: right;
+
+        .content ul
+        {
+            list-style:none;
+            margin: 0 0 0 4px;
+            padding: 0;
+
+            li
+            {
+                list-style:none;
+                margin: 0 0 0 10px;
+                padding: 0;
+                display: inline-block;
+                vertical-align: top;
+
+                a
+                {
+                    display: block;
+                    width: 35px;
+                    height: 35px;
+                    background-repeat:no-repeat;
+                    background-position:left top;
+                    font-size:0;
+                    color:transparent;
+
+                    &.fb
+                    {
+                        background-image:url(../images/icon-fb.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-fb-hover.png);
+                        }
+                    }
+                    &.tw
+                    {
+                        background-image:url(../images/icon-tw.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-tw-hover.png);
+                        }
+                    }
+                    &.in
+                    {
+                        background-image:url(../images/icon-in.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-in-hover.png);
+                        }
+                    }
+                    &.yt
+                    {
+                        background-image:url(../images/icon-yt.png);
+
+                        &:hover,
+                        &:after
+                        {
+                            background-image:url(../images/icon-yt-hover.png);
+                        }
+                    }
+
+                    &:after
+                    {
+                        content:"";
+                        display: block;
+                        position: absolute;
+                        left: -99999px;
+                    }
+                }
+            }
+        }
+    }
+
+    #block-block-1
+    {
+        @extend .font-condensed;
+        color:$orange;
+        font-weight:bold;
+        clear: right;
+        padding:45px 0 0 80px;
+        overflow: hidden;
+        font-size:0.95em;
+    }
+}
+
+#header
+{
+    clear: both;
+    padding-top:8px;
+    padding-bottom: 10px;
+
+    & > div
+    {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+
+        & > div
+        {
+            padding: 0 20px;
+        }
+    }
+}
+
+.region-content
+{
+    ul, ol
+    {
+        margin:0 0 0.8em 20px;
+    }
+}
+
+#sidebar
+{
+    float: right;
+    width: 230px;
+    margin-left:25px;
+    position: relative;
+    text-align: center;
+    color:$navy;
+
+    .block-views
+    {
+        h2
+        {
+            text-transform: uppercase;
+            font-size:1.35em;
+        }
+    }
+}
+
+#footer
+{
+    clear: both;
+    border-top:5px solid $lightblue;
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    color:white;
+    text-align: center;
+    background:$navy;
+    position: relative;
+    z-index: 1;
+
+    & > div
+    {
+        border-top:5px solid white;
+
+        & > div
+        {
+            background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
+            background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
+            background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
+            background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, $navy));
+            background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
+            background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, $navy 100%);
+
+            min-height:205px;
+
+            & > div
+            {
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    a
+    {
+        color:white;
+        text-decoration: none;
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+
+    #block-menu-menu-footer-menu .content ul
+    {
+        list-style:none;
+        margin: 0;
+        padding: 26px 0 75px 0;
+        text-align: center;
+        font-size:0.8em;
+        line-height:100%;
+        background:url(../images/bg-footer.png) no-repeat center 70%;
+
+        li
+        {
+            list-style:none;
+            margin:10px 0;
+            padding:0;
+            display: inline-block;
+            padding:0 14px;
+            border-right:2px solid white;
+
+            &.last
+            {
+                border-right:0;
+            }
+
+            a
+            {
+                display: block;
+                font-weight: bold;
+            }
+        }
+    }
+
+    #copyright,
+    #site-by-cci
+    {
+        font-size:0.7em;
+    }
+}
+#main-wrapper
+{
+    padding:25px 0;
+    background:white;
+
+    & > div
+    {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+
+        & > div
+        {
+            padding:0 20px;
+        }
+    }
+}
+
+#first-widgets
+{
+    border:solid $lightblue;
+    border-width:5px 0;
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    color:white;
+    padding: 0;
+
+    & > div
+    {
+        border:solid white;
+        border-width:5px 0;
+        width: auto;
+        max-width: none;
+        margin: 0;
+
+        & > div
+        {
+            box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+            background:$navy;
+            position: relative;
+            padding: 0;
+
+            &:before
+            {
+                content:"";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                z-index: 0;
+
+                $color2: transparent;
+                background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, $color2));
+                background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, $color2 100%);
+            }
+            &:after
+            {
+                content:"";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                z-index: 0;
+
+                $color2: transparent;
+                background-image: -ms-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: -moz-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: -o-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 471, color-stop(0, #1B5186), color-stop(1, $color2));
+                background-image: -webkit-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+                background-image: radial-gradient(ellipse farthest-side at center bottom, #1B5186 0%, $color2 100%);
+            }
+
+            & > div
+            {
+                max-width:980px;
+                width: 100%;
+                margin:0 auto;
+                padding:30px 0;
+
+                & > div
+                {
+                    padding:0 20px;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+#second-widgets
+{
+    max-width:980px;
+    width: 100%;
+    margin: 0 auto;
+    padding:30px 0;
+
+    & > div
+    {
+        padding:0 20px;
+    }
+
+    #block-block-2
+    {
+        float: left;
+        width: 50%;
+
+        .content
+        {
+            img
+            {
+                display: block;
+                border:1px solid #ccc;
+                border-radius:2px;
+                box-shadow:0 13px 10px -10px rgba(0,0,0,0.5);
+                height:auto !important;
+                width:100% !important;
+            }
+
+            p
+            {
+                color:$navy;
+                font-weight:bold;
+                padding-bottom:10px;
+                font-size:0.925em;
+            }
+        }
+    }
+
+    .block.view-news-container
+    {
+        width: 50%;
+        float: left;
+        text-shadow:1px 1px 5px rgba(0,0,0,0.2);
+
+        & > div
+        {
+            padding:20px 0 0 15px;
+            position: relative;
+
+            & > h2
+            {
+                text-align: center;
+                padding-bottom:15px;
+                background:url(../images/news-line.png) repeat-x left bottom;
+                text-transform: uppercase;
+                color:$navy;
+            }
+        }
+    }
+}
+#sidebar
+{
+    #block-views-news-block,
+    #block-views-news-block-belle-river,
+    #block-views-news-block-chatham-kent,
+    #block-views-news-block-pelee-island,
+    #block-views-news-block-sarnia-lambton,
+    #block-views-news-block-windsor-essex
+    {
+        & > div > h2
+        {
+            padding-bottom:5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid $navy;
+        }
+    }
+}
+
+ul.locations-dropdown
+{
+    display: inline-block;
+    list-style:none;
+    width: 200px;
+    border-radius:10px;
+    background:#f48800;
+    text-align: left;
+    font-size:14px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    margin-left: -100px;
+    height:40px;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+    transition:height 0.4s;
+
+    $color1: #ffa700;
+    $color2: #e96900;
+    background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
+    background: -webkit-linear-gradient(top, $color1 0%,$color2 100%);
+    background: -o-linear-gradient(top, $color1 0%,$color2 100%);
+    background: -ms-linear-gradient(top, $color1 0%,$color2 100%);
+    background: linear-gradient(to bottom, $color1 0%,$color2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa700', endColorstr='#e96900',GradientType=0 );
+
+    &.open
+    {
+        height:204px;
+        z-index: 999;
+    }
+
+    li
+    {
+        list-style:none;
+        margin:1px 0 0 0;
+        position: relative;
+
+        &:after
+        {
+            content:"";
+            display: block;
+            position: absolute;
+            top: -1px;
+            left: 3px;
+            right: 3px;
+            border-bottom:1px solid #e96900;
+        }
+
+        &:first-child
+        {
+            margin-top: 0;
+            margin-right:36px;
+            display: block;
+
+            &:after
+            {
+                display: none;
+            }
+        }
+    }
+
+    li a
+    {
+        display: block;
+        color:white;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: 100%;
+        padding:13px 0 13px 36px;
+        text-shadow:1px 1px 0 rgba(0,0,0,0.35);
+        background-repeat:no-repeat;
+        background-position:10px center;
+
+        &:hover,
+        &:focus
+        {
+            background-color:white;
+            color:#e96900;
+            text-shadow: none;
+            outline:none;
+        }
+
+        &:before
+        {
+            content:"";
+            display: block;
+            position: absolute;
+            left: -99999px;
+        }
+    }
+
+    a.open-btn
+    {
+        font-size:0;
+        color:transparent;
+        display: block;
+        width: 36px;
+        height: 40px;
+        background:url(../images/arrow-down.png) no-repeat center center;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &:hover, &:focus, &:before
+        {
+            background-color:white;
+            background-image:url(../images/arrow-down-hover.png);
+            outline:none;
+        }
+
+        &:before, &:after
+        {
+            content:"";
+            display: block;
+            position: absolute;
+            left: -99999px;
+        }
+    }
+    &.open a.open-btn,
+    a.open-btn:after
+    {
+        background-image:url(../images/arrow-up.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/arrow-up-hover.png);
+        }
+    }
+
+    li.belle-river a
+    {
+        background-image:url(../images/icon-br-m.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-br-m-hover.png);
+        }
+    }
+    li.chatham-kent a
+    {
+        background-image:url(../images/icon-ck-m.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-ck-m-hover.png);
+        }
+    }
+    li.pelee-island a
+    {
+        background-image:url(../images/icon-pi-m.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-pi-m-hover.png);
+        }
+    }
+    li.sarnia-lambton a
+    {
+        background-image:url(../images/icon-sl-m.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-sl-m-hover.png);
+        }
+    }
+    li.windsor-essex a
+    {
+        background-image:url(../images/icon-we-m.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-we-m-hover.png);
+        }
+    }
+}
+div.locations-dropdown-placeholder
+{
+    height:47px;
+}
+
+ul.locations-dropdown.small
+{
+    height:27px;
+    font-size:11px;
+    letter-spacing:-0.5px;
+    border-radius:7px;
+    width: 136px;
+    margin-left:-68px;
+
+    &.open
+    {
+        height: 139px;
+    }
+
+    li:first-child
+    {
+        margin-right:20px;
+    }
+
+    li a
+    {
+        padding:8px 0 8px 25px;
+        background-position:6px center;
+    }
+
+    a.open-btn
+    {
+        width: 20px;
+        height: 27px;
+        background-image:url(../images/arrow-down-s.png);
+        background-position:5px center;
+
+        &:hover, &:before, &:focus
+        {
+            background-image:url(../images/arrow-down-s-hover.png);
+        }
+    }
+    &.open a.open-btn
+    {
+        background-image:url(../images/arrow-up-s.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/arrow-up-s-hover.png);
+        }
+    }
+
+    li.belle-river a
+    {
+        background-image:url(../images/icon-br-s.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-br-s-hover.png);
+        }
+    }
+    li.chatham-kent a
+    {
+        background-image:url(../images/icon-ck-s.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-ck-s-hover.png);
+        }
+    }
+    li.pelee-island a
+    {
+        background-image:url(../images/icon-pi-s.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-pi-s-hover.png);
+        }
+    }
+    li.sarnia-lambton a
+    {
+        background-image:url(../images/icon-sl-s.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-sl-s-hover.png);
+        }
+    }
+    li.windsor-essex a
+    {
+        background-image:url(../images/icon-we-s.png);
+
+        &:hover, &:focus, &:before
+        {
+            background-image:url(../images/icon-we-s-hover.png);
+        }
+    }
+}
+
+
+body.node-type-location
+{
+    #page-wrapper
+    {
+        overflow: hidden;
+    }
+    #first-widgets
+    {
+        display: none;
+    }
+    #main-wrapper
+    {
+        @extend #first-widgets;
+        display: block;
+        border-top:0;
+
+        & > div
+        {
+            border-top: 0;
+
+            & > div
+            {
+                box-shadow:none;
+
+                &:before
+                {
+                    display: none;
+                }
+
+                & > div
+                {
+                    position: relative;
+                    z-index: 1;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+
+    #page-title
+    {
+        &:after
+        {
+            display: none!important;
+        }
+
+        &:before
+        {
+            content:"";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 0;
+
+            $color2: transparent;
+            background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, $color2));
+            background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, $color2 100%);
+        }
+    }
+}
+
+#page-title h1
+{
+    padding:35px 0 35px 24px;
+    background-repeat:no-repeat;
+    background-position:left center;
+    font-size:2.6em;
+    text-transform: uppercase;
+    line-height:120%;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.75);
+
+}
+body
+{
+    &.chatham-kent
+    {
+        #page-title h1
+        {
+            background-image:url(../images/icon-ck-l.png);
+        }
+    }
+    &.sarnia-lambton
+    {
+        #page-title h1
+        {
+            background-image:url(../images/icon-sl-l.png);
+        }
+    }
+    &.windsor-essex
+    {
+        #page-title h1
+        {
+            background-image:url(../images/icon-we-l.png);
+        }
+    }
+    &.belle-river
+    {
+        #page-title h1
+        {
+            background-image:url(../images/icon-br-l.png);
+        }
+    }
+    &.pelee-island
+    {
+        #page-title h1
+        {
+            background-image:url(../images/icon-pi-l.png);
+        }
+    }
+}
+body.location-inner
+{
+    #main-wrapper > div > div > div
+    {
+        position: relative;
+
+        #content
+        {
+            position: relative;
+            z-index: 1;
+            min-height:300px;
+        }
+
+        &:after
+        {
+            content:"";
+            display: block;
+            position: absolute;
+            bottom:-120px;
+            left:-170px;
+            background-repeat:no-repeat;
+            background-position:center bottom;
+            width: 341px;
+            height: 341px;
+        }
+    }
+
+    &.chatham-kent #main-wrapper > div > div > div:after
+    {
+        background-image:url(../images/icon-ck-bg-semi.png);
+    }
+    &.sarnia-lambton #main-wrapper > div > div > div:after
+    {
+        background-image:url(../images/icon-sl-bg-semi.png);
+    }
+    &.windsor-essex #main-wrapper > div > div > div:after
+    {
+        background-image:url(../images/icon-we-bg-semi.png);
+    }
+    &.belle-river #main-wrapper > div > div > div:after
+    {
+        background-image:url(../images/icon-br-bg-semi.png);
+    }
+    &.pelee-island #main-wrapper > div > div > div:after
+    {
+        background-image:url(../images/icon-pi-bg-semi.png);
+    }
+
+}
+body.node-type-location
+{
+    .field-name-body
+    {
+        padding-bottom: 30px;
+        font-size:0.9em;
+        width: 45%;
+    }
+
+    .field-name-field-get-involved,
+    .field-name-field-donate,
+    .field-name-field-contact-us,
+    .field-name-field-sponsors,
+    .field-name-field-programs,
+    .field-name-field-events
+    {
+        float: left;
+        width: 16.6%;
+        text-align: center;
+        background-repeat:no-repeat;
+        background-position:center top;
+        position: relative;
+        padding-top: 115px;
+        padding-bottom: 10px;
+
+        .field-label
+        {
+            text-transform: uppercase;
+            padding-bottom: 8px;
+        }
+
+        ul.locations-dropdown
+        {
+            @extend ul.locations-dropdown.small;
+        }
+    }
+    .field-name-field-get-involved
+    {
+        background-image:url(../images/icon-get-involved-m.png);
+    }
+    .field-name-field-donate
+    {
+        background-image:url(../images/icon-donate-m.png);
+    }
+    .field-name-field-contact-us
+    {
+        background-image:url(../images/icon-contact-us-m.png);
+    }
+    .field-name-field-sponsors
+    {
+        background-image:url(../images/icon-sponsors-m.png);
+    }
+    .field-name-field-programs
+    {
+        background-image:url(../images/icon-programs-m.png);
+    }
+    .field-name-field-events
+    {
+        background-image:url(../images/icon-events-m.png);
+    }
+
+    .field-name-field-image img
+    {
+        position: absolute;
+        top:0;
+        left:50%;
+        opacity:0.75;
+        z-index: -1;
+        width: auto;
+        height: auto;
+    }
+}
+
+#sidebar
+{
+    #block-block-3,
+    #block-block-4,
+    #block-block-6,
+    #block-block-7,
+    #block-block-8,
+    #block-block-9,
+    #block-block-10,
+    #block-block-11,
+    #block-block-12,
+    #block-block-13,
+    #block-block-14,
+    #block-block-15,
+    #block-block-16,
+    #block-block-22,
+    #block-block-23,
+    #block-block-24,
+    #block-block-25
+    {
+        margin-bottom: 20px;
+
+        ul.locations-dropdown
+        {
+            @extend ul.locations-dropdown.small;
+        }
+
+        p
+        {
+            display: none;
+        }
+
+        h2
+        {
+            text-transform: uppercase;
+            color:$navy;
+            font-size:1.1em;
+            padding-top: 115px;
+            background-repeat:no-repeat;
+            background-position:center top;
+            margin-bottom: 8px;
+        }
+    }
+    #block-block-3,
+    #block-block-12,
+    #block-block-13,
+    #block-block-14,
+    #block-block-15,
+    #block-block-16
+    {
+        h2
+        {
+            background-image:url(../images/icon-get-involved-m.png);
+        }
+    }
+    #block-block-4,
+    #block-block-7,
+    #block-block-8,
+    #block-block-9,
+    #block-block-10,
+    #block-block-11
+    {
+        h2
+        {
+            background-image:url(../images/icon-donate-m.png);
+        }
+    }
+    #block-block-6,
+    #block-block-22,
+    #block-block-23,
+    #block-block-24,
+    #block-block-25
+    {
+        h2
+        {
+            background-image:url(../images/icon-events-m.png);
+        }
+    }
+}
+
+body.location-inner #content
+{
+    overflow: hidden;
+    width: 685px;
+    width: calc(100% - 255px);
+    float: left;
+}
+
+body.not-front
+{
+    #page-title
+    {
+        box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+        background:$navy;
+        position: relative;
+        padding: 0;
+        border-top:5px solid $lightblue;
+
+        &:after
+        {
+            content:"";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 0;
+
+            $color2: transparent;
+            background-image: -ms-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: -moz-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: -o-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 471, color-stop(0, #1B5186), color-stop(1, $color2));
+            background-image: -webkit-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
+            background-image: radial-gradient(ellipse farthest-side at center bottom, #1B5186 0%, $color2 100%);
+        }
+
+        & > div
+        {
+            border-top:5px solid white;
+            box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+            position: relative;
+
+            & > div
+            {
+                box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+
+                & > div
+                {
+                    max-width:980px;
+                    width: 100%;
+                    margin:0 auto;
+                    padding:30px 0;
+
+                    & > div
+                    {
+                        padding:0 20px;
+                        position: relative;
+                        z-index: 1;
+
+                        h1
+                        {
+                            color:white;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+#block-block-26
+{
+    display: none;
+}
+
+
+#gmap
+{
+    height: 280px;
+    border: 3px solid $lightblue;
+}
+
+body.page-node-76
+{
+    #block-system-main
+    {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-style:solid;
+        border-color:$lightblue;
+        border-width:5px 0;
+        background:white;
+        z-index: 1000;
+        margin-top: -150px;
+        text-align: center;
+
+        & > div
+        {
+            border-style:solid;
+            border-color:white;
+            border-width:4px 0;
+
+            & > div
+            {
+                border-style:solid;
+                border-color:$navy;
+                border-width:6px 0;
+
+                & > div
+                {
+                    width: 100%;
+                    max-width: 940px;
+                    margin:0 auto;
+                    height: 300px;
+
+                    & > div
+                    {
+                        padding: 45px 0;
+                    }
+                }
+            }
+        }
+
+        h1
+        {
+            font-size:4em;
+        }
+        p
+        {
+            font-size:2.25em;
+            font-weight: 700;
+        }
+        a.button
+        {
+            font-size:0.6em;
+        }
+    }
+
+    &:after
+    {
+        content:"";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:black;
+        opacity:0.6;
+        z-index: 999;
+    }
+}
+
+ol.search-results .title a
+{
+    color:$lightblue;
+    font-size:1.25em;
+}

@@ -1,0 +1,114 @@
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=phone],
+textarea
+{
+    display: block;
+    padding:8px 12px;
+    box-shadow:1px 1px 6px rgba(0,0,0,0.5) inset;
+    border:1px solid #b0b0b0;
+    border-radius:10px;
+    outline:0;
+    font-size:18px;
+    font-weight: bold;
+    width: 100%;
+    box-sizing:border-box;
+    color:#404040;
+
+    &:focus
+    {
+        border:1px solid $lightblue;
+    }
+}
+
+label
+{
+    padding-left:10px;
+    font-size:0.9em;
+    font-weight: bold;
+}
+
+form#webform-client-form-48
+{
+    max-width:465px;
+    padding:0 1px;
+    margin: 0 auto;
+
+    .form-required
+    {
+        display: none;
+    }
+
+    input#edit-submit
+    {
+        display: block;
+        font-size:24px;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    #webform-component-first-name
+    {
+        width: 200px;
+        float: left;
+    }
+    #webform-component-last-name
+    {
+        width: 200px;
+        float: right;
+    }
+
+    #webform-component-address
+    {
+        clear: both;
+    }
+
+    #webform-component-address-2
+    {
+        label
+        {
+            position: absolute;
+            left: -9999px;
+        }
+    }
+
+    #webform-component-city,
+    #webform-component-province,
+    #webform-component-postal-code
+    {
+        width: 135px;
+        float: left;
+        margin-right: 30px;
+        margin-top: 0;
+    }
+    #webform-component-postal-code
+    {
+        margin-right: 0;
+    }
+
+    #webform-component-phone
+    {
+        clear: left;
+        width: 200px;
+        float: left;
+        margin-top: 0;
+    }
+    #webform-component-cell-phone
+    {
+        width: 200px;
+        float: right;
+        margin-top: 0;
+    }
+
+    #webform-component-email
+    {
+        clear: left;
+    }
+
+    #webform-component-amount
+    {
+        width: 200px;
+    }
+}

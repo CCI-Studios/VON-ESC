@@ -1,0 +1,3 @@
+name = View block top class
+description = Applies the classes set in your view's "CSS Class" setting to the top-level container of their block's HTML with "-container" added.
+core = 7.x

@@ -1,0 +1,80 @@
+#cboxOverlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:black;
+    z-index: 999;
+}
+
+#colorbox
+{
+    z-index: 1000;
+    background: white;
+    padding:20px;
+    outline:none;
+    overflow: visible!important;
+
+    img.cboxPhoto
+    {
+        display: block;
+    }
+
+    #cboxLoadedContent
+    {
+        height: auto!important;
+    }
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose
+{
+    display: block;
+    border:0;
+    background-color:transparent;
+    background-repeat:no-repeat;
+    background-position: center center;
+    width: 56px;
+    height: 56px;
+    color:transparent;
+    font-size:0;
+    position: absolute;
+    cursor: pointer;
+}
+
+#cboxPrevious
+{
+    background-image: url(../images/popup-arrow-left.png);
+    left:-75px;
+    top:50%;
+    margin-top: -28px;
+}
+
+#cboxNext
+{
+    background-image: url(../images/popup-arrow-right.png);
+    right:-75px;
+    top:50%;
+    margin-top: -28px;
+}
+
+#cboxClose
+{
+    background-image: url(../images/popup-close.png);
+    top:-20px;
+    right: -20px;
+}
+
+#cboxTitle
+{
+    color:$navy;
+    line-height:100%;
+    font-size:0.9em;
+    padding:10px 20px;
+    margin:0 -20px;
+    background: white;
+    float: none!important;
+}

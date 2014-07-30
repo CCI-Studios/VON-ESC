@@ -1,0 +1,25 @@
+name = VON Erie St. Clair
+description = VON Erie St. Clair Custom
+core = 7.x
+
+scripts[] = js/slideshow.js
+scripts[] = js/locations-dropdown.js
+scripts[] = js/location-page.js
+scripts[] = js/menu-btn.js
+scripts[] = js/donation-location.js
+scripts[] = js/maps.js
+scripts[] = js/placeholders.min.js
+scripts[] = js/jquery.rwdImageMaps.min.js
+
+stylesheets[all][] = stylesheets/screen.css
+stylesheets[all][] = stylesheets/hemant.css
+
+regions[navigation] = Navigation
+regions[secondary_navigation] = Secondary Navigation
+regions[header] = Header
+regions[help] = Help
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[first_widgets] = First Widgets
+regions[second_widgets] = Second Widgets
+regions[footer] = Footer

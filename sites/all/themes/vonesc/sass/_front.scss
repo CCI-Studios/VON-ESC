@@ -1,0 +1,48 @@
+body.front
+{
+    #main-wrapper,
+    #page-title
+    {
+        display: none;
+    }
+
+    #first-widgets
+    {
+
+        .block
+        {
+            width: 30%;
+            float: left;
+            text-align: center;
+            font-size:0.9em;
+            text-shadow:1px 1px 0 rgba(0,0,0,0.75);
+            position: relative;
+
+            &#block-block-4
+            {
+                margin:0 5%;
+            }
+
+            & > div > h2
+            {
+                text-transform: uppercase;
+                margin-bottom: 5px;
+                padding-top: 170px;
+                background-repeat:no-repeat;
+                background-position:center top;
+            }
+            &#block-block-3 > div > h2
+            {
+                background-image:url(../images/icon-get-involved-large.png);
+            }
+            &#block-block-4 > div > h2
+            {
+                background-image:url(../images/icon-donate-large.png);
+            }
+            &#block-block-5 > div > h2
+            {
+                background-image:url(../images/icon-contact-us-large.png);
+            }
+        }
+    }
+}

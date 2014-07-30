@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * Implements hook_webform_submission_insert().
+ */
+function custom_paypal_webform_submission_insert($node, $submission) {
+
+    if ($node->nid == 48)
+    {
+        _custom_paypal_donation($node, $submission);
+    }
+    else if ($node->field_paypal_payments['und'][0]['value'])
+    {
+        _custom_paypal_ticket_purchase($node, $submission);
+    }
+}
+
+/**
+ * Function to convert webform submissions into a nicely-mapped array.
+ *
+ * @see http://www.drupalcoder.com/story/678-additional-processing-in-drupals-webform-3-module
+ */
+function _custom_paypal_webform_component_mapping($node) {
+    $mapping = array();
+    $components = $node->webform['components'];
+    foreach ($components as $i => $component) {
+        $key = $component['form_key'];
+        $mapping[$key] = $i;
+    }
+    return $mapping;
+}
+
+function _custom_paypal_ticket_purchase($node, $submission)
+{
+    $mapping = _custom_paypal_webform_component_mapping($node);
+
+    $quantity = $submission->data[$mapping['quantity']]['value'][0];
+    $unit_price = $node->field_price['und'][0]['value'];
+    $tax_rate = $node->field_tax['und'][0]['value'];
+
+    $paypal_options = array();
+    $paypal_options['cmd'] = '_xclick'; // Varies depending on type of payment sent via PayPal
+    $paypal_options['business'] = 'cmorris@ccistudios.com';  // PayPal account email
+    $paypal_options['page_style'] = 'primary'; // Set this in PayPal prefs, then change here (default = paypal)
+    $paypal_options['currency_code'] = 'CAD';
+    $paypal_options['amount'] = $unit_price;
+    $paypal_options['quantity'] = $quantity;
+    $paypal_options['item_name'] = 'Description of the type of donation, payment, etc. goes here.';
+    $paypal_options['no_shipping'] = '1'; // Don't prompt user for shipping address
+    $paypal_options['no_note'] = '1'; // Don't prompt user for extra information (note)
+    $paypal_options['tax_rate'] = $tax_rate; // No tax for this payment
+    $paypal_options['rm'] = '1'; // Return method - 1 = browser redirected to return URL by GET method w/o variables
+    $paypal_options['return'] = $GLOBALS['base_url'].'/thank-you'; // Page to which user is returned
+    $paypal_options['first_name'] = $submission->data[$mapping['first_name']]['value'][0];
+    $paypal_options['last_name'] = $submission->data[$mapping['last_name']]['value'][0];
+    $paypal_options['email'] = $submission->data[$mapping['email']]['value'][0];
+    $paypal_options['address1'] = $submission->data[$mapping['address']]['value'][0];
+    $paypal_options['address2'] = $submission->data[$mapping['address_2']]['value'][0];
+    $paypal_options['city'] = $submission->data[$mapping['city']]['value'][0];
+    $paypal_options['province'] = $submission->data[$mapping['province']]['value'][0];
+    $paypal_options['postal_code'] = $submission->data[$mapping['postal_code']]['value'][0];
+    $paypal_options['country'] = 'CA';
+
+    _custom_paypal_goto_paypal($paypal_options);
+}
+
+function _custom_paypal_donation($node, $submission)
+{
+    $mapping = _custom_paypal_webform_component_mapping($node);
+
+    $amount = $submission->data[$mapping['amount']]['value'][0];
+
+    $paypal_account = 'Sharon.bevington@von.ca';
+    switch ($submission->data[$mapping['location']]['value'][0])
+    {
+        case 'tid_1':
+            $paypal_account = 'Melissa.landry@von.ca';
+            break;
+        case 'tid_2':
+            $paypal_account = 'melissa.crowe@von.ca';
+            break;
+    }
+
+    $paypal_options = array();
+    $paypal_options['cmd'] = '_donations'; // Varies depending on type of payment sent via PayPal
+    $paypal_options['business'] = $paypal_account;  // PayPal account email
+    $paypal_options['page_style'] = 'primary'; // Set this in PayPal prefs, then change here (default = paypal)
+    $paypal_options['currency_code'] = 'CAD';
+    $paypal_options['amount'] = $amount;
+    $paypal_options['item_name'] = 'Donation to VON Erie St. Clair';
+    $paypal_options['no_shipping'] = '1'; // Don't prompt user for shipping address
+    $paypal_options['no_note'] = '1'; // Don't prompt user for extra information (note)
+    $paypal_options['rm'] = '1'; // Return method - 1 = browser redirected to return URL by GET method w/o variables
+    $paypal_options['return'] = $GLOBALS['base_url'].'/thank-you'; // Page to which user is returned
+    $paypal_options['first_name'] = $submission->data[$mapping['first_name']]['value'][0];
+    $paypal_options['last_name'] = $submission->data[$mapping['last_name']]['value'][0];
+    $paypal_options['email'] = $submission->data[$mapping['email']]['value'][0];
+    $paypal_options['address1'] = $submission->data[$mapping['address']]['value'][0];
+    $paypal_options['address2'] = $submission->data[$mapping['address_2']]['value'][0];
+    $paypal_options['city'] = $submission->data[$mapping['city']]['value'][0];
+    $paypal_options['province'] = $submission->data[$mapping['province']]['value'][0];
+    $paypal_options['postal_code'] = $submission->data[$mapping['postal_code']]['value'][0];
+    $paypal_options['country'] = 'CA';
+
+    _custom_paypal_goto_paypal($paypal_options);
+}
+
+function _custom_paypal_goto_paypal($paypal_options)
+{
+    // Build the URL/query for PayPal payment form.
+    $query = http_build_query($paypal_options, '', '&');
+    $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr?' . $query;
+
+    // Redirect user to PayPal...
+    drupal_goto($url);
+}
+?>

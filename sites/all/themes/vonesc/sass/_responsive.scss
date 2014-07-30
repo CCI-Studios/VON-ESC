@@ -1,0 +1,591 @@
+@media screen and (max-width:995px)
+{
+    #navigation #block-system-main-menu
+    {
+        font-size:0.85em;
+        position: relative;
+        z-index: 999;
+
+        .content>ul>li
+        {
+            &.first
+            {
+                margin-left:-15px;
+            }
+            &.last
+            {
+                margin-right: -15px;
+            }
+
+            &>a
+            {
+                padding-left:5px;
+                padding-right:5px;
+            }
+        }
+    }
+
+    #logo img
+    {
+        width: 175px;
+    }
+
+    #secondary-navigation #block-block-1
+    {
+        padding: 30px 0 0 60px;
+    }
+
+    #second-widgets
+    {
+        .block.view-news-container
+        {
+            width: calc(100% - 462px);
+            max-width:50%;
+        }
+    }
+
+    body.node-type-location
+    {
+        .field-name-field-get-involved,
+        .field-name-field-donate,
+        .field-name-field-contact-us,
+        .field-name-field-sponsors,
+        .field-name-field-programs,
+        .field-name-field-events
+        {
+            width: 33.333%;
+            padding-bottom:20px;
+        }
+    }
+
+    .view-contact .views-row
+    {
+        float: none;
+        width: auto;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:768px)
+{
+    #navigation #block-system-main-menu
+    {
+        display: none;
+        font-size:1em;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        width: 200px;
+        border-width:3px 0 3px 3px;
+        border-style:solid;
+        border-color:$lightblue;
+        z-index: 999;
+
+        .content>ul>li
+        {
+            display: block;
+            text-shadow:0 1px 0 rgba(0,0,0,0.30);
+            border-bottom: 1px solid $navy;
+            position: relative;
+            text-align: right;
+
+            &.first
+            {
+                margin-left: 0;
+            }
+            &.last
+            {
+                margin-right: 0;
+                border-bottom: 0;
+            }
+
+            & > a
+            {
+                display: block;
+                background:white!important;
+                padding: 12px 12px 12px 50px;
+                border-bottom: 1px solid $navy;
+
+                &:hover
+                {
+                    background:$navy!important;
+                }
+
+                &:before
+                {
+                    content:"";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 50px;
+                    height: 40px;
+                    z-index: 1;
+                    background:no-repeat center center;
+                }
+
+                &.chatham-kent
+                {
+                    &:before
+                    {
+                        background-image:url(../images/icon-ck-mobile-blue.png);
+                    }
+
+                    &:hover:before
+                    {
+                        background-image:url(../images/icon-ck-mobile-orange.png);
+                    }
+                }
+
+                &.sarnia-lambton
+                {
+                    &:before
+                    {
+                        background-image:url(../images/icon-sl-mobile-blue.png);
+                    }
+
+                    &:hover:before
+                    {
+                        background-image:url(../images/icon-sl-mobile-orange.png);
+                    }
+                }
+
+                &.windsor-essex
+                {
+                    &:before
+                    {
+                        background-image:url(../images/icon-we-mobile-blue.png);
+                    }
+
+                    &:hover:before
+                    {
+                        background-image:url(../images/icon-we-mobile-orange.png);
+                    }
+                }
+
+                &.belle-river
+                {
+                    &:before
+                    {
+                        background-image:url(../images/icon-br-mobile-blue.png);
+                    }
+
+                    &:hover:before
+                    {
+                        background-image:url(../images/icon-br-mobile-orange.png);
+                    }
+                }
+
+                &.pelee-island
+                {
+                    &:before
+                    {
+                        background-image:url(../images/icon-pi-mobile-blue.png);
+                    }
+
+                    &:hover:before
+                    {
+                        background-image:url(../images/icon-pi-mobile-orange.png);
+                    }
+                }
+            }
+
+
+
+            & > ul
+            {
+                display: block;
+                position: static;
+                border:0;
+                width: auto;
+                padding: 3px 0;
+
+                & > li
+                {
+                    font-size:0.85em;
+
+                    &:after
+                    {
+                        display: none;
+                    }
+
+                    a
+                    {
+                        text-align: right;
+                        padding:6px 12px 5px 0;
+                    }
+                }
+            }
+
+        }
+    }
+
+    #logo
+    {
+        float: none;
+
+        img
+        {
+            margin:0 auto;
+        }
+    }
+
+    #navigation
+    {
+        margin-bottom: 120px;
+    }
+
+    #secondary-navigation #block-search-form
+    {
+        position: static;
+        width: 192px;
+        height: 32px;
+        margin: 0 auto 1em auto;
+        overflow: hidden;
+    }
+    #secondary-navigation #block-menu-menu-social-menu
+    {
+        float: none;
+        width: 182px;
+        margin: 0 auto;
+
+        .content ul
+        {
+            margin: 0;
+
+            li.first
+            {
+                margin-left: 0;
+            }
+        }
+    }
+    #secondary-navigation #block-block-1
+    {
+        padding: 1em 0 0 0;
+        text-align: center;
+    }
+
+    #second-widgets
+    {
+        .block.view-news-container
+        {
+            width: auto;
+            float: none;
+            clear: both;
+            max-width:none;
+        }
+
+        #block-block-2
+        {
+            float: none;
+            width: auto;
+            max-width:472px;
+            margin:0 auto;
+
+            .content img
+            {
+                width: 100%!important;
+                height: auto!important;
+            }
+        }
+    }
+
+    body.front #first-widgets .block
+    {
+        width: auto;
+        float: none;
+        margin:0 0 2.5em 0!important;
+
+        &:last-child
+        {
+            margin-bottom: 0!important;
+        }
+
+        & > div > h2
+        {
+            padding-top:125px;
+            background-size:auto 120px;
+        }
+    }
+
+    #block-block-26
+    {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 0;
+        z-index: 1;
+
+        .content
+        {
+            a
+            {
+                display: block;
+                padding: 10px;
+            }
+
+            p
+            {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    .view-header-slideshow
+    {
+        .view-content
+        {
+            padding: 0 20px;
+            left: -20px;
+            overflow: hidden;
+        }
+        .views-row
+        {
+            .views-field-field-image
+            {
+                border:0;
+                border-radius:0;
+                position: relative;
+                z-index: 1;
+                width: 100%;
+
+                img
+                {
+                    box-shadow:0 0 6px rgba(0,0,0,0.35);
+                }
+            }
+
+            .views-field-nothing
+            {
+                position: relative;
+                bottom: 0;
+                width: auto;
+                padding: 20px;
+                border-radius:0;
+                background:#ef964b;
+            }
+        }
+    }
+
+    body.location-inner
+    {
+        #content
+        {
+            width: auto;
+            float: none;
+        }
+
+        #sidebar
+        {
+            float: none;
+            margin-left: 0;
+            margin-top: 40px;
+            width: auto;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    body.node-type-location
+    {
+        .field-name-body
+        {
+            width: auto;
+        }
+        .field-name-field-image
+        {
+            display: none;
+        }
+        #page-wrapper
+        {
+            overflow: visible;
+        }
+    }
+    body.location-inner
+    {
+        #main-wrapper>div>div>div #content
+        {
+            min-height: 0;
+        }
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:540px)
+{
+    .view-contact-people .views-row ul li
+    {
+        .field-name-field-phone,
+        .field-name-field-email
+        {
+            float: none;
+            width: auto;
+        }
+        .field-name-field-phone
+        {
+            padding-left: 30px;
+            background-position: 3px center;
+        }
+    }
+
+    form#webform-client-form-48
+    {
+        #webform-component-first-name,
+        #webform-component-last-name,
+        #webform-component-city,
+        #webform-component-province,
+        #webform-component-postal-code,
+        #webform-component-phone,
+        #webform-component-cell-phone
+        {
+            width: auto;
+            float: none;
+            margin-right: 0;
+        }
+
+        #webform-component-address
+        {
+            margin-bottom: 0;
+        }
+        #webform-component-address-2
+        {
+            margin-top: 5px;
+        }
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width:480px)
+{
+    #page-title h1
+    {
+        font-size:2em;
+    }
+
+    body.node-type-location
+    {
+        .field-name-field-get-involved,
+        .field-name-field-donate,
+        .field-name-field-contact-us,
+        .field-name-field-sponsors,
+        .field-name-field-programs,
+        .field-name-field-events
+        {
+            width: 50%;
+            padding-bottom:20px;
+        }
+    }
+
+    .view-events,
+    .view-event
+    {
+        .views-row
+        {
+            .views-field-title
+            {
+                font-size:2em;
+            }
+
+            .views-field-path,
+            .views-field-field-purchase-tickets-form
+            {
+                float: none;
+                margin-bottom: 6px;
+            }
+
+            .views-field-title,
+            .views-field-field-short-description,
+            .views-field-path,
+            .views-field-field-purchase-tickets-form,
+            .views-field-body
+            {
+                padding-left: 65px;
+            }
+        }
+    }
+
+    .view-volunteer-opportunities,
+    .view-volunteer-opportunity
+    {
+        .views-row
+        {
+            text-align: center;
+
+            .views-field-title
+            {
+                font-size:2em;
+            }
+            .views-field-path
+            {
+                float: none;
+            }
+        }
+    }
+
+    .view-program
+    {
+        .view-content
+        {
+            clear: both;
+        }
+
+        .views-field-body ul
+        {
+            overflow: visible;
+
+            li
+            {
+                float: none;
+                width: auto;
+            }
+        }
+    }
+
+    .view-photo-galleries,
+    .view-photo-gallery
+    {
+        .views-row
+        {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+    }
+
+    ul.locations-dropdown.small
+    {
+        width: 130px;
+
+        li a
+        {
+            padding-left: 20px;
+            background-position: 4px center;
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width:769px)
+{
+    #block-system-main-menu
+    {
+        display: block !important
+    }
+}
