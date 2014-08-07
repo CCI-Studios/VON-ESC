@@ -78,7 +78,7 @@
         {
             icon += "sl";
         }
-        else if ($("body").hasClass("windsor-essex"))
+        else ($("body").hasClass("windsor-essex"))
         {
             icon += "we";
         }
