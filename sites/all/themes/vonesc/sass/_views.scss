@@ -242,8 +242,6 @@
     {
         text-transform: uppercase;
         padding-bottom: 10px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid $navy;
         position: relative;
         padding:10px 0;
 
@@ -270,8 +268,14 @@
 
     .views-field-field-image
     {
-        border:3px solid $lightblue;
         margin-bottom: 10px;
+        padding-top: 10px;
+        border-top: 1px solid $navy;
+
+        .field-content
+        {
+            border:3px solid $lightblue;
+        }
 
         img
         {
