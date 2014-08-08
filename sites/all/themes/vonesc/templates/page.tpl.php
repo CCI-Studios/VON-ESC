@@ -72,7 +72,7 @@
  * @ingroup themeable
  */
 ?>
-
+<div id="container">
   <div id="page-wrapper"><div><div>
 
     <div id="navigation"><div><div><div>
@@ -137,3 +137,4 @@
       <div id="copyright">&copy; Erie St. Clair VON <?php print date('Y'); ?></div>
       <div id="site-by-cci">Site by <a href="http://ccistudios.com" target="_blank">CCI Studios</a></div>
     </div></div></div></div> <!-- /#footer -->
+</div>

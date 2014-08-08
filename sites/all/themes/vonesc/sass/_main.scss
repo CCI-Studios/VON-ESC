@@ -53,6 +53,10 @@ hr
     }
 }
 
+#container
+{
+    overflow: hidden;
+}
 #page-wrapper
 {
     background:white;
@@ -1007,10 +1011,6 @@ ul.locations-dropdown.small
 
 body.node-type-location
 {
-    #page-wrapper
-    {
-        overflow: hidden;
-    }
     #first-widgets
     {
         display: none;
