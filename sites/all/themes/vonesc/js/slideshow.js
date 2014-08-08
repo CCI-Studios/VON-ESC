@@ -11,6 +11,7 @@
             fixHeight();
         });
     });
+    $(window).load(fixHeight);
 
     function container()
     {
