@@ -13,12 +13,12 @@ function auto_nodequeue_schema() {
   $schema['nodequeue_auto'] = array(
     'description' => 'Storage for the Auto Nodequeue module.',
     'fields' => array(
-      'name' => array(
+      'qid' => array(
         'description' => 'The primary identifier for a context.',
-        'type' => 'varchar',
-        'length' => 128,
+        'type' => 'int',
+        'length' => 11,
         'not null' => TRUE,
-        'default' => '',
+        'default' => 0,
       ),
       'auto_add' => array(
         'description' => 'The auto add flag.',
@@ -28,39 +28,7 @@ function auto_nodequeue_schema() {
         'default' => 0,
       ),
     ),
-    'primary key' => array('name'),
+    'primary key' => array('qid'),
   );
   return $schema;
-}
-
-/**
- * Change qid field by name field to adjust keys and indexes to use machine
- * name as in nodequeue_queue table.
- */
-function auto_nodequeue_update_7200() {
-  if (db_field_exists('nodequeue_queue', 'name')) {
-    if (db_field_exists('nodequeue_auto', 'qid')) {
-      $name_field = array(
-        'description' => 'The machine name for the autonode queue.',
-        'type' => 'varchar',
-        'length' => 128,
-      );
-
-      // Remove the existing data from the table.
-      db_delete('nodequeue_auto')->execute();
-
-      // Changes to nodequeue_auto table.
-      // Change qid from serial to int first, otherwise removing the primary key
-      // isn't possible.
-      db_change_field('nodequeue_auto', 'qid', 'qid', array(
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-      ));
-
-      db_drop_primary_key('nodequeue_auto');
-      db_change_field('nodequeue_auto', 'qid', 'name', $name_field);
-      db_add_primary_key('nodequeue_auto', array('name'));
-    }
-  }
 }
