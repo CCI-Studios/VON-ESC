@@ -9,6 +9,8 @@ function vonesc_form_alter(&$form, $form_state, $form_id) {
 	else if ($form_id == 'webform_client_form_48')
 	{
 		$form['actions']['submit']['#attributes']['class'][] = 'button';
+		$form['#action'] = '';
+		drupal_set_message("<pre>".print_r($form['#action'], true)."</pre>");
 	}
 	else if ($form_id == 'search_form')
 	{
