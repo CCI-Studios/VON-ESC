@@ -618,7 +618,6 @@ body.windsor-essex .view-program
         .views-field-field-related-programs
         {
             font-weight: bold;
-            color:$navy;
             padding-bottom: 10px;
 
             ul, li
@@ -626,6 +625,17 @@ body.windsor-essex .view-program
                 list-style:none;
                 margin: 0;
                 padding: 0;
+            }
+
+            a
+            {
+                color:$navy;
+                text-decoration: none;
+
+                &:hover
+                {
+                    text-decoration: underline;
+                }
             }
         }
     }
