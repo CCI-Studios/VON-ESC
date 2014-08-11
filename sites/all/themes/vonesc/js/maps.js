@@ -33,7 +33,7 @@
     {
         geocoder = new google.maps.Geocoder();
         var mapOptions = {
-            zoom: 15
+            zoom: getZoom()
         }
         map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
 
@@ -42,6 +42,14 @@
         showContactPeople($first.data("nid"));
         showMap($first.text());
         showMarkers();
+    }
+    function getZoom()
+    {
+        if ($("body").hasClass("page-node-77"))
+        {
+            return 7;
+        }
+        return 15;
     }
 
     function showMarkers()
