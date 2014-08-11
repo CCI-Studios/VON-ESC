@@ -454,6 +454,11 @@ body.windsor-essex .view-program
             }
         }
     }
+
+    .view-footer
+    {
+        clear: both;
+    }
 }
 
 
@@ -600,6 +605,10 @@ body.windsor-essex .view-program
             }
         }
     }
+}
+.view-event .view-footer
+{
+    clear: both;
 }
 
 .view-volunteer-opportunities,
