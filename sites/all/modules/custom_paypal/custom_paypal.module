@@ -87,7 +87,6 @@ function _custom_paypal_donation($node, $submission)
     $paypal_options['page_style'] = 'primary'; // Set this in PayPal prefs, then change here (default = paypal)
     $paypal_options['currency_code'] = 'CAD';
     $paypal_options['amount'] = $amount;
-    $paypal_options['item_name'] = 'Donation to VON Erie St. Clair';
     $paypal_options['no_shipping'] = '1'; // Don't prompt user for shipping address
     $paypal_options['no_note'] = '1'; // Don't prompt user for extra information (note)
     $paypal_options['rm'] = '1'; // Return method - 1 = browser redirected to return URL by GET method w/o variables
@@ -101,6 +100,11 @@ function _custom_paypal_donation($node, $submission)
     $paypal_options['province'] = $submission->data[$mapping['province']]['value'][0];
     $paypal_options['postal_code'] = $submission->data[$mapping['postal_code']]['value'][0];
     $paypal_options['country'] = 'CA';
+    $paypal_options['cbt'] = 'Return to VON Erie St. Clair';
+    $tid = substr($submission->data[$mapping['location']]['value'][0], 4);
+    $term = taxonomy_term_load($tid);
+    $location = $term->name;
+    $paypal_options['item_name'] = 'Donation to VON '.$location;
 
     _custom_paypal_goto_paypal($paypal_options);
 }
