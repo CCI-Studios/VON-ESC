@@ -650,99 +650,67 @@ body.windsor-essex .view-program
 
     .views-row
     {
-        float: left;
-        width: 50%;
-        margin-bottom: 0.75em;
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        padding-left: 30px;
+        border-bottom: 1px solid $navy;
+        color:$orange;
+        font-weight: bold;
+        background-repeat:no-repeat;
+        background-position:left 4px;
+        overflow: hidden;
+
+        a
+        {
+            color:$orange;
+            text-decoration: none;
+        }
+
+        .views-field-title
+        {
+            font-size:1.5em;
+        }
 
         .views-field-field-address
         {
             padding-right: 20px;
         }
 
-        a
+        .views-field-field-phone
         {
-            color:$navy;
-            text-decoration: none;
-            font-size:1.5em;
-            font-weight: bold;
-
-            &.active
-            {
-                color:$orange;
-            }
+            padding-left: 30px;
+            background:url(../images/phone.png) no-repeat left center;
+            width:200px;
+            float: left;
         }
-    }
-}
-.view-contact-people
-{
-    clear: both;
-    border-top:1px solid $navy;
-    position: relative;
-    height: 500px;
-    color:$orange;
-    font-weight: bold;
 
-    .views-row
-    {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-
-        ul
+        .views-field-field-fax
         {
-            list-style:none;
-            padding: 0;
-            margin: 0;
+            padding-left: 30px;
+            background:url(../images/fax.png) no-repeat left center;
+            width: 200px;
+            float: left;
+        }
 
-            li
-            {
-                list-style:none;
-                margin: 0;
-                padding: 0.75em 0;
-                clear: both;
-                border-bottom: 1px solid $navy;
-                overflow: hidden;
-
-                .field-name-field-name
-                {
-                    font-size:1.5em;
-                    padding-left: 36px;
-                    margin-bottom: 6px;
-                    background:url(../images/icon-ck-orange-small.png) no-repeat left center;
-                }
-                .field-name-field-phone,
-                .field-name-field-email
-                {
-                    width: 40%;
-                    float: left;
-                    background:no-repeat left center;
-                }
-                .field-name-field-phone
-                {
-                    padding-left: 24px;
-                    background-image:url(../images/phone.png);
-                }
-                .field-name-field-email
-                {
-                    padding-left: 30px;
-                    background-image:url(../images/email.png);
-                }
-
-
-                a
-                {
-                    color:$orange;
-                    text-decoration: none;
-
-                    &:hover
-                    {
-                        text-decoration: underline;
-                    }
-                }
-            }
-
+        &.Chatham-Kent
+        {
+            background-image:url(../images/icon-ck-mobile-orange.png);
+        }
+        &.Sarnia-Lambton
+        {
+            background-image:url(../images/icon-sl-mobile-orange.png);
+        }
+        &.Windsor-Essex
+        {
+            background-image:url(../images/icon-we-mobile-orange.png);
+        }
+        &.Belle-River
+        {
+            background-image:url(../images/icon-br-mobile-orange.png);
+        }
+        &.Pelee-Island
+        {
+            background-image:url(../images/icon-pi-mobile-orange.png);
         }
     }
 }

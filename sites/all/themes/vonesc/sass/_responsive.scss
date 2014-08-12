@@ -57,12 +57,6 @@
             padding-bottom:20px;
         }
     }
-
-    .view-contact .views-row
-    {
-        float: none;
-        width: auto;
-    }
 }
 
 
@@ -422,21 +416,6 @@
 
 @media screen and (max-width:540px)
 {
-    .view-contact-people .views-row ul li
-    {
-        .field-name-field-phone,
-        .field-name-field-email
-        {
-            float: none;
-            width: auto;
-        }
-        .field-name-field-phone
-        {
-            padding-left: 30px;
-            background-position: 3px center;
-        }
-    }
-
     form#webform-client-form-48
     {
         #webform-component-first-name,
