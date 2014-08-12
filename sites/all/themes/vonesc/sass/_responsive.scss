@@ -288,24 +288,6 @@
         }
     }
 
-    body.front #first-widgets .block
-    {
-        width: auto;
-        float: none;
-        margin:0 0 2.5em 0!important;
-
-        &:last-child
-        {
-            margin-bottom: 0!important;
-        }
-
-        & > div > h2
-        {
-            padding-top:125px;
-            background-size:auto 120px;
-        }
-    }
-
     #block-block-26
     {
         display: block;
@@ -405,6 +387,30 @@
         #main-wrapper>div>div>div #content
         {
             min-height: 0;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width:720px)
+{
+    body.front #first-widgets .block
+    {
+        width: auto;
+        float: none;
+        margin:0 0 2.5em 0!important;
+
+        &:last-child
+        {
+            margin-bottom: 0!important;
+        }
+
+        & > div > h2
+        {
+            padding-top:125px;
+            background-size:auto 120px;
         }
     }
 }
