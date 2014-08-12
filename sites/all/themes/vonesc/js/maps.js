@@ -59,32 +59,33 @@
             getAddressLatLng(address, showMarkerLatLng);
         });
     }
-    function showMarkerLatLng(latlng)
+    function showMarkerLatLng(latlng, address)
     {
         var marker = new google.maps.Marker({
             map: map,
             position: latlng,
-            icon: getMarkerIcon()
+            icon: getMarkerIcon(address)
         });
     }
-    function getMarkerIcon()
+    function getMarkerIcon(address)
     {
         var icon = "/sites/all/themes/vonesc/images/map-marker-";
-        if ($("body").hasClass("belle-river"))
-        {
-            icon += "br";
-        }
-        else if ($("body").hasClass("chatham-kent"))
+
+        if (address.toLowerCase().indexOf("chatham") > -1)
         {
             icon += "ck";
         }
-        else if ($("body").hasClass("pelee-island"))
-        {
-            icon += "pi";
-        }
-        else if ($("body").hasClass("sarnia-lambton"))
+        else if (address.toLowerCase().indexOf("sarnia") > -1)
         {
             icon += "sl";
+        }
+        else if (address.toLowerCase().indexOf("belle") > -1)
+        {
+            icon += "br";
+        }
+        else if (address.toLowerCase().indexOf("pelee") > -1)
+        {
+            icon += "pi";
         }
         else
         {
@@ -111,7 +112,7 @@
     {
         geocoder.geocode( { 'address':address}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                callback(results[0].geometry.location);
+                callback(results[0].geometry.location, address);
             } else {
                 //alert('Geocode was not successful for the following reason: ' + status);
             }
