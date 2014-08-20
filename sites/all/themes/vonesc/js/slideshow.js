@@ -15,7 +15,7 @@
 
     function container()
     {
-        return $(".view-header-slideshow");
+        return $(".view-header-slideshow, .view-header-slideshow-location-");
     }
     function rows()
     {

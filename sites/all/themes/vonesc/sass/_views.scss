@@ -1,4 +1,5 @@
-.view-header-slideshow
+.view-header-slideshow,
+.view-header-slideshow-location-
 {
     .view-content
     {
@@ -115,7 +116,14 @@
         }
     }
 }
-
+.view-header-slideshow-location-
+{
+    .view-content,
+    .views-row
+    {
+        height: 305px;
+    }
+}
 
 .view-news
 {
