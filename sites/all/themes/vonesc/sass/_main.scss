@@ -1089,6 +1089,12 @@ body.node-type-location
     text-shadow:1px 1px 1px rgba(0,0,0,0.75);
 
 }
+#block-block-1 .content
+{
+    padding-left: 42px;
+    background-repeat:no-repeat;
+    background-position:left center;
+}
 body
 {
     #page-title h1
@@ -1102,12 +1108,20 @@ body
         {
             background-image:url(../images/icon-ck-l.png);
         }
+        #block-block-1 .content
+        {
+            background-image:url(../images/icon-ck-orange-small.png);
+        }
     }
     &.sarnia-lambton
     {
         #page-title h1
         {
             background-image:url(../images/icon-sl-l.png);
+        }
+        #block-block-1 .content
+        {
+            background-image:url(../images/icon-sl-orange-small.png);
         }
     }
     &.windsor-essex
@@ -1116,6 +1130,10 @@ body
         {
             background-image:url(../images/icon-we-l.png);
         }
+        #block-block-1 .content
+        {
+            background-image:url(../images/icon-we-orange-small.png);
+        }
     }
     &.belle-river
     {
@@ -1123,12 +1141,20 @@ body
         {
             background-image:url(../images/icon-br-l.png);
         }
+        #block-block-1 .content
+        {
+            background-image:url(../images/icon-br-orange-small.png);
+        }
     }
     &.pelee-island
     {
         #page-title h1
         {
             background-image:url(../images/icon-pi-l.png);
+        }
+        #block-block-1 .content
+        {
+            background-image:url(../images/icon-pi-orange-small.png);
         }
     }
 }
