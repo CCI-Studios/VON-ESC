@@ -4,6 +4,17 @@ body
     color:$navy;
 }
 
+a
+{
+    color:$orange;
+    text-decoration: none;
+    
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}
+
 p
 {
     margin-bottom:0.75em;
