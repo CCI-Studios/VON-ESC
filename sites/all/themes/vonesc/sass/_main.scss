@@ -761,9 +761,8 @@ ul.locations-dropdown
     z-index: 99;
     left: 50%;
     margin-left: -100px;
-    height:40px;
+    max-height:40px;
     box-shadow:2px 2px 5px rgba(0,0,0,0.3);
-    transition:height 0.4s;
 
     $color1: #ffa700;
     $color2: #e96900;
@@ -777,7 +776,6 @@ ul.locations-dropdown
 
     &.open
     {
-        height:204px;
         z-index: 999;
     }
 
