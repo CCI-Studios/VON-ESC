@@ -10,6 +10,8 @@
             maxHeight = 0;
             fixHeight();
         });
+        fixHeight();
+        setTimeout(fixHeight, 200);
     });
     $(window).load(fixHeight);
 
@@ -54,7 +56,7 @@
         var h = getActive().find("> div").height();
         if (h > maxHeight)
         {
-            getActive().height(h).parent().height(h);
+            rows().height(h).parent().height(h);
             maxHeight = h;
         }
     }
