@@ -101,9 +101,11 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
+      hide($content['field_location']);
       print render($content);
     ?>
-    <a href="../" class="button" style="clear:both;">Back to News</a>
+    <a href="../" class="button" style="clear:both;">Back to <?php print $content['field_location'][0]['#markup']; ?> News</a>
+    <a href="/news" class="button" style="clear:both;">Back to All News</a>
   </div>
 
   <?php print render($content['links']); ?>
