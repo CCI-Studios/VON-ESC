@@ -1,7 +1,7 @@
 (function($) {
     $(function(){
         fixLocationBackground();
-        $(window).resize(fixLocationBackground);
+        $(window).load(fixLocationBackground).resize(fixLocationBackground);
     });
 
     function fixLocationBackground()
