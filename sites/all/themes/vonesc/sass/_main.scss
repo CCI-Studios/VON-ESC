@@ -1218,11 +1218,17 @@ body.location-inner
 }
 body.node-type-location
 {
+    .node
+    {
+        text-align: center;
+    }
+    
     .field-name-body
     {
         padding-bottom: 30px;
         font-size:0.9em;
         width: 45%;
+        text-align: left;
     }
 
     .field-name-field-get-involved,
@@ -1232,7 +1238,7 @@ body.node-type-location
     .field-name-field-programs,
     .field-name-field-events
     {
-        float: left;
+        display: inline-block;
         width: 16.6%;
         text-align: center;
         background-repeat:no-repeat;
@@ -1240,6 +1246,7 @@ body.node-type-location
         position: relative;
         padding-top: 115px;
         padding-bottom: 10px;
+        margin: 0 -2px;
 
         .field-label
         {
