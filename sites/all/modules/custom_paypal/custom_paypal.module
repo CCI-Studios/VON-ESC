@@ -40,15 +40,15 @@ function _custom_paypal_ticket_purchase($node, $submission)
 
     $paypal_options = array();
     $paypal_options['cmd'] = '_xclick'; // Varies depending on type of payment sent via PayPal
-    $paypal_options['business'] = 'cmorris@ccistudios.com';  // PayPal account email
+    $paypal_options['business'] = 'Sharon.bevington@von.ca';  // PayPal account email
     $paypal_options['page_style'] = 'primary'; // Set this in PayPal prefs, then change here (default = paypal)
     $paypal_options['currency_code'] = 'CAD';
     $paypal_options['amount'] = $unit_price;
     $paypal_options['quantity'] = $quantity;
-    $paypal_options['item_name'] = 'Description of the type of donation, payment, etc. goes here.';
+    $paypal_options['item_name'] = 'Ticket purchase';
     $paypal_options['no_shipping'] = '1'; // Don't prompt user for shipping address
     $paypal_options['no_note'] = '1'; // Don't prompt user for extra information (note)
-    $paypal_options['tax_rate'] = $tax_rate; // No tax for this payment
+    $paypal_options['tax_rate'] = $tax_rate;
     $paypal_options['rm'] = '1'; // Return method - 1 = browser redirected to return URL by GET method w/o variables
     $paypal_options['return'] = $GLOBALS['base_url'].'/thank-you'; // Page to which user is returned
     $paypal_options['first_name'] = $submission->data[$mapping['first_name']]['value'][0];
