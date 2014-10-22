@@ -6,7 +6,6 @@ scripts[] = js/slideshow.js
 scripts[] = js/locations-dropdown.js
 scripts[] = js/location-page.js
 scripts[] = js/menu-btn.js
-scripts[] = js/donation-location.js
 scripts[] = js/maps.js
 scripts[] = js/placeholders.min.js
 scripts[] = js/jquery.rwdImageMaps.min.js

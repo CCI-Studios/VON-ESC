@@ -6,7 +6,10 @@ function vonesc_form_alter(&$form, $form_state, $form_id) {
 		$form['search_block_form']['#attributes']['autocomplete'] = 'off';
 		$form['search_block_form']['#attributes']['placeholder'] = 'Search';
 	}
-	else if ($form_id == 'webform_client_form_48')
+	else if ($form_id == 'webform_client_form_48' || 
+		$form_id == 'webform_client_form_253'|| 
+		$form_id == 'webform_client_form_254'|| 
+		$form_id == 'webform_client_form_255')
 	{
 		$form['actions']['submit']['#attributes']['class'][] = 'button';
 		$form['#action'] = '';

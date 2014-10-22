@@ -5,7 +5,10 @@
  */
 function custom_paypal_webform_submission_insert($node, $submission) {
 
-    if ($node->nid == 48)
+    if ($node->nid == 48||
+    $node->nid == 253||
+    $node->nid == 254||
+    $node->nid == 255)
     {
         _custom_paypal_donation($node, $submission);
     }
@@ -69,17 +72,7 @@ function _custom_paypal_donation($node, $submission)
     $mapping = _custom_paypal_webform_component_mapping($node);
 
     $amount = $submission->data[$mapping['amount']]['value'][0];
-
-    $paypal_account = 'Sharon.bevington@von.ca';
-    switch ($submission->data[$mapping['location']]['value'][0])
-    {
-        case 'tid_1':
-            $paypal_account = 'Melissa.landry@von.ca';
-            break;
-        case 'tid_2':
-            $paypal_account = 'melissa.crowe@von.ca';
-            break;
-    }
+    $paypal_account = _custom_paypal_get_recipient($node->nid);
 
     $paypal_options = array();
     $paypal_options['cmd'] = '_donations'; // Varies depending on type of payment sent via PayPal
@@ -101,12 +94,45 @@ function _custom_paypal_donation($node, $submission)
     $paypal_options['postal_code'] = $submission->data[$mapping['postal_code']]['value'][0];
     $paypal_options['country'] = 'CA';
     $paypal_options['cbt'] = 'Return to VON Erie St. Clair';
-    $tid = substr($submission->data[$mapping['location']]['value'][0], 4);
-    $term = taxonomy_term_load($tid);
-    $location = $term->name;
+    $location = _custom_paypal_get_location($node->nid);
     $paypal_options['item_name'] = 'Donation to VON '.$location;
 
     _custom_paypal_goto_paypal($paypal_options);
+}
+
+function _custom_paypal_get_recipient($nid)
+{
+    //default/windsor
+    $paypal_account = 'Sharon.bevington@von.ca';
+    switch ($nid)
+    {
+        case 48:
+            //chatham
+            $paypal_account = 'Melissa.landry@von.ca';
+            break;
+        case 253:
+            //sarnia
+            $paypal_account = 'melissa.crowe@von.ca';
+            break;
+    }
+    return $paypal_account;
+}
+function _custom_paypal_get_location($nid)
+{
+    $location = 'Windsor-Essex';
+    switch ($nid)
+    {
+        case 48:
+            $location = 'Chatham-Kent';
+            break;
+        case 253:
+            $location = 'Sarnia-Lambton';
+            break;
+        case 255:
+            $location = 'Pelee Island';
+            break;
+    }
+    return $location;
 }
 
 function _custom_paypal_goto_paypal($paypal_options)
