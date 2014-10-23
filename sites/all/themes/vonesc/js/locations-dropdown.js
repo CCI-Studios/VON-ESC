@@ -28,13 +28,23 @@
 
     function open($ul)
     {
-        $ul.addClass("open").animate({"max-height":"204px"});
+        var maxHeight = "204px";
+        if ($ul.hasClass("small"))
+        {
+            maxHeight = "134px";
+        }
+        $ul.addClass("open").animate({"max-height":maxHeight});
     }
 
     function closeAll()
     {
         $("ul.locations-dropdown.open").each(function(){
-            $(this).removeClass("open").css("max-height",$(this).outerHeight()).animate({"max-height":"40px"});
+            var maxHeight = "40px";
+            if ($(this).hasClass("small"))
+            {
+                maxHeight = "26px";
+            }
+            $(this).removeClass("open").css("max-height",$(this).outerHeight()).animate({"max-height":maxHeight});
         });
     }
 }(jQuery));

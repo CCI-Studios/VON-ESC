@@ -930,17 +930,12 @@ div.locations-dropdown-placeholder
 
 ul.locations-dropdown.small
 {
-    height:27px;
     font-size:11px;
     letter-spacing:-0.5px;
     border-radius:7px;
     width: 136px;
     margin-left:-68px;
-
-    &.open
-    {
-        height: 139px;
-    }
+    max-height: 26px;
 
     li:first-child
     {
