@@ -73,6 +73,7 @@ function _custom_paypal_donation($node, $submission)
 
     $amount = $submission->data[$mapping['amount']]['value'][0];
     $paypal_account = _custom_paypal_get_recipient($node->nid);
+    $return_url = _custom_paypal_get_return_url($node->nid);
 
     $paypal_options = array();
     $paypal_options['cmd'] = '_donations'; // Varies depending on type of payment sent via PayPal
@@ -83,7 +84,7 @@ function _custom_paypal_donation($node, $submission)
     $paypal_options['no_shipping'] = '1'; // Don't prompt user for shipping address
     $paypal_options['no_note'] = '1'; // Don't prompt user for extra information (note)
     $paypal_options['rm'] = '1'; // Return method - 1 = browser redirected to return URL by GET method w/o variables
-    $paypal_options['return'] = $GLOBALS['base_url'].'/thank-you'; // Page to which user is returned
+    $paypal_options['return'] = $return_url; // Page to which user is returned
     $paypal_options['first_name'] = $submission->data[$mapping['first_name']]['value'][0];
     $paypal_options['last_name'] = $submission->data[$mapping['last_name']]['value'][0];
     $paypal_options['email'] = $submission->data[$mapping['email']]['value'][0];
@@ -133,6 +134,10 @@ function _custom_paypal_get_location($nid)
             break;
     }
     return $location;
+}
+function _custom_paypal_get_return_url($nid)
+{
+    return $GLOBALS['base_url'].'/'.drupal_html_class(_custom_paypal_get_location($nid)).'/thank-you';
 }
 
 function _custom_paypal_goto_paypal($paypal_options)
