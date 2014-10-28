@@ -20,11 +20,29 @@ function vonesc_form_alter(&$form, $form_state, $form_id) {
 	}
 }
 
-function vonesc_preprocess_page(&$var)
+function vonesc_preprocess_page(&$variables)
 {
 	$googleMapsAPIKey = 'AIzaSyArDzWsTLx4esQf9HTBagGny_Ld84NiTds';
 	drupal_add_js("https://maps.googleapis.com/maps/api/js?key=$googleMapsAPIKey", 'external');
+	
+	if ($node = menu_get_object())
+	{
+		$location = @$node->field_location['und'][0]['taxonomy_term']->name;
+		
+		if ($node->type == 'volunteer_opportunity')
+		{
+			$variables['title'] = 'Volunteer: '.$location;
+		}
+		else if ($node->type == 'news')
+		{
+			$variables['title'] = 'News: '.$location;
+		}
+		else if ($node->type == 'event')
+		{
+			$variables['title'] = 'Events: '.$location;
+		}
+	}
+	
 }
-
 
 ?>
