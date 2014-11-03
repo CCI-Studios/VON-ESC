@@ -2,7 +2,7 @@
     $(function(){
         $("ul.locations-dropdown").each(function(){
             $(this).find("li:first-child").after("<a href='#' class='open-btn'>Open Dropdown</a>");
-            $(this).find("a.open-btn").click(toggle);
+            $(this).find("a.open-btn, li.select-city a").click(toggle);
             $(this).find("a").click(function(e){
                 e.stopPropagation();
             });
