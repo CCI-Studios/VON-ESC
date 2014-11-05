@@ -40,10 +40,11 @@ function _custom_paypal_ticket_purchase($node, $submission)
     $quantity = $submission->data[$mapping['quantity']]['value'][0];
     $unit_price = $node->field_price['und'][0]['value'];
     $tax_rate = $node->field_tax['und'][0]['value'];
+    $paypal_account = _custom_paypal_get_ticket_purchase_recipient($node);
 
     $paypal_options = array();
     $paypal_options['cmd'] = '_xclick'; // Varies depending on type of payment sent via PayPal
-    $paypal_options['business'] = 'Sharon.bevington@von.ca';  // PayPal account email
+    $paypal_options['business'] = $paypal_account;  // PayPal account email
     $paypal_options['page_style'] = 'primary'; // Set this in PayPal prefs, then change here (default = paypal)
     $paypal_options['currency_code'] = 'CAD';
     $paypal_options['amount'] = $unit_price;
@@ -72,7 +73,7 @@ function _custom_paypal_donation($node, $submission)
     $mapping = _custom_paypal_webform_component_mapping($node);
 
     $amount = $submission->data[$mapping['amount']]['value'][0];
-    $paypal_account = _custom_paypal_get_recipient($node->nid);
+    $paypal_account = _custom_paypal_get_donation_recipient($node->nid);
     $return_url = _custom_paypal_get_return_url($node->nid);
 
     $paypal_options = array();
@@ -101,7 +102,7 @@ function _custom_paypal_donation($node, $submission)
     _custom_paypal_goto_paypal($paypal_options);
 }
 
-function _custom_paypal_get_recipient($nid)
+function _custom_paypal_get_donation_recipient($nid)
 {
     //default/windsor
     $paypal_account = 'Sharon.bevington@von.ca';
@@ -115,6 +116,23 @@ function _custom_paypal_get_recipient($nid)
             //sarnia
             $paypal_account = 'melissa.crowe@von.ca';
             break;
+    }
+    return $paypal_account;
+}
+function _custom_paypal_get_ticket_purchase_recipient($node)
+{
+    $location_tid = $node->field_location['und'][0]['tid'];
+    
+    //windsor/default
+    $paypal_account = 'Sharon.bevington@von.ca';
+    
+    if ($location_tid == 1)
+    {//chatham
+        $paypal_account = 'Melissa.landry@von.ca';
+    }
+    else if ($location_tid == 2)
+    {//sarnia
+        $paypal_account = 'melissa.crowe@von.ca';
     }
     return $paypal_account;
 }

@@ -1,22 +1,19 @@
 <?php
 
 function vonesc_form_alter(&$form, $form_state, $form_id) {
+	$form['actions']['submit']['#attributes']['class'][] = 'button';
 	if ($form_id == 'search_block_form')
 	{
 		$form['search_block_form']['#attributes']['autocomplete'] = 'off';
 		$form['search_block_form']['#attributes']['placeholder'] = 'Search';
+		unset($form['actions']['submit']['#attributes']['class']);
 	}
 	else if ($form_id == 'webform_client_form_48' || 
 		$form_id == 'webform_client_form_253'|| 
 		$form_id == 'webform_client_form_254'|| 
 		$form_id == 'webform_client_form_255')
 	{
-		$form['actions']['submit']['#attributes']['class'][] = 'button';
 		$form['#action'] = '';
-	}
-	else if ($form_id == 'search_form')
-	{
-		$form['basic']['submit']['#attributes']['class'][] = 'button';
 	}
 }
 
