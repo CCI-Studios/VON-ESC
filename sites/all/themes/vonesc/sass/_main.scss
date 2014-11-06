@@ -1309,7 +1309,12 @@ body.node-type-location
     #block-block-22,
     #block-block-23,
     #block-block-24,
-    #block-block-25
+    #block-block-25,
+    #block-block-27,
+    #block-block-28,
+    #block-block-29,
+    #block-block-30,
+    #block-block-31
     {
         margin-bottom: 20px;
 
@@ -1367,6 +1372,17 @@ body.node-type-location
         h2
         {
             background-image:url(../images/icon-events-m.png);
+        }
+    }
+    #block-block-27,
+    #block-block-28,
+    #block-block-29,
+    #block-block-30,
+    #block-block-31
+    {
+        h2
+        {
+            background-image:url(../images/icon-programs-m.png);
         }
     }
 }
