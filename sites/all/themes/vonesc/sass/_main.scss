@@ -1477,6 +1477,15 @@ body.page-node-256,
 body.page-node-257,
 body.page-node-258
 {
+    #main-wrapper>div>div>div
+    {
+        position: static;
+        
+        #content
+        {
+            position: static;
+        }
+    }
     #block-system-main
     {
         position: absolute;
@@ -1525,6 +1534,7 @@ body.page-node-258
         {
             font-size:2.25em;
             font-weight: 700;
+            margin-bottom: 0.5em;
         }
         a.button
         {
