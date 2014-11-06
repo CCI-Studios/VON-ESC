@@ -34,6 +34,10 @@ function vonesc_preprocess_page(&$variables)
 		{
 			$variables['title'] = 'News: '.$location;
 		}
+		else if ($node->type == 'news_erie_st_clair_')
+		{
+			$variables['title'] = 'News';
+		}
 		else if ($node->type == 'event')
 		{
 			$variables['title'] = 'Events: '.$location;
