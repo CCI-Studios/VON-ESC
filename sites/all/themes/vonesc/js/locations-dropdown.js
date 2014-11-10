@@ -28,7 +28,7 @@
 
     function open($ul)
     {
-        var maxHeight = "204px";
+        var maxHeight = "240px";
         if ($ul.hasClass("small"))
         {
             maxHeight = "134px";
