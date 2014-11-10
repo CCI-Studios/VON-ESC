@@ -3,7 +3,7 @@
     var geocoder;
 
     $(function(){
-        $(".view-contact a").click(click);
+        $(".view-contact .views-field-field-address a").click(click);
         if ($("#gmap").length > 0)
             mapInit();
     });
@@ -13,20 +13,10 @@
         var address = $(this).text();
         var nid = $(this).data("nid");
 
-        showContactPeople(nid);
         showMap(address);
         makeActive($(this));
 
         return false;
-    }
-
-    function showContactPeople(nid)
-    {
-        var rows = $(".view-contact-people .views-row");
-        rows.fadeOut();
-        var $newRow = rows.filter(".nid-"+nid);
-        $newRow.fadeIn();
-        $(".view-contact-people").height($newRow.height()+"px");
     }
 
     function mapInit()
@@ -37,9 +27,8 @@
         }
         map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
 
-        var $first = $(".view-contact a").eq(0);
+        var $first = $(".view-contact .views-field-field-address a").eq(0);
         makeActive($first);
-        showContactPeople($first.data("nid"));
         showMap($first.text());
         showMarkers();
     }
@@ -54,7 +43,7 @@
 
     function showMarkers()
     {
-        $(".view-contact a").each(function(){
+        $(".view-contact .views-field-field-address a").each(function(){
             var address = $(this).text();
             getAddressLatLng(address, showMarkerLatLng);
         });
@@ -121,7 +110,7 @@
 
     function makeActive($active)
     {
-        $(".view-contact a").removeClass("active");
+        $(".view-contact .views-field-field-address a").removeClass("active");
         $active.addClass("active");
     }
 }(jQuery));

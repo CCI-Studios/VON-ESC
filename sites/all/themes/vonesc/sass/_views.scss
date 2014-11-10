@@ -686,21 +686,29 @@ body.windsor-essex .view-program
         {
             padding-right: 20px;
         }
+        
+        .views-field-field-phone,
+        .views-field-field-fax
+        {
+            background-repeat:no-repeat;
+            background-position:left center;
+            margin-right: 5%;
+            min-width: 30%;
+            float: left;
+            
+            & > div
+            {
+                padding-left: 30px;
+            }
+        }
 
         .views-field-field-phone
         {
-            padding-left: 30px;
-            background:url(../images/phone.png) no-repeat left center;
-            width:200px;
-            float: left;
+            background-image:url(../images/phone.png);
         }
-
         .views-field-field-fax
         {
-            padding-left: 30px;
-            background:url(../images/fax.png) no-repeat left center;
-            width: 200px;
-            float: left;
+            background-image:url(../images/fax.png);
         }
 
         &.Chatham-Kent
@@ -723,6 +731,56 @@ body.windsor-essex .view-program
         {
             background-image:url(../images/icon-pi-mobile-orange.png);
         }
+    }
+}
+.view-contact-people
+{
+    .views-row
+    {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        padding-left: 30px;
+        border-bottom: 1px solid $navy;
+        color:$orange;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    
+    a
+    {
+        color:$orange;
+        text-decoration: none;
+    }
+    
+    .views-field-field-phone,
+    .views-field-field-fax,
+    .views-field-field-email
+    {
+        background-repeat:no-repeat;
+        background-position:left center;
+        margin-right: 5%;
+        min-width: 30%;
+        float: left;
+        
+        & > div
+        {
+            padding-left: 30px;
+        }
+    }
+    
+    .views-field-field-phone
+    {
+        background-image:url(../images/phone.png);
+    }
+    .views-field-field-fax
+    {
+        background-image:url(../images/fax.png);
+    }
+    .views-field-field-email
+    {
+        background-image:url(../images/email.png);
+        margin-right: 0;
+        clear: left;
     }
 }
 

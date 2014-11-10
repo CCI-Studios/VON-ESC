@@ -577,6 +577,25 @@
             background-position: 4px center;
         }
     }
+    
+    .view-contact,
+    .view-contact-people
+    {
+        .views-row
+        {
+            .views-field-field-phone,
+            .views-field-field-fax,
+            .views-field-field-email,
+            .views-field-nothing
+            {
+                clear: left;
+            }
+        }
+    }
+    .view-contact-people .views-row
+    {
+        padding-left: 0;
+    }
 }
 
 
