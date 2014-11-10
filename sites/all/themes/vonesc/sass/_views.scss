@@ -777,14 +777,13 @@ body.windsor-essex .view-program
     {
         background-image:url(../images/phone.png);
     }
-    .views-field-field-fax
-    {
-        background-image:url(../images/fax.png);
-    }
     .views-field-field-email
     {
         background-image:url(../images/email.png);
-        margin-right: 0;
+    }
+    .views-field-field-fax
+    {
+        background-image:url(../images/fax.png);
         clear: left;
     }
 }
