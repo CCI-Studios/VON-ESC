@@ -157,6 +157,35 @@ function _custom_paypal_get_return_url($node)
 {
     return $GLOBALS['base_url'].'/'.drupal_html_class(_custom_paypal_get_location($node)).'/thank-you';
 }
+function _custom_paypal_get_replyto($node)
+{
+    $location = _custom_paypal_get_location($node);
+    switch ($location)
+    {
+        case 'Sarnia-Lambton':
+        case 'Chatham-Kent':
+            return 'melissa.crowe@von.ca';
+        case 'Windsor-Essex':
+        case 'Pelee Island':
+        default:
+            return 'sharon.bevington@von.ca ';
+    }
+}
+function _custom_paypal_get_admins($node)
+{
+    $location = _custom_paypal_get_location($node);
+    switch ($location)
+    {
+        case 'Chatham-Kent':
+            return 'melissa.crowe@von.ca, kerry.beattie@von.ca';
+        case 'Sarnia-Lambton':
+            return 'melissa.crowe@von.ca, scott.wilkie@von.ca';
+        case 'Windsor-Essex':
+        case 'Pelee Island':
+        default:
+            return 'sharon.bevington@von.ca ';
+    }
+}
 
 function _custom_paypal_goto_paypal($paypal_options)
 {
@@ -291,6 +320,7 @@ function _custom_paypal_ipn_complete()
             $params['firstname'] = $submission->data[$mapping['first_name']]['value'][0];
             $params['lastname'] = $submission->data[$mapping['last_name']]['value'][0];
             $params['payment_amount'] = $payment_amount;
+            $params['replyto'] = _custom_paypal_get_replyto($node);
             
             $key = 'donate';
             if ($location == 'Pelee Island') $key = 'donatepelee';
@@ -301,6 +331,7 @@ function _custom_paypal_ipn_complete()
             $params = array();
             $params['subject'] = $node->field_email_subject['und'][0]['value'];
             $params['body'] = $node->field_email_body['und'][0]['value'];
+            $params['replyto'] = @$node->field_user_notification_reply_to['und'][0]['value'];
             drupal_mail('custom_paypal','other',$submission_email,language_default(),$params,"VON $location <info@voneriestclair.ca>");
             break;
     }
@@ -314,8 +345,11 @@ function _custom_paypal_ipn_complete()
     $params['node'] = $node;
     $params['submission'] = $submission;
     $params['txn_id'] = $txn_id;
-    $to_email = 'cmorris@ccistudios.com';
-    drupal_mail('custom_paypal','admin',$to_email,language_default(),$params,"VON ESC Website <info@voneriestclair.ca>");
+    $to = _custom_paypal_get_admins($node);
+    $to = 'cmorris@ccistudios.com'; //DEBUG VALUE
+    if ($node->type == 'purchase_tickets_form' && count($node->field_admin_email_address['und']))
+        $to .= ', '.$node->field_admin_email_address['und'][0]['value'];
+    drupal_mail('custom_paypal','admin',$to,language_default(),$params,"VON ESC Website <info@voneriestclair.ca>");
 }
 
 function _custom_paypal_insert_submission_txn_id($node, $submission, $txn_id, $field_id)
@@ -333,6 +367,7 @@ function custom_paypal_mail($key, &$message, $params)
             $firstname = $params['firstname'];
             $lastname = $params['lastname'];
             $payment_amount = $params['payment_amount'];
+            $replyto = $params['replyto'];
             
             $message['subject'] = t('Thank you for your donation to VON !location', array('!location'=>$location));
             
@@ -347,6 +382,7 @@ function custom_paypal_mail($key, &$message, $params)
             $body .= "<p><strong>Andrew Ward</strong><br>VON Erie St. Clair<br>District Executive Director</p>";
             $message['body'][] = t($body, array('!location'=>$location, '!firstname'=>$firstname, '!lastname'=>$lastname, '!payment_amount'=>$payment_amount));
             
+            $message['headers']['Reply-To'] = $replyto;
             $message['headers']['MIME-Version'] = '1.0';
             $message['headers']['Content-Type'] = 'multipart/mixed;';
             $message['headers']['Content-Type'] = 'text/html;';
@@ -358,6 +394,7 @@ function custom_paypal_mail($key, &$message, $params)
             $firstname = $params['firstname'];
             $lastname = $params['lastname'];
             $payment_amount = $params['payment_amount'];
+            $replyto = $params['replyto'];
             
             $message['subject'] = t('Thank you for your donation to VON !location', array('!location'=>$location));
             
@@ -372,6 +409,7 @@ function custom_paypal_mail($key, &$message, $params)
             $body .= "<p><strong>Andrew Ward</strong><br>VON Erie St. Clair<br>District Executive Director</p>";
             $message['body'][] = t($body, array('!location'=>$location, '!firstname'=>$firstname, '!lastname'=>$lastname, '!payment_amount'=>$payment_amount));
             
+            $message['headers']['Reply-To'] = $replyto;
             $message['headers']['MIME-Version'] = '1.0';
             $message['headers']['Content-Type'] = 'multipart/mixed;';
             $message['headers']['Content-Type'] = 'text/html;';
@@ -379,6 +417,7 @@ function custom_paypal_mail($key, &$message, $params)
             
         
         case 'other':
+            $message['headers']['Reply-To'] = $params['replyto'];
             $message['subject'] = $params['subject'];
             $message['body'][] = $params['body'];
             break;
@@ -405,6 +444,8 @@ function custom_paypal_mail($key, &$message, $params)
             $body .= "Transaction ID: !txn_id\n";
             $body .= webform_submission_render($node, $submission, NULL, 'email');
             $message['body'][] = t($body, array('!account'=>$account, '!item_name'=>$item_name, '!payment_amount'=>$payment_amount, '!txn_fee'=>$txn_fee, '!received_amount'=>$received_amount, '!txn_id'=>$txn_id));
+            
+            $message['headers']['Reply-To'] = "";
             break;
     }
 }
