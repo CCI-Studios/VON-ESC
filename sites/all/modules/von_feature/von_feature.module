@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the VON Feature feature.
+ */
+
+include_once 'von_feature.features.inc';
