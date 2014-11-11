@@ -162,9 +162,10 @@ function _custom_paypal_get_replyto($node)
     $location = _custom_paypal_get_location($node);
     switch ($location)
     {
-        case 'Sarnia-Lambton':
         case 'Chatham-Kent':
-            return 'melissa.crowe@von.ca';
+            return 'kerry.beattie@von.ca';
+        case 'Sarnia-Lambton':
+            return 'scott.wilkie@von.ca';
         case 'Windsor-Essex':
         case 'Pelee Island':
         default:
@@ -177,9 +178,9 @@ function _custom_paypal_get_admins($node)
     switch ($location)
     {
         case 'Chatham-Kent':
-            return 'melissa.crowe@von.ca, kerry.beattie@von.ca';
+            return 'kerry.beattie@von.ca';
         case 'Sarnia-Lambton':
-            return 'melissa.crowe@von.ca, scott.wilkie@von.ca';
+            return 'scott.wilkie@von.ca';
         case 'Windsor-Essex':
         case 'Pelee Island':
         default:
