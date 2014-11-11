@@ -183,7 +183,7 @@ function _custom_paypal_get_admins($node)
         case 'Windsor-Essex':
         case 'Pelee Island':
         default:
-            return 'sharon.bevington@von.ca ';
+            return 'sharon.bevington@von.ca';
     }
 }
 
@@ -191,7 +191,7 @@ function _custom_paypal_goto_paypal($paypal_options)
 {
     // Build the URL/query for PayPal payment form.
     $query = http_build_query($paypal_options, '', '&');
-    $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr?' . $query;
+    $url = 'https://www.paypal.com/cgi-bin/webscr?' . $query;
 
     // Redirect user to PayPal...
     drupal_goto($url);
@@ -240,7 +240,7 @@ function _custom_paypal_ipn()
      
     // STEP 2: POST IPN data back to PayPal to validate
      
-    $ch = curl_init('https://www.sandbox.paypal.com/cgi-bin/webscr');
+    $ch = curl_init('https://www.paypal.com/cgi-bin/webscr');
     curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -345,8 +345,8 @@ function _custom_paypal_ipn_complete()
     $params['node'] = $node;
     $params['submission'] = $submission;
     $params['txn_id'] = $txn_id;
+    $params['admins'] = _custom_paypal_get_admins($node);
     $to = _custom_paypal_get_admins($node);
-    $to = 'cmorris@ccistudios.com'; //DEBUG VALUE
     if ($node->type == 'purchase_tickets_form' && count($node->field_admin_email_address['und']))
         $to .= ', '.$node->field_admin_email_address['und'][0]['value'];
     drupal_mail('custom_paypal','admin',$to,language_default(),$params,"VON ESC Website <info@voneriestclair.ca>");
@@ -433,17 +433,19 @@ function custom_paypal_mail($key, &$message, $params)
             $received_amount = $params['received_amount'];
             $txn_id = $params['txn_id'];
             $form_name = $node->title;
+            $admins = $params['admins'];
         
             $message['subject'] = t('!form_name Submitted', array('!form_name'=>$form_name));
             
             $body = "Paypal Account: !account\n";
+            $body .= "Admins: !admins\n";
             $body .= "Item Name: !item_name\n";
             $body .= "Payment Amount: $!payment_amount\n";
             $body .= "Transaction Fee: $!txn_fee\n";
             $body .= "Received Amount: $!received_amount\n";
             $body .= "Transaction ID: !txn_id\n";
             $body .= webform_submission_render($node, $submission, NULL, 'email');
-            $message['body'][] = t($body, array('!account'=>$account, '!item_name'=>$item_name, '!payment_amount'=>$payment_amount, '!txn_fee'=>$txn_fee, '!received_amount'=>$received_amount, '!txn_id'=>$txn_id));
+            $message['body'][] = t($body, array('!account'=>$account, '!item_name'=>$item_name, '!payment_amount'=>$payment_amount, '!txn_fee'=>$txn_fee, '!received_amount'=>$received_amount, '!txn_id'=>$txn_id, '!admins'=>$admins));
             
             $message['headers']['Reply-To'] = "";
             break;
