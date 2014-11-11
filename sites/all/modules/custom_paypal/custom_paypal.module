@@ -77,7 +77,7 @@ function _custom_paypal_donation($node, $submission)
 
     $amount = $submission->data[$mapping['amount']]['value'][0];
     $paypal_account = _custom_paypal_get_paypal_account($node);
-    $return_url = _custom_paypal_get_return_url($node->nid);
+    $return_url = _custom_paypal_get_return_url($node);
     $location = _custom_paypal_get_location($node);
 
     $paypal_options = array();
