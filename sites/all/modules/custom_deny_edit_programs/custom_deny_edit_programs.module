@@ -1,0 +1,20 @@
+<?php
+function custom_deny_edit_programs_node_access($node, $op, $account) {
+    $type = is_string($node) ? $node : $node->type;
+
+    if ($type == 'programs_services' && ($op == 'create' || $op == 'update')) {
+        global $user;
+        $allowed_roles = array(
+            'super administrator',
+            'administrator'
+        );
+        $access_allow = array_intersect($allowed_roles, array_values($account->roles));
+        if ($access_allow)
+            return NODE_ACCESS_ALLOW;
+        else
+            return NODE_ACCESS_DENY;
+    }
+
+    // Return the default ignore value if your module doesn't need to get involved in this decision
+    return NODE_ACCESS_IGNORE;
+}

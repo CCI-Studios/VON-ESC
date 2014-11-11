@@ -1,0 +1,4 @@
+name = Custom Deny Edit Programs
+core = 7.x
+version = "7.x-1.0"
+description = Custom module to deny permission to create/edit programs for users without admin roles
