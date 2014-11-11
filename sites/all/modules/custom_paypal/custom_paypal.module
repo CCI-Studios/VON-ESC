@@ -397,7 +397,7 @@ function custom_paypal_mail($key, &$message, $params)
             $payment_amount = $params['payment_amount'];
             $replyto = $params['replyto'];
             
-            $message['subject'] = t('Thank you for your donation to VON !location', array('!location'=>$location));
+            $message['subject'] = t('Thank you for your donation to VON Pelee Island Nursing Station', array('!location'=>$location));
             
             $body = "<p><img src='".$GLOBALS['base_url']."/sites/all/themes/vonesc/images/voncanada.png' alt='VON Canada. Health starts at home'/></p>";
             $body .= "<p>Dear !firstname !lastname:</p><p>Thank you for your generous gift of $!payment_amount</p>";
