@@ -1,0 +1,458 @@
+<?php
+
+/**
+ * Implements hook_webform_submission_insert().
+ */
+function custom_wtp_webform_submission_insert($node, $submission) {
+
+    if ($node->nid == 266)
+    {
+        _custom_wtp_form_submit($node, $submission);
+    }
+}
+
+/**
+ * Function to convert webform submissions into a nicely-mapped array.
+ *
+ * @see http://www.drupalcoder.com/story/678-additional-processing-in-drupals-webform-3-module
+ */
+function _custom_wtp_webform_component_mapping($node) {
+    $mapping = array();
+    $components = $node->webform['components'];
+    foreach ($components as $i => $component) {
+        $key = $component['form_key'];
+        $mapping[$key] = $i;
+    }
+    return $mapping;
+}
+
+function _custom_wtp_form_submit($node, $submission)
+{
+    $mapping = _custom_wtp_webform_component_mapping($node);
+
+    $unit_price = 60;
+    $paypal_account = _custom_wtp_get_paypal_account($node);
+
+    $paypal_options = array();
+    $paypal_options['cmd'] = '_xclick'; // Varies depending on type of payment sent via PayPal
+    $paypal_options['business'] = $paypal_account;  // PayPal account email
+    $paypal_options['page_style'] = 'primary'; // Set this in PayPal prefs, then change here (default = paypal)
+    $paypal_options['currency_code'] = 'CAD';
+    $paypal_options['amount'] = $unit_price;
+    $paypal_options['item_name'] = $node->title;
+    $paypal_options['no_shipping'] = '1'; // Don't prompt user for shipping address
+    $paypal_options['no_note'] = '1'; // Don't prompt user for extra information (note)
+    $paypal_options['rm'] = '1'; // Return method - 1 = browser redirected to return URL by GET method w/o variables
+    $paypal_options['return'] = $GLOBALS['base_url'].'/thank-you'; // Page to which user is returned
+    $paypal_options['first_name'] = $submission->data[$mapping['first_name']]['value'][0];
+    $paypal_options['last_name'] = $submission->data[$mapping['last_name']]['value'][0];
+    $paypal_options['email'] = $submission->data[$mapping['email']]['value'][0];
+    $paypal_options['address1'] = $submission->data[$mapping['address']]['value'][0];
+    $paypal_options['address2'] = $submission->data[$mapping['address_2']]['value'][0];
+    $paypal_options['city'] = $submission->data[$mapping['city']]['value'][0];
+    $paypal_options['province'] = $submission->data[$mapping['province']]['value'][0];
+    $paypal_options['postal_code'] = $submission->data[$mapping['postal_code']]['value'][0];
+    $paypal_options['country'] = 'CA';
+    $paypal_options['cbt'] = 'Return to VON Erie St. Clair';
+    $paypal_options['custom'] = $node->nid.'|'.$submission->sid;
+    $paypal_options['notify_url'] = $GLOBALS['base_url'].'/custom_wtp/ipn';
+
+    _custom_wtp_goto_paypal($paypal_options);
+}
+
+function _custom_wtp_get_paypal_account($node)
+{
+    return 'Sharon.bevington@von.ca';
+}
+function _custom_wtp_get_return_url($node)
+{
+    return $GLOBALS['base_url'].'/'.drupal_html_class(_custom_wtp_get_location($node)).'/thank-you';
+}
+function _custom_wtp_get_replyto($node)
+{
+    return '<sharon.bevington@von.ca >';
+}
+function _custom_wtp_get_admins($node)
+{
+    return 'cmorris@ccistudios.com';
+    return 'sharon.bevington@von.ca';
+}
+
+function _custom_wtp_goto_paypal($paypal_options)
+{
+    // Build the URL/query for PayPal payment form.
+    $query = http_build_query($paypal_options, '', '&');
+    $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr?' . $query;
+
+    // Redirect user to PayPal...
+    drupal_goto($url);
+}
+
+function custom_wtp_menu()
+{
+    $items = array();
+    $items['custom_wtp/ipn'] = array(
+        'title' => 'Paypal IPN',
+        'page callback' => '_custom_wtp_ipn',
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access content')
+    );
+    return $items;
+}
+
+function _custom_wtp_ipn()
+{
+    // STEP 1: read POST data
+ 
+    // Reading POSTed data directly from $_POST causes serialization issues with array data in the POST.
+    // Instead, read raw POST data from the input stream. 
+    $raw_post_data = file_get_contents('php://input');
+    $raw_post_array = explode('&', $raw_post_data);
+    $myPost = array();
+    foreach ($raw_post_array as $keyval) {
+      $keyval = explode ('=', $keyval);
+      if (count($keyval) == 2)
+         $myPost[$keyval[0]] = urldecode($keyval[1]);
+    }
+    // read the IPN message sent from PayPal and prepend 'cmd=_notify-validate'
+    $req = 'cmd=_notify-validate';
+    if(function_exists('get_magic_quotes_gpc')) {
+       $get_magic_quotes_exists = true;
+    } 
+    foreach ($myPost as $key => $value) {        
+       if($get_magic_quotes_exists == true && get_magic_quotes_gpc() == 1) { 
+            $value = urlencode(stripslashes($value)); 
+       } else {
+            $value = urlencode($value);
+       }
+       $req .= "&$key=$value";
+    }
+     
+     
+    // STEP 2: POST IPN data back to PayPal to validate
+     
+    $ch = curl_init('https://www.sandbox.paypal.com/cgi-bin/webscr');
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+    curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
+     
+    // In wamp-like environments that do not come bundled with root authority certificates,
+    // please download 'cacert.pem' from "http://curl.haxx.se/docs/caextract.html" and set 
+    // the directory path of the certificate as shown below:
+    // curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
+    if( !($res = curl_exec($ch)) ) {
+        // error_log("Got " . curl_error($ch) . " when processing IPN data");
+        curl_close($ch);
+        exit;
+    }
+    curl_close($ch);
+     
+     
+    // STEP 3: Inspect IPN validation result and act accordingly
+     
+    if (strcmp ($res, "VERIFIED") == 0)
+    {
+        // The IPN is verified, process it:
+        // check whether the payment_status is Completed
+        // check that txn_id has not been previously processed
+        // check that receiver_email is your Primary PayPal email
+        // check that payment_amount/payment_currency are correct
+        // process the notification
+     
+        $payment_status = $_POST['payment_status'];
+        
+        if ($payment_status == 'Completed')
+        {
+            _custom_wtp_ipn_complete();
+        }
+        
+    }
+    else if (strcmp ($res, "INVALID") == 0)
+    {
+        // IPN invalid, log for manual investigation
+        echo "The response from IPN was: <b>" .$res ."</b>";
+    }
+}
+
+function _custom_wtp_ipn_complete()
+{
+    $item_name = $_POST['item_name'];
+    $payment_status = $_POST['payment_status'];
+    $payment_amount = $_POST['mc_gross'];
+    $txn_fee = $_POST['mc_fee'];
+    $txn_id = $_POST['txn_id'];
+    $custom = $_POST['custom'];
+    
+    $custom_parts = explode('|',$custom);
+    $nid = $custom_parts[0];
+    $sid = $custom_parts[1];
+    $submission = webform_menu_submission_load($sid, $nid);
+    $node = node_load($nid);
+    $mapping = _custom_wtp_webform_component_mapping($node);
+    
+    _custom_wtp_insert_submission_txn_id($node, $submission, $txn_id, $mapping['paypal_transaction_id']);
+    
+    mailsystem_set(array(
+        'custom_wtp' => 'MimeMailSystem',
+    ));
+    
+    $password = _custom_wtp_create_user($node, $submission);
+    $submission_email = $submission->data[$mapping['email']]['value'][0];
+    $params = array();
+    $params['username'] = $submission_email;
+    $params['password'] = $password;
+    $params['firstname'] = $submission->data[$mapping['first_name']]['value'][0];
+    $params['lastname'] = $submission->data[$mapping['last_name']]['value'][0];
+    $params['replyto'] = _custom_wtp_get_replyto($node);
+    drupal_mail('custom_wtp','user',$submission_email,language_default(),$params,"VON Erie St. Clair <info@voneriestclair.ca>");
+
+    
+    $params = array();
+    $params['account'] = _custom_wtp_get_paypal_account($node);
+    $params['item_name'] = $item_name;
+    $params['payment_amount'] = $payment_amount;
+    $params['txn_fee'] = $txn_fee;
+    $params['received_amount'] = number_format((float)$payment_amount - (float)$txn_fee, 2);
+    $params['node'] = $node;
+    $params['submission'] = $submission;
+    $params['txn_id'] = $txn_id;
+    $params['admins'] = _custom_wtp_get_admins($node);
+    $to = _custom_wtp_get_admins($node);
+    drupal_mail('custom_wtp','admin',$to,language_default(),$params,"VON ESC Website <info@voneriestclair.ca>");
+}
+
+function _custom_wtp_create_user($node, $submission)
+{
+    $mapping = _custom_wtp_webform_component_mapping($node);
+    $email = $submission->data[$mapping['email']]['value'][0];
+    $first_name = $submission->data[$mapping['first_name']]['value'][0];
+    $last_name = $submission->data[$mapping['last_name']]['value'][0];
+    $role = $submission->data[$mapping['parenting_role']]['value'][0];
+    $birthyear = $submission->data[$mapping['babys_birth_year']]['value'][0];
+    $birthmonth = $submission->data[$mapping['birth_month']]['value'][0];
+    
+    $birthmonth_formatted = DateTime::createFromFormat('!m', $birthmonth)->format('F');
+    $role_value_id = '';
+    switch($role)
+    {
+        case 'f':
+        $role_value_id = '7AD8EE24-C2D9-468C-808A-2B68B2187926';
+        break;
+        case 'm':
+        $role_value_id = '27915E10-38C0-42B4-9DE3-511B968A060B';
+        break;
+        case 's':
+        $role_value_id = '2BEB1000-ADB4-45F4-A65E-A79C78D0AFC6';
+        break;
+    }
+    
+    $apikey = 'hbg3ox5pwhruow29deya36hugmayk3xr';
+    
+    $soapLearner = _custom_wtp_get_learner_soap();
+    $soapDomain = _custom_wtp_get_domain_soap();
+    
+    $login_name = $email;
+    $password = _custom_wtp_generate_password();
+    $lang = 'en';
+    $metadata = "<userMetadata>
+    <metadataValues>
+    <field id='8d79522d-cfe8-4004-a11c-fad20b00934e'>
+    <value>$role_value_id</value>
+    </field>
+    <field id='b7a1861af77f4e6bb868a5c00a7524ab'>
+    <value>$birthyear</value>
+    </field>
+    <field id='7f0622154bb94bb584b9c3b1767f1600'>
+    <value>$birthmonth_formatted</value>
+    </field>
+    </metadataValues>
+    </userMetadata>";
+    
+    $params = array(
+        'apiKey'=>$apikey,
+        'userFirstName'=>$first_name,
+        'userLastName'=>$last_name,
+        'userLoginName'=>$login_name,
+        'userPassword'=>$password,
+        'userEmail'=>$email,
+        'userLanguage'=>$lang,
+        'userCustomMetadata'=>$metadata
+    );
+    
+    try
+    {
+        $result = $soapLearner->RegisterUser($params);
+    } catch(Exception $e)
+    {
+        die("error encountered in soap RegisterUser: ".$e->getMessage());
+    }
+    $userID = $result->RegisterUserResult->Result;
+    
+    
+    $domains = array(
+    'von'=>'93d7d7f0-d20f-441a-a3fd-6e7f0b180101',
+    'father'=>'6ee5bf2a-1ae5-4245-a9d2-149f05ab12b6',
+    'mother'=>'6c653f06-14de-43ad-864f-44e134d1c972',
+    'support_person'=>'89b11b5c-5715-4cd8-af61-81e105ca0191'
+    );
+    $params = array(
+    'apiKey'=>$apikey,
+    'userID'=>$userID,
+    'domainID'=>$domains['von']
+    );
+    try
+    {
+        $result = $soapLearner->AddUserToDomain($params);
+    } catch(Exception $e)
+    {
+        die("error encountered in soap AddUserToDomain: ".$e->getMessage());
+    }
+    
+    
+    $domainID = '';
+    switch ($role)
+    {
+        case 'f':
+        $domainID = $domains['father'];
+        break;
+        case 'm':
+        $domainID = $domains['mother'];
+        break;
+        case 's':
+        $domainID = $domains['support_person'];
+        break;
+    }
+    $params = array(
+    'apiKey'=>$apikey,
+    'userID'=>$userID,
+    'domainID'=>$domainID
+    );
+    try
+    {
+        $result = $soapLearner->AddUserToDomain($params);
+    } catch(Exception $e)
+    {
+        die("error encountered in soap AddUserToDomain: ".$e->getMessage());
+    }
+    
+    
+    $domainCode = $birthyear.'-'.$birthmonth.' VON';
+    $params = array(
+    'apiKey'=>$apikey,
+    'domainCode'=>$domainCode
+    );
+    try
+    {
+        $result = $soapDomain->GetDomainByCode($params);
+    } catch(Exception $e)
+    {
+        die("error encountered in soap GetDomainByCode: ".$e->getMessage());
+    }
+    $domainID = $result->GetDomainByCodeResult->Result->ID;
+    
+    $params = array(
+    'apiKey'=>$apikey,
+    'userID'=>$userID,
+    'domainID'=>$domainID
+    );
+    try
+    {
+        $result = $soapLearner->AddUserToDomain($params);
+    } catch(Exception $e)
+    {
+        die("error encountered in soap AddUserToDomain: ".$e->getMessage());
+    }
+    
+    return $password;
+}
+
+function _custom_wtp_generate_password($length = 16) {
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*,.?+=-_';
+    $count = mb_strlen($chars);
+    
+    for ($i = 0, $result = ''; $i < $length; $i++) {
+        $index = rand(0, $count - 1);
+        $result .= mb_substr($chars, $index, 1);
+    }
+    
+    return $result;
+}
+
+function _custom_wtp_get_learner_soap()
+{
+    return new SoapClient('http://von.welcometoparenting.com/WebService/LearnerManagement.asmx?wsdl');
+}
+function _custom_wtp_get_domain_soap()
+{
+    return new SoapClient('http://von.welcometoparenting.com/WebService/DomainManagement.asmx?wsdl');
+}
+
+function _custom_wtp_insert_submission_txn_id($node, $submission, $txn_id, $field_id)
+{
+    $submission->data[$field_id]['value'][0] = $txn_id;
+    webform_submission_update($node, $submission);
+}
+
+function custom_wtp_mail($key, &$message, $params)
+{
+    switch($key)
+    {
+        case 'user':
+            $username = $params['username'];
+            $password = $params['password'];
+            $firstname = $params['firstname'];
+            $lastname = $params['lastname'];
+            $replyto = $params['replyto'];
+            
+            $message['subject'] = t('Thank you for joining Welcome to Parenting');
+            
+            $body = "<p><img src='".$GLOBALS['base_url']."/sites/all/themes/vonesc/images/voncanada.png' alt='VON Canada. Health starts at home'/></p>";
+            $body .= "<p>Dear !firstname !lastname:</p>";
+            $body .= "<p>Thank you for joining Welcome to Parenting, presented by VON.</p>";
+            $body .= "<p>Your account has been activated. You can login with the following username/password.</p>";
+            $body .= "<p>username: !username</p>";
+            $body .= "<p>password: !password</p>";
+            $body .= "<p><a href='http://von.welcometoparenting.com/'>http://von.welcometoparenting.com/</a></p>";
+            $message['body'][] = t($body, array('!username'=>$username, '!password'=>$password, '!firstname'=>$firstname, '!lastname'=>$lastname));
+            
+            $message['headers']['Reply-To'] = $replyto;
+            $message['headers']['MIME-Version'] = '1.0';
+            $message['headers']['Content-Type'] = 'multipart/mixed;';
+            $message['headers']['Content-Type'] = 'text/html;';
+            break;
+                
+                
+        case 'admin':
+            $node = $params['node'];
+            $submission = $params['submission'];
+            $account = $params['account'];
+            $item_name = $params['item_name'];
+            $payment_amount = $params['payment_amount'];
+            $txn_fee = $params['txn_fee'];
+            $received_amount = $params['received_amount'];
+            $txn_id = $params['txn_id'];
+            $form_name = $node->title;
+            $admins = $params['admins'];
+        
+            $message['subject'] = t('!form_name Submitted', array('!form_name'=>$form_name));
+            
+            $body = "Paypal Account: !account\n";
+            $body .= "Admins: !admins\n";
+            $body .= "Item Name: !item_name\n";
+            $body .= "Payment Amount: $!payment_amount\n";
+            $body .= "Transaction Fee: $!txn_fee\n";
+            $body .= "Received Amount: $!received_amount\n";
+            $body .= "Transaction ID: !txn_id\n";
+            $body .= webform_submission_render($node, $submission, NULL, 'email');
+            $message['body'][] = t($body, array('!account'=>$account, '!item_name'=>$item_name, '!payment_amount'=>$payment_amount, '!txn_fee'=>$txn_fee, '!received_amount'=>$received_amount, '!txn_id'=>$txn_id, '!admins'=>$admins));
+            
+            $message['headers']['Reply-To'] = "";
+            break;
+    }
+}
+?>

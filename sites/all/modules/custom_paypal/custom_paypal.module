@@ -163,13 +163,13 @@ function _custom_paypal_get_replyto($node)
     switch ($location)
     {
         case 'Chatham-Kent':
-            return 'kerry.beattie@von.ca';
+            return '<kerry.beattie@von.ca>';
         case 'Sarnia-Lambton':
-            return 'scott.wilkie@von.ca';
+            return '<scott.wilkie@von.ca>';
         case 'Windsor-Essex':
         case 'Pelee Island':
         default:
-            return 'sharon.bevington@von.ca ';
+            return '<sharon.bevington@von.ca> ';
     }
 }
 function _custom_paypal_get_admins($node)
@@ -332,7 +332,7 @@ function _custom_paypal_ipn_complete()
             $params = array();
             $params['subject'] = $node->field_email_subject['und'][0]['value'];
             $params['body'] = $node->field_email_body['und'][0]['value'];
-            $params['replyto'] = @$node->field_user_notification_reply_to['und'][0]['value'];
+            $params['replyto'] = @'<'.$node->field_user_notification_reply_to['und'][0]['value'].'>';
             drupal_mail('custom_paypal','other',$submission_email,language_default(),$params,"VON $location <info@voneriestclair.ca>");
             break;
     }
