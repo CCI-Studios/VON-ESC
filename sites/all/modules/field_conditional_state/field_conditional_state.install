@@ -298,7 +298,7 @@ function field_conditional_state_update_7202() {
 
     if (field_conditional_state_multi_trigger_value_is_supported($instance['widget']['type'])) {
       db_update('field_conditional_state')
-      ->fields(array('trigger_value' => serialize((array)$state['trigger_value'])))
+      ->fields(array('trigger_value' => serialize((array) $state['trigger_value'])))
       ->condition('id', $state['id'])
       ->execute();
     }
