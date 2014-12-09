@@ -1,10 +1,26 @@
 <?php
 
-/**
- * Implements hook_webform_submission_insert().
- */
-function custom_wtp_webform_submission_insert($node, $submission) {
+function custom_wtp_form_alter(&$form, &$form_state, $form_id)                 
+{
+    if($form_id == 'webform_client_form_266') 
+    {
+        $form['#validate'][] = 'custom_wtp_submit_validate';    
+    }
+}
+function custom_wtp_submit_validate($form, &$form_state)
+{
+    $email = $form_state['values']['submitted']['email'];
+    if (!_custom_wtp_email_verify($email))
+    {
+        form_set_error('email','This email address already has an account with Welcome to Parenting.');
+    }
+}
 
+/**
+* Implements hook_webform_submission_insert().
+*/
+function custom_wtp_webform_submission_insert($node, $submission) {
+    
     if ($node->nid == 266)
     {
         _custom_wtp_form_submit($node, $submission);
@@ -369,6 +385,34 @@ function _custom_wtp_create_user($node, $submission)
     }
     
     return $password;
+}
+function _custom_wtp_email_verify($email)
+{
+    $apikey = 'hbg3ox5pwhruow29deya36hugmayk3xr';
+    $soapLearner = _custom_wtp_get_learner_soap();
+    
+    $params = array(
+        'apiKey'=>$apikey,
+        'userEmail'=>$email
+    );
+
+    try
+    {
+        $result = $soapLearner->GetUserByEmail($params);
+    } catch(Exception $e)
+    {
+        die("error encountered in soap GetUserByEmail: ".$e->getMessage());
+    }
+
+    $result = $result->GetUserByEmailResult->Success;
+    if ($result)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 function _custom_wtp_generate_password($length = 16) {
