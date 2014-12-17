@@ -2621,6 +2621,49 @@ function von_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-volunteer_opportunity-field_link_to_application_form'
+  $field_instances['node-volunteer_opportunity-field_link_to_application_form'] = array(
+    'bundle' => 'volunteer_opportunity',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link_to_application_form',
+    'label' => 'Display Link to Application Form',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-volunteer_opportunity-field_location'
   $field_instances['node-volunteer_opportunity-field_location'] = array(
     'bundle' => 'volunteer_opportunity',
@@ -2792,6 +2835,7 @@ function von_feature_field_default_field_instances() {
   t('Contact Us');
   t('Content is limited to 250 characters');
   t('Date');
+  t('Display Link to Application Form');
   t('Donate');
   t('Email');
   t('Email Body');
