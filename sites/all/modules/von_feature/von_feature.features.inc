@@ -267,6 +267,14 @@ function von_feature_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'program_subcategory' => array(
+      'name' => t('Program Subcategory'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'programs_services' => array(
       'name' => t('Programs & Services'),
       'base' => 'node_content',
