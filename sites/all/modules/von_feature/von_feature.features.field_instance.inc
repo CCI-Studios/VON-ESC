@@ -1683,8 +1683,8 @@ function von_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-program_subcategory-field_location'
-  $field_instances['node-program_subcategory-field_location'] = array(
+  // Exported field_instance: 'node-program_subcategory-field_locations'
+  $field_instances['node-program_subcategory-field_locations'] = array(
     'bundle' => 'program_subcategory',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1705,8 +1705,8 @@ function von_feature_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_location',
-    'label' => 'Location',
+    'field_name' => 'field_locations',
+    'label' => 'Locations',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1722,7 +1722,7 @@ function von_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 32,
     ),
   );

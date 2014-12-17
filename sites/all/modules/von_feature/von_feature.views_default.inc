@@ -3070,17 +3070,17 @@ else
   $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
   $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
-  /* Filter criterion: Content: Location (field_location) */
-  $handler->display->display_options['filters']['field_location_tid']['id'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['table'] = 'field_data_field_location';
-  $handler->display->display_options['filters']['field_location_tid']['field'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['value'] = array(
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
     4 => '4',
   );
-  $handler->display->display_options['filters']['field_location_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_location_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_location_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_location_tid']['vocabulary'] = 'location';
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
@@ -3137,17 +3137,17 @@ else
   $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
   $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
-  /* Filter criterion: Content: Location (field_location) */
-  $handler->display->display_options['filters']['field_location_tid']['id'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['table'] = 'field_data_field_location';
-  $handler->display->display_options['filters']['field_location_tid']['field'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['value'] = array(
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_location_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_location_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_location_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_location_tid']['vocabulary'] = 'location';
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
@@ -3246,17 +3246,17 @@ else
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['filters']['status_1']['group'] = 2;
-  /* Filter criterion: Content: Location (field_location) */
-  $handler->display->display_options['filters']['field_location_tid']['id'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['table'] = 'field_data_field_location';
-  $handler->display->display_options['filters']['field_location_tid']['field'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['value'] = array(
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
     2 => '2',
   );
-  $handler->display->display_options['filters']['field_location_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_location_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_location_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_location_tid']['vocabulary'] = 'location';
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
 
   /* Display: Windsor-Essex */
   $handler = $view->new_display('block', 'Windsor-Essex', 'block_we');
@@ -3293,23 +3293,29 @@ else
   $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['filters']['status_1']['group'] = 2;
-  /* Filter criterion: Content: Location (field_location) */
-  $handler->display->display_options['filters']['field_location_tid']['id'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['table'] = 'field_data_field_location';
-  $handler->display->display_options['filters']['field_location_tid']['field'] = 'field_location_tid';
-  $handler->display->display_options['filters']['field_location_tid']['value'] = array(
-    3 => '3',
-  );
-  $handler->display->display_options['filters']['field_location_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_location_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_location_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_location_tid']['vocabulary'] = 'location';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
@@ -3318,12 +3324,6 @@ else
     'program_subcategory' => 'program_subcategory',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
-  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
-  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
-  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
-  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
-  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
   $export['programs_list'] = $view;
 
   $view = new view();
