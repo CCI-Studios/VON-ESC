@@ -3,7 +3,7 @@ body.front
     #main-wrapper,
     #page-title
     {
-        display: none;
+        @include sr-only;
     }
 
     #first-widgets
