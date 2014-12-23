@@ -1683,6 +1683,50 @@ function von_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-program_subcategory-field_locations'
+  $field_instances['node-program_subcategory-field_locations'] = array(
+    'bundle' => 'program_subcategory',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_locations',
+    'label' => 'Locations',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view' => array(
+      'args' => array(),
+      'display_name' => '',
+      'match_operator' => 'CONTAINS',
+      'size' => '',
+      'view_name' => '',
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'node-programs_services-body'
   $field_instances['node-programs_services-body'] = array(
     'bundle' => 'programs_services',
@@ -1870,6 +1914,45 @@ function von_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-programs_services-field_parent_program_subcategory'
+  $field_instances['node-programs_services-field_parent_program_subcategory'] = array(
+    'bundle' => 'programs_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_parent_program_subcategory',
+    'label' => 'Parent Program Subcategory',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-programs_services-field_subtitle'
   $field_instances['node-programs_services-field_subtitle'] = array(
     'bundle' => 'programs_services',
@@ -1994,7 +2077,7 @@ function von_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -2033,12 +2116,51 @@ function von_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 42,
+      'weight' => 11,
     ),
   );
 
   // Exported field_instance: 'node-purchase_tickets_form-field_email_body'
   $field_instances['node-purchase_tickets_form-field_email_body'] = array(
+    'bundle' => 'purchase_tickets_form',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_email_body',
+    'label' => 'Email Body',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-purchase_tickets_form-field_email_subject'
+  $field_instances['node-purchase_tickets_form-field_email_subject'] = array(
     'bundle' => 'purchase_tickets_form',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2058,48 +2180,9 @@ function von_feature_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_email_body',
-    'label' => 'Email Body',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 41,
-    ),
-  );
-
-  // Exported field_instance: 'node-purchase_tickets_form-field_email_subject'
-  $field_instances['node-purchase_tickets_form-field_email_subject'] = array(
-    'bundle' => 'purchase_tickets_form',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
     'field_name' => 'field_email_subject',
     'label' => 'Email Subject',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -2111,7 +2194,7 @@ function von_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 40,
+      'weight' => 9,
     ),
   );
 
@@ -2138,7 +2221,7 @@ function von_feature_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_location',
     'label' => 'Location for Paypal Payments',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2154,14 +2237,18 @@ function von_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 39,
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance: 'node-purchase_tickets_form-field_paypal_payments'
   $field_instances['node-purchase_tickets_form-field_paypal_payments'] = array(
     'bundle' => 'purchase_tickets_form',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2180,17 +2267,19 @@ function von_feature_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_paypal_payments',
-    'label' => 'Paypal Payments',
-    'required' => 1,
+    'label' => 'Enable Paypal Payments',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 33,
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 5,
     ),
   );
 
@@ -2230,7 +2319,7 @@ function von_feature_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 35,
+      'weight' => 6,
     ),
   );
 
@@ -2274,7 +2363,7 @@ function von_feature_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 37,
+      'weight' => 7,
     ),
   );
 
@@ -2289,7 +2378,7 @@ function von_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2313,7 +2402,7 @@ function von_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 43,
+      'weight' => 12,
     ),
   );
 
@@ -2621,6 +2710,49 @@ function von_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-volunteer_opportunity-field_link_to_application_form'
+  $field_instances['node-volunteer_opportunity-field_link_to_application_form'] = array(
+    'bundle' => 'volunteer_opportunity',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link_to_application_form',
+    'label' => 'Display Link to Application Form',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-volunteer_opportunity-field_location'
   $field_instances['node-volunteer_opportunity-field_location'] = array(
     'bundle' => 'volunteer_opportunity',
@@ -2792,11 +2924,13 @@ function von_feature_field_default_field_instances() {
   t('Contact Us');
   t('Content is limited to 250 characters');
   t('Date');
+  t('Display Link to Application Form');
   t('Donate');
   t('Email');
   t('Email Body');
   t('Email Subject');
   t('Email address to receive notification emails from each form submission');
+  t('Enable Paypal Payments');
   t('Events');
   t('Fax');
   t('Get Involved');
@@ -2805,7 +2939,7 @@ function von_feature_field_default_field_instances() {
   t('Location');
   t('Location for Paypal Payments');
   t('Locations');
-  t('Paypal Payments');
+  t('Parent Program Subcategory');
   t('Phone');
   t('Photos');
   t('Price');

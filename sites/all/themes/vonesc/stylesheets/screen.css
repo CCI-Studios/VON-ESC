@@ -1961,7 +1961,10 @@ form#webform-client-form-255 {
 
 body.front #main-wrapper,
 body.front #page-title {
-  background: red; }
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px; }
 body.front #first-widgets .block, body.front body.node-type-location #main-wrapper .block, body.node-type-location body.front #main-wrapper .block {
   width: 30%;
   float: left;
@@ -2120,13 +2123,17 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
 #block-system-main .view-news-container {
   padding-bottom: 160px; }
 
-.view-programs-list {
+.view-programs-list,
+.view-program-subcategories {
   max-width: 540px; }
-  .view-programs-list .views-row {
+  .view-programs-list .views-row,
+  .view-program-subcategories .views-row {
     border-bottom: 1px solid #1f386b; }
-    .view-programs-list .views-row:hover {
+    .view-programs-list .views-row:hover,
+    .view-program-subcategories .views-row:hover {
       background: url(../images/icon-dot.png) no-repeat left 16px; }
-    .view-programs-list .views-row a {
+    .view-programs-list .views-row a,
+    .view-program-subcategories .views-row a {
       color: #1f386b;
       text-decoration: none;
       text-transform: uppercase;
@@ -3022,5 +3029,3 @@ body.windsor-essex .view-program .views-field-body ul {
 @media screen and (min-width: 769px) {
   #block-system-main-menu {
     display: block !important; } }
-
-/*# sourceMappingURL=screen.css.map */

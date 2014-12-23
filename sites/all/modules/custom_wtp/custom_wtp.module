@@ -2,7 +2,8 @@
 
 function custom_wtp_form_alter(&$form, &$form_state, $form_id)                 
 {
-    if($form_id == 'webform_client_form_266') 
+    if($form_id == 'webform_client_form_266' ||
+    $form_id == 'webform_client_form_285') 
     {
         $form['#validate'][] = 'custom_wtp_submit_validate';    
     }
@@ -21,7 +22,7 @@ function custom_wtp_submit_validate($form, &$form_state)
 */
 function custom_wtp_webform_submission_insert($node, $submission) {
     
-    if ($node->nid == 266)
+    if ($node->nid == 266 || $node->nid == 285)
     {
         _custom_wtp_form_submit($node, $submission);
     }
@@ -80,25 +81,20 @@ function _custom_wtp_get_paypal_account($node)
 {
     return 'Sharon.bevington@von.ca';
 }
-function _custom_wtp_get_return_url($node)
-{
-    return $GLOBALS['base_url'].'/'.drupal_html_class(_custom_wtp_get_location($node)).'/thank-you';
-}
 function _custom_wtp_get_replyto($node)
 {
-    return '<sharon.bevington@von.ca >';
+    return 'prenatal@von.ca';
 }
 function _custom_wtp_get_admins($node)
 {
-    return 'cmorris@ccistudios.com';
-    return 'sharon.bevington@von.ca';
+    return 'prenatal@von.ca, liz.mikol@von.ca';
 }
 
 function _custom_wtp_goto_paypal($paypal_options)
 {
     // Build the URL/query for PayPal payment form.
     $query = http_build_query($paypal_options, '', '&');
-    $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr?' . $query;
+    $url = 'https://www.paypal.com/cgi-bin/webscr?' . $query;
 
     // Redirect user to PayPal...
     drupal_goto($url);
@@ -147,7 +143,7 @@ function _custom_wtp_ipn()
      
     // STEP 2: POST IPN data back to PayPal to validate
      
-    $ch = curl_init('https://www.sandbox.paypal.com/cgi-bin/webscr');
+    $ch = curl_init('https://www.paypal.com/cgi-bin/webscr');
     curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -464,7 +460,7 @@ function custom_wtp_mail($key, &$message, $params)
             $body .= "<p><a href='http://von.welcometoparenting.com/'>http://von.welcometoparenting.com/</a></p>";
             $message['body'][] = t($body, array('!username'=>$username, '!password'=>$password, '!firstname'=>$firstname, '!lastname'=>$lastname));
             
-            $message['headers']['Reply-To'] = $replyto;
+            $message['headers']['Reply-To'] = '<'.$replyto.'>';
             $message['headers']['MIME-Version'] = '1.0';
             $message['headers']['Content-Type'] = 'multipart/mixed;';
             $message['headers']['Content-Type'] = 'text/html;';

@@ -564,6 +564,7 @@ function von_feature_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -649,23 +650,16 @@ function von_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['title_enable'] = TRUE;
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
   $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -732,9 +726,10 @@ function von_feature_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -2500,13 +2495,6 @@ function von_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -2651,6 +2639,186 @@ function von_feature_views_default_views() {
   $export['program'] = $view;
 
   $view = new view();
+  $view->name = 'program_subcategories';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Program Subcategories';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Belle-RIver: Programs & Services';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['relationships']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['relationships']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['relationships']['field_parent_program_subcategory_target_id']['required'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_programs_services_target_id';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="../[nid]">[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['path'] = './[nid]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'programs_services' => 'programs_services',
+  );
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+
+  /* Display: Windsor-Essex */
+  $handler = $view->new_display('page', 'Windsor-Essex', 'page_we');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'programs_services' => 'programs_services',
+  );
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  $handler->display->display_options['path'] = 'windsor-essex/programs-and-services/category/%';
+
+  /* Display: Chatham-Kent */
+  $handler = $view->new_display('page', 'Chatham-Kent', 'page_ck');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Chatham-Kent: Programs & Services';
+  $handler->display->display_options['path'] = 'chatham-kent/programs-and-services/category/%';
+
+  /* Display: Sarnia-Lambton */
+  $handler = $view->new_display('page', 'Sarnia-Lambton', 'page_sl');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Sarnia-Lambton: Programs & Services';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'programs_services' => 'programs_services',
+  );
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  $handler->display->display_options['path'] = 'sarnia-lambton/programs-and-services/category/%';
+
+  /* Display: Belle-River */
+  $handler = $view->new_display('page', 'Belle-River', 'page_br');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'programs_services' => 'programs_services',
+  );
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  $handler->display->display_options['path'] = 'belle-river/programs-and-services/category/%';
+  $export['program_subcategories'] = $view;
+
+  $view = new view();
   $view->name = 'programs_for_volunteer_opportunity';
   $view->description = '';
   $view->tag = 'default';
@@ -2718,6 +2886,12 @@ function von_feature_views_default_views() {
   $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['programs_for_volunteer_opportunity'] = $view;
 
   $view = new view();
@@ -2749,13 +2923,40 @@ function von_feature_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+if ($row->type == \'program_subcategory\')
+{
+  print \'./category/\'.$row->nid;
+}
+else
+{
+  print \'./\'.$row->nid;
+}
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="./[nid]">[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[php]">[title]</a>';
   $handler->display->display_options['fields']['title']['alter']['path'] = './[nid]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
@@ -2765,6 +2966,11 @@ function von_feature_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -2779,6 +2985,7 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'programs_services' => 'programs_services',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Locations (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -2786,12 +2993,50 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
+  /* Filter criterion: Content: Location (field_location) */
+  $handler->display->display_options['filters']['field_location_tid']['id'] = 'field_location_tid';
+  $handler->display->display_options['filters']['field_location_tid']['table'] = 'field_data_field_location';
+  $handler->display->display_options['filters']['field_location_tid']['field'] = 'field_location_tid';
+  $handler->display->display_options['filters']['field_location_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_location_tid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_location_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_location_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_location_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'program_subcategory' => 'program_subcategory',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
 
   /* Display: Belle RIver */
   $handler = $view->new_display('block', 'Belle RIver', 'block_br');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -2807,6 +3052,7 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'programs_services' => 'programs_services',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Locations (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -2814,11 +3060,108 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
     4 => '4',
   );
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'program_subcategory' => 'program_subcategory',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
 
   /* Display: Chatham-Kent */
   $handler = $view->new_display('block', 'Chatham-Kent', 'block_ck');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'programs_services' => 'programs_services',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'program_subcategory' => 'program_subcategory',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
 
   /* Display: Pelee Island */
   $handler = $view->new_display('block', 'Pelee Island', 'block_pi');
@@ -2851,6 +3194,11 @@ function von_feature_views_default_views() {
   /* Display: Sarnia-Lambton */
   $handler = $view->new_display('block', 'Sarnia-Lambton', 'block_sl');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -2866,6 +3214,7 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'programs_services' => 'programs_services',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Locations (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -2873,12 +3222,50 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
     2 => '2',
   );
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'program_subcategory' => 'program_subcategory',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
 
   /* Display: Windsor-Essex */
   $handler = $view->new_display('block', 'Windsor-Essex', 'block_we');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -2894,6 +3281,7 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'programs_services' => 'programs_services',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Locations (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -2901,8 +3289,41 @@ function von_feature_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['value'] = array(
     3 => '3',
   );
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Parent Program Subcategory (field_parent_program_subcategory) */
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['id'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['table'] = 'field_data_field_parent_program_subcategory';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['field'] = 'field_parent_program_subcategory_target_id';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_parent_program_subcategory_target_id']['group'] = 1;
+  /* Filter criterion: Content: Locations (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid_1']['id'] = 'field_locations_tid_1';
+  $handler->display->display_options['filters']['field_locations_tid_1']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid_1']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid_1']['value'] = array(
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['field_locations_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_locations_tid_1']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid_1']['vocabulary'] = 'location';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'program_subcategory' => 'program_subcategory',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
   $export['programs_list'] = $view;
 
   $view = new view();
@@ -3796,6 +4217,16 @@ function von_feature_views_default_views() {
   );
   $handler->display->display_options['fields']['field_related_programs']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_related_programs']['multi_type'] = 'ul';
+  /* Field: Content: Display Link to Application Form */
+  $handler->display->display_options['fields']['field_link_to_application_form']['id'] = 'field_link_to_application_form';
+  $handler->display->display_options['fields']['field_link_to_application_form']['table'] = 'field_data_field_link_to_application_form';
+  $handler->display->display_options['fields']['field_link_to_application_form']['field'] = 'field_link_to_application_form';
+  $handler->display->display_options['fields']['field_link_to_application_form']['label'] = '';
+  $handler->display->display_options['fields']['field_link_to_application_form']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_application_form']['alter']['text'] = '<a class="button" href="/forms/volunteer-application">Volunteer Now</a>';
+  $handler->display->display_options['fields']['field_link_to_application_form']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_application_form']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_application_form']['type'] = 'list_key';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -3811,13 +4242,6 @@ function von_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'volunteer_opportunity' => 'volunteer_opportunity',
   );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
