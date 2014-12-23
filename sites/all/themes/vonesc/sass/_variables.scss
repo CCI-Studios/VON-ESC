@@ -1,3 +1,10 @@
 $navy: #1f386b;
 $lightblue: #2aa1d9;
 $orange: #ea6b00;
+
+@mixin sr-only {
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    height: 1px;
+}
