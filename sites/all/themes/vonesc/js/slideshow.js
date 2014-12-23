@@ -5,7 +5,7 @@
     $(function(){
         createIndicators();
         setActive(0);
-        timer = setInterval(next, 5000);
+        timer = setInterval(next, 7000);
         $(window).resize(function(){
             maxHeight = 0;
             fixHeight();
