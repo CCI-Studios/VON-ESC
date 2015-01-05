@@ -53,7 +53,7 @@ tbody {
   line-height: 100%;
   padding: 8px 13px;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: -0.5px;
   border-radius: 7px;
   cursor: pointer;
@@ -611,7 +611,7 @@ body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar
 #sidebar #block-block-29 ul.locations-dropdown,
 #sidebar #block-block-30 ul.locations-dropdown,
 #sidebar #block-block-31 ul.locations-dropdown {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: -0.5px;
   border-radius: 7px;
   width: 136px;
@@ -2104,7 +2104,8 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
         color: #2aa1d9;
         text-decoration: none;
         font-weight: bold;
-        font-size: 0.9em; }
+        font-size: 14px;
+        display: block; }
         .view-news .views-row .views-field-title a:hover {
           text-decoration: underline; }
     .view-news .views-row .views-field-body {
@@ -2318,6 +2319,15 @@ body.windsor-essex .view-program .views-field-body ul {
       font-weight: bold;
       color: #2aa1d9;
       line-height: 100%; }
+      .view-events .views-row .views-field-title h2,
+      .view-events .views-row .views-field-title h2 a,
+      .view-event .views-row .views-field-title h2,
+      .view-event .views-row .views-field-title h2 a,
+      .view-volunteer-opportunities .views-row .views-field-title h2,
+      .view-volunteer-opportunities .views-row .views-field-title h2 a,
+      .view-volunteer-opportunity .views-row .views-field-title h2,
+      .view-volunteer-opportunity .views-row .views-field-title h2 a {
+        font-size: 32px; }
       .view-events .views-row .views-field-title a,
       .view-event .views-row .views-field-title a,
       .view-volunteer-opportunities .views-row .views-field-title a,
@@ -2461,8 +2471,6 @@ body.windsor-essex .view-program .views-field-body ul {
     .view-contact .views-row a {
       color: #ea6b00;
       text-decoration: none; }
-    .view-contact .views-row .views-field-title {
-      font-size: 1.5em; }
     .view-contact .views-row .views-field-field-address {
       padding-right: 20px; }
     .view-contact .views-row .views-field-field-phone,
