@@ -75,63 +75,65 @@
 <div id="container">
   <div id="page-wrapper"><div><div>
 
-    <div id="navigation"><div><div><div>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img src="/sites/all/themes/vonesc/images/von-logo.png" alt="VON - Erie St. Clair Victorian Order of Nurses" />
-      </a>
-      <?php print render($page['navigation']); ?>
-    </div></div></div></div>
+    <div role="banner">
+      <div id="navigation"><div><div><div>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+          <img src="/sites/all/themes/vonesc/images/von-logo.png" alt="VON - Erie St. Clair Victorian Order of Nurses" />
+        </a>
+        <?php print render($page['navigation']); ?>
+      </div></div></div></div>
 
+      <div id="secondary-navigation"><div><div><div>
+        <?php print render($page['secondary_navigation']); ?>
+      </div></div></div></div>
+      <div id="header"><div><div>
+        <?php print render($page['header']); ?>
+      </div></div></div> <!-- /#header -->
+    </div>
 
-    <div id="secondary-navigation"><div><div><div>
-      <?php print render($page['secondary_navigation']); ?>
-    </div></div></div></div>
+    <div role="main">
+      <div id="page-title"><div><div><div><div>
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?><h1 id="article-label"><?php print $title; ?></h1><?php endif; ?>
+          <?php print render($title_suffix); ?>
+      </div></div></div></div></div>
 
-    <div id="header"><div><div>
-      <?php print render($page['header']); ?>
-    </div></div></div> <!-- /#header -->
+      <div id="main-wrapper"><div><div><div>
 
-    <div id="page-title"><div><div><div><div>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?><h1><?php print $title; ?></h1><?php endif; ?>
-        <?php print render($title_suffix); ?>
-    </div></div></div></div></div>
+        <div id="content"><div><div>
+          <a id="main-content"></a>
 
-    <div id="main-wrapper"><div><div><div>
+          <?php print $messages; ?>
+          <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+          <?php print render($page['help']); ?>
+          <?php print render($page['content']); ?>
+        </div></div></div> <!-- /#content -->
 
-      <div id="content"><div><div>
-        <a id="main-content"></a>
+        <?php if ($page['sidebar']): ?>
+          <div id="sidebar" role="complementary" aria-label="Sidebar"><div><div>
+            <?php print render($page['sidebar']); ?>
+          </div></div></div> <!-- /#sidebar -->
+        <?php endif; ?>
 
-        <?php print $messages; ?>
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-        <?php print render($page['help']); ?>
-        <?php print render($page['content']); ?>
-      </div></div></div> <!-- /#content -->
-
-      <?php if ($page['sidebar']): ?>
-        <div id="sidebar"><div><div>
-          <?php print render($page['sidebar']); ?>
-        </div></div></div> <!-- /#sidebar -->
-      <?php endif; ?>
-
-      <div class="clearfix"></div>
-  </div></div></div></div> <!-- /#main, /#main-wrapper -->
+        <div class="clearfix"></div>
+      </div></div></div></div> <!-- /#main, /#main-wrapper -->
+    </div>
 
     <?php if ($page['first_widgets']): ?>
-        <div id="first-widgets"><div><div><div><div>
+        <div id="first-widgets" role="complementary" aria-label="Primary Widgets"><div><div><div><div>
           <?php print render($page['first_widgets']); ?>
           <div class="clearfix"></div>
         </div></div></div></div></div>
     <?php endif; ?>
 
-    <div id="second-widgets"><div><div>
+    <div id="second-widgets" role="complementary" aria-label="Secondary Widgets"><div><div>
       <?php print render($page['second_widgets']); ?>
       <div class="clearfix"></div>
     </div></div></div>
 
   </div></div></div> <!-- /#page-wrapper -->
 
-    <div id="footer"><div><div><div>
+    <div id="footer" role="contentinfo" aria-label="Footer"><div><div><div>
       <?php print render($page['footer']); ?>
       <div id="copyright">&copy; Erie St. Clair VON <?php print date('Y'); ?></div>
       <div id="site-by-cci">Site by <a href="http://ccistudios.com" target="_blank">CCI Studios</a></div>
