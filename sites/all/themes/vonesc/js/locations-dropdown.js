@@ -31,7 +31,7 @@
         var maxHeight = "240px";
         if ($ul.hasClass("small"))
         {
-            maxHeight = "134px";
+            maxHeight = "149px";
         }
         $ul.addClass("open").animate({"max-height":maxHeight});
     }
