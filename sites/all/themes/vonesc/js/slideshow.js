@@ -85,7 +85,7 @@
         container().append("<ul class='indicators' />");
         var indicatorsContainer = container().find(".indicators")
         rows().each(function(i){
-            indicatorsContainer.append("<li><a href='#' data-indicator='"+i+"'>Activate slide "+i+"</a></li>");
+            indicatorsContainer.append("<li><a href='#' aria-label='Slide "+(i+1)+"' data-indicator='"+(i+1)+"'>Activate slide "+(i+1)+"</a></li>");
         });
         indicatorsContainer.find("a").click(function(){
             indicatorClick($(this).data("indicator"));
