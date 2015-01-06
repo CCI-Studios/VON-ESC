@@ -152,17 +152,16 @@ tbody {
             position: absolute;
             left: -99999px; }
         #navigation #block-system-main-menu .content > ul > li > ul {
-          display: none;
           position: absolute;
           left: 0;
-          top: 100%;
           border: 3px solid #2aa1d9;
           background: white;
           list-style: none;
           margin: 0;
           padding: 0;
           width: 147px;
-          z-index: 999; }
+          z-index: 999;
+          top: -1000px; }
           #navigation #block-system-main-menu .content > ul > li > ul > li {
             list-style: none;
             margin: 0;
@@ -190,8 +189,8 @@ tbody {
               right: 6px; }
             #navigation #block-system-main-menu .content > ul > li > ul > li.last:after, #navigation #block-system-main-menu .content > ul > li > ul > li:hover:after {
               display: none; }
-        #navigation #block-system-main-menu .content > ul > li:hover > ul {
-          display: block; }
+        #navigation #block-system-main-menu .content > ul > li:hover > ul, #navigation #block-system-main-menu .content > ul > li:focus > ul {
+          top: 100%; }
 
 #secondary-navigation {
   padding: 16px 0; }
@@ -614,8 +613,8 @@ body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar
   font-size: 13px;
   letter-spacing: -0.5px;
   border-radius: 7px;
-  width: 136px;
-  margin-left: -68px;
+  width: 152px;
+  margin-left: -76px;
   max-height: 26px; }
   ul.locations-dropdown.small li:first-child, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li:first-child,
   body.node-type-location .field-name-field-donate ul.locations-dropdown li:first-child,
@@ -1552,7 +1551,7 @@ body.node-type-location .field-name-field-events {
   position: relative;
   padding-top: 115px;
   padding-bottom: 10px;
-  margin: 0 -2px; }
+  margin: 0 2px -2px; }
   body.node-type-location .field-name-field-get-involved .field-label,
   body.node-type-location .field-name-field-donate .field-label,
   body.node-type-location .field-name-field-contact-us .field-label,
