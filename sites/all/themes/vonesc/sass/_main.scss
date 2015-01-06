@@ -221,10 +221,10 @@ tbody
 
                 & > ul
                 {
-                    display: none;
+                    // display: none;
                     position: absolute;
                     left: 0;
-                    top: 100%;
+                    // top: 100%;
                     border:3px solid $lightblue;
                     background: white;
                     list-style:none;
@@ -232,6 +232,7 @@ tbody
                     padding: 0;
                     width: 147px;
                     z-index: 999;
+                    top: -1000px;
 
                     & > li
                     {
@@ -275,9 +276,11 @@ tbody
                         }
                     }
                 }
-                &:hover > ul
+                &:hover > ul,
+                &:focus > ul
                 {
-                    display: block;
+                    // display: block;
+                    top: 100%;
                 }
             }
         }
