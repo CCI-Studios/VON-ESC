@@ -26,7 +26,7 @@ body {
   color: #1f386b; }
 
 a {
-  color: #ea6b00;
+  color: #fc821c;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -90,7 +90,7 @@ tbody {
 
 #navigation {
   background: #1f386b;
-  border-bottom: 5px solid #2aa1d9;
+  border-bottom: 5px solid #227eb1;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4); }
   #navigation > div {
     border-bottom: 5px solid white;
@@ -118,7 +118,7 @@ tbody {
         position: relative; }
         #navigation #block-system-main-menu .content > ul > li > a {
           display: block;
-          color: #2aa1d9;
+          color: #40ace8;
           text-decoration: none;
           padding: 45px 12px 16px 12px;
           line-height: 100%;
@@ -154,7 +154,7 @@ tbody {
         #navigation #block-system-main-menu .content > ul > li > ul {
           position: absolute;
           left: 0;
-          border: 3px solid #2aa1d9;
+          border: 3px solid #227eb1;
           background: white;
           list-style: none;
           margin: 0;
@@ -169,7 +169,7 @@ tbody {
             position: relative; }
             #navigation #block-system-main-menu .content > ul > li > ul > li > a {
               display: block;
-              color: #2aa1d9;
+              color: #227eb1;
               text-decoration: none;
               line-height: 100%;
               padding: 8px 28px 7px 6px;
@@ -221,7 +221,7 @@ tbody {
       font-size: inherit;
       font-weight: inherit; }
       #secondary-navigation #block-search-form #edit-search-block-form--2:focus {
-        border: 1px solid #2aa1d9; }
+        border: 1px solid #227eb1; }
     #secondary-navigation #block-search-form .form-actions input {
       float: left;
       margin-left: -30px;
@@ -309,7 +309,7 @@ tbody {
 
 #footer {
   clear: both;
-  border-top: 5px solid #2aa1d9;
+  border-top: 5px solid #227eb1;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   color: white;
   text-align: center;
@@ -368,7 +368,7 @@ tbody {
       padding: 0 20px; }
 
 #first-widgets, body.node-type-location #main-wrapper {
-  border: solid #2aa1d9;
+  border: solid #227eb1;
   border-width: 5px 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   color: white;
@@ -614,7 +614,7 @@ body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar
   letter-spacing: -0.5px;
   border-radius: 7px;
   width: 152px;
-  margin-left: -76px;
+  margin-left: -77px;
   max-height: 26px; }
   ul.locations-dropdown.small li:first-child, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li:first-child,
   body.node-type-location .field-name-field-donate ul.locations-dropdown li:first-child,
@@ -1694,7 +1694,7 @@ body.not-front #page-title {
   background: #1f386b;
   position: relative;
   padding: 0;
-  border-top: 5px solid #2aa1d9; }
+  border-top: 5px solid #227eb1; }
   body.not-front #page-title:after {
     content: "";
     display: block;
@@ -1733,7 +1733,7 @@ body.not-front #page-title {
 
 #gmap {
   height: 280px;
-  border: 3px solid #2aa1d9; }
+  border: 3px solid #227eb1; }
 
 body.page-node-76 #main-wrapper > div > div > div,
 body.page-node-256 #main-wrapper > div > div > div,
@@ -1756,7 +1756,7 @@ body.page-node-264 #block-system-main {
   left: 0;
   width: 100%;
   border-style: solid;
-  border-color: #2aa1d9;
+  border-color: #227eb1;
   border-width: 5px 0;
   background: white;
   z-index: 1000;
@@ -1830,7 +1830,7 @@ body.page-node-264:after {
   z-index: 999; }
 
 ol.search-results .title a {
-  color: #2aa1d9;
+  color: #227eb1;
   font-size: 1.25em; }
 
 ul.primary {
@@ -1866,7 +1866,7 @@ textarea {
   input[type=number]:focus,
   input[type=phone]:focus,
   textarea:focus {
-    border: 1px solid #2aa1d9; }
+    border: 1px solid #227eb1; }
 
 label {
   padding-left: 10px;
@@ -2064,7 +2064,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       color: transparent;
       width: 0;
       height: 0;
-      border: 5px solid #2aa1d9;
+      border: 5px solid #227eb1;
       border-radius: 5px;
       transition: border-color 0.5s; }
     .view-header-slideshow .indicators li.active a,
@@ -2100,7 +2100,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     .view-news .views-row .views-field-title {
       padding-left: 66px; }
       .view-news .views-row .views-field-title a {
-        color: #2aa1d9;
+        color: #227eb1;
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
@@ -2178,7 +2178,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     padding-top: 10px;
     border-top: 1px solid #1f386b; }
     .view-program .views-field-field-image .field-content {
-      border: 3px solid #2aa1d9; }
+      border: 3px solid #227eb1; }
     .view-program .views-field-field-image img {
       display: block;
       width: 100%;
@@ -2316,7 +2316,7 @@ body.windsor-essex .view-program .views-field-body ul {
       text-transform: uppercase;
       font-size: 2em;
       font-weight: bold;
-      color: #2aa1d9;
+      color: #227eb1;
       line-height: 100%; }
       .view-events .views-row .views-field-title h2,
       .view-events .views-row .views-field-title h2 a,
@@ -2331,7 +2331,7 @@ body.windsor-essex .view-program .views-field-body ul {
       .view-event .views-row .views-field-title a,
       .view-volunteer-opportunities .views-row .views-field-title a,
       .view-volunteer-opportunity .views-row .views-field-title a {
-        color: #2aa1d9;
+        color: #227eb1;
         text-decoration: none; }
     .view-events .views-row .views-field-field-short-description,
     .view-events .views-row .views-field-body,
@@ -2439,7 +2439,7 @@ body.windsor-essex .view-program .views-field-body ul {
   padding-left: 0; }
 .view-volunteer-opportunities .views-row .views-field-field-related-programs,
 .view-volunteer-opportunity .views-row .views-field-field-related-programs {
-  font-weight: bold;
+  font-size: 14px;
   padding-bottom: 10px; }
   .view-volunteer-opportunities .views-row .views-field-field-related-programs ul, .view-volunteer-opportunities .views-row .views-field-field-related-programs li,
   .view-volunteer-opportunity .views-row .views-field-field-related-programs ul,
@@ -2561,7 +2561,7 @@ body.windsor-essex .view-program .views-field-body ul {
     text-decoration: underline; }
 
 .block.sponsors-container > div > h2 {
-  color: #2aa1d9;
+  color: #227eb1;
   text-transform: uppercase;
   font-size: 2.75em;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -2671,7 +2671,7 @@ body.windsor-essex .view-program .views-field-body ul {
     width: 200px;
     border-width: 3px 0 3px 3px;
     border-style: solid;
-    border-color: #2aa1d9;
+    border-color: #227eb1;
     z-index: 999; }
     #navigation #block-system-main-menu .content > ul > li {
       display: block;
@@ -2990,7 +2990,7 @@ body.windsor-essex .view-program .views-field-body ul {
   #sidebar #block-block-29 ul.locations-dropdown,
   #sidebar #block-block-30 ul.locations-dropdown,
   #sidebar #block-block-31 ul.locations-dropdown {
-    width: 130px; }
+    width: 152px; }
     ul.locations-dropdown.small li a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li a,
     body.node-type-location .field-name-field-donate ul.locations-dropdown li a,
     body.node-type-location .field-name-field-contact-us ul.locations-dropdown li a,
@@ -3018,7 +3018,7 @@ body.windsor-essex .view-program .views-field-body ul {
     #sidebar #block-block-29 ul.locations-dropdown li a,
     #sidebar #block-block-30 ul.locations-dropdown li a,
     #sidebar #block-block-31 ul.locations-dropdown li a {
-      padding-left: 20px;
+      padding-left: 25px;
       background-position: 4px center; }
 
   .view-contact .views-row .views-field-field-phone,
