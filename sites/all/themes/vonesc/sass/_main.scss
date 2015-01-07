@@ -6,7 +6,7 @@ body
 
 a
 {
-    color:$orange;
+    color:$lightorange;
     text-decoration: none;
     
     &:hover
@@ -97,7 +97,7 @@ tbody
 #navigation
 {
     background:$navy;
-    border-bottom:5px solid $lightblue;
+    border-bottom:5px solid $blue;
     box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
 
     & > div
@@ -225,7 +225,7 @@ tbody
                     position: absolute;
                     left: 0;
                     // top: 100%;
-                    border:3px solid $lightblue;
+                    border:3px solid $blue;
                     background: white;
                     list-style:none;
                     margin:0;
@@ -244,7 +244,7 @@ tbody
                         & > a
                         {
                             display: block;
-                            color: $lightblue;
+                            color: $blue;
                             text-decoration:none;
                             line-height:100%;
                             padding:8px 28px 7px 6px;
@@ -333,7 +333,7 @@ tbody
 
             &:focus
             {
-                border:1px solid $lightblue;
+                border:1px solid $blue;
             }
         }
 
@@ -494,7 +494,7 @@ tbody
 #footer
 {
     clear: both;
-    border-top:5px solid $lightblue;
+    border-top:5px solid $blue;
     box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
     color:white;
     text-align: center;
@@ -593,7 +593,7 @@ tbody
 
 #first-widgets
 {
-    border:solid $lightblue;
+    border:solid $blue;
     border-width:5px 0;
     box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
     color:white;
@@ -939,7 +939,7 @@ ul.locations-dropdown.small
     // width: 136px;
     width: 152px;
     // margin-left:-68px;
-    margin-left:-76px;
+    margin-left:-77px;
     max-height: 26px;
 
     li:first-child
@@ -1408,7 +1408,7 @@ body.not-front
         background:$navy;
         position: relative;
         padding: 0;
-        border-top:5px solid $lightblue;
+        border-top:5px solid $blue;
 
         &:after
         {
@@ -1474,7 +1474,7 @@ body.not-front
 #gmap
 {
     height: 280px;
-    border: 3px solid $lightblue;
+    border: 3px solid $blue;
 }
 
 body.page-node-76,
@@ -1498,7 +1498,7 @@ body.page-node-264
         left: 0;
         width: 100%;
         border-style:solid;
-        border-color:$lightblue;
+        border-color:$blue;
         border-width:5px 0;
         background:white;
         z-index: 1000;
@@ -1565,7 +1565,7 @@ body.page-node-264
 
 ol.search-results .title a
 {
-    color:$lightblue;
+    color:$blue;
     font-size:1.25em;
 }
 
