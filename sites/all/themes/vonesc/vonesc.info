@@ -8,6 +8,7 @@ scripts[] = js/menu-btn.js
 scripts[] = js/maps.js
 scripts[] = js/placeholders.min.js
 scripts[] = js/jquery.rwdImageMaps.min.js
+scripts[] = js/a11y.js
 
 stylesheets[all][] = stylesheets/screen.css
 stylesheets[all][] = stylesheets/hemant.css
