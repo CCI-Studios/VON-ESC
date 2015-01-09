@@ -15,6 +15,14 @@ function vonesc_form_alter(&$form, $form_state, $form_id) {
 	{
 		$form['#action'] = '';
 	}
+
+	foreach($form['submitted'] as $component_id=>$component)
+	{
+		if ($form['submitted'][$component_id]['#required'])
+		{
+			$form['submitted'][$component_id]['#attributes']['aria-required'] = 'true';
+		}
+	}
 }
 
 function vonesc_preprocess_page(&$variables)
@@ -44,6 +52,21 @@ function vonesc_preprocess_page(&$variables)
 		}
 	}
 	
+}
+
+function vonesc_menu_tree($variables) {
+  return '<ul class="menu" aria-role="menu">' . $variables['tree'] . '</ul>';
+}
+
+function vonesc_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li aria-role="menuitem" ' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
 ?>
