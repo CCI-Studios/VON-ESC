@@ -49,7 +49,7 @@
         });
         fixHeight();
 
-        indicators().removeClass("active").eq(i).addClass("active");
+        indicators().removeClass("active").eq(i+1).addClass("active");
     }
     function fixHeight()
     {
@@ -83,11 +83,18 @@
     function createIndicators()
     {
         container().append("<ul class='indicators' />");
-        var indicatorsContainer = container().find(".indicators")
+        var indicatorsContainer = container().find(".indicators");
+        
+        indicatorsContainer.append("<li><a href='#' class='btn-pause'>Pause</a></li>");
+        indicatorsContainer.find(".btn-pause").click(function(){
+            stop();
+            return false;
+        });
+        
         rows().each(function(i){
             indicatorsContainer.append("<li><a href='#' aria-label='Slide "+(i+1)+"' data-indicator='"+(i+1)+"'>Activate slide "+(i+1)+"</a></li>");
         });
-        indicatorsContainer.find("a").click(function(){
+        indicatorsContainer.find("a[data-indicator]").click(function(){
             indicatorClick($(this).data("indicator"));
             return false;
         });

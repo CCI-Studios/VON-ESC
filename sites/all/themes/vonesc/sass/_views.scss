@@ -101,16 +101,28 @@
                 display: block;
                 font-size:0;
                 color:transparent;
-                width: 0;
-                height: 0;
-                border:5px solid $blue;
-                border-radius:5px;
+                width: 11px;
+                height: 11px;
+                border-radius: 5px;
+                background-color: $blue;
                 transition:border-color 0.5s;
+                
+                &.btn-pause
+                {
+                    background-image: url(../images/btn-pause.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    
+                    &:hover
+                    {
+                        background-color: $navy;
+                    }
+                }
             }
 
             &.active a
             {
-                border-color:$navy;
+                background-color:$navy;
             }
         }
     }
