@@ -88,6 +88,7 @@
         indicatorsContainer.append("<li><a href='#' class='btn-pause'>Pause</a></li>");
         indicatorsContainer.find(".btn-pause").click(function(){
             stop();
+            $(this).addClass("paused");
             return false;
         });
         

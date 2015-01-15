@@ -113,7 +113,8 @@
                     background-repeat: no-repeat;
                     background-position: center center;
                     
-                    &:hover
+                    &:hover,
+                    &.paused
                     {
                         background-color: $navy;
                     }
