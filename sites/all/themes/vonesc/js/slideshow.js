@@ -49,7 +49,7 @@
         });
         fixHeight();
 
-        indicators().removeClass("active").eq(i+1).addClass("active");
+        indicators().removeClass("active").eq(i).addClass("active");
     }
     function fixHeight()
     {
