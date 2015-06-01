@@ -221,10 +221,8 @@ tbody
 
                 & > ul
                 {
-                    // display: none;
                     position: absolute;
                     left: 0;
-                    // top: 100%;
                     border:3px solid $blue;
                     background: white;
                     list-style:none;
@@ -279,7 +277,6 @@ tbody
                 &:hover > ul,
                 &:focus > ul
                 {
-                    // display: block;
                     top: 100%;
                 }
             }
@@ -936,9 +933,7 @@ ul.locations-dropdown.small
     font-size:13px;
     letter-spacing:-0.5px;
     border-radius:7px;
-    // width: 136px;
     width: 152px;
-    // margin-left:-68px;
     margin-left:-77px;
     max-height: 26px;
 
