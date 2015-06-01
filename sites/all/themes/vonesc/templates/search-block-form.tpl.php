@@ -29,7 +29,7 @@
  * @see template_preprocess_search_block_form()
  */
 ?>
-<div class="container-inline">
+<div class="container-inline" aria-role="search">
   <?php if (empty($variables['form']['#block']->subject)): ?>
   <?php endif; ?>
   <?php print $search_form; ?>
