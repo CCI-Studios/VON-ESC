@@ -4,7 +4,7 @@
 
     $(function(){
         createIndicators();
-        setActive(0);
+        setActive(1);
         timer = setInterval(next, 7000);
         $(window).resize(function(){
             maxHeight = 0;
@@ -33,18 +33,18 @@
     }
     function getActiveIndex()
     {
-        return getActive().index();
+        return getActive().index()+1;
     }
     function setActive(i)
     {
-        var current = getActive()
-        if (i == current.index())
+        var current = getActive();
+        if (i-1 == current.index())
         {
             return;
         }
 
         current.addClass("outbound").removeClass("active");
-        rows().eq(i).addClass("active").hide().fadeIn(function(){
+        rows().eq(i-1).addClass("active").hide().fadeIn(function(){
             current.removeClass("outbound").hide();
         });
         fixHeight();
