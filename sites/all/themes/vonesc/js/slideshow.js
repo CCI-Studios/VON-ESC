@@ -70,7 +70,7 @@
         i++;
         if (i > max())
         {
-            i = 0;
+            i = 1;
         }
 
         setActive(i);
