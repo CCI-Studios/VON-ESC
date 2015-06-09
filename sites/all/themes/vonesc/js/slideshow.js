@@ -62,7 +62,7 @@
     }
     function max()
     {
-        return rows().length-1;
+        return rows().length;
     }
     function next()
     {
