@@ -66,7 +66,7 @@ function webform_template_form_node_form_alter(&$form, &$form_state, $form_id) {
 
       $result = $q->execute()->fetchAll();
 
-      $templates[] = '- ' . t('none') . ' -';
+      $templates = array();
       foreach ($result as $row) {
         $templates[$row->nid] = $row->title;
         if (!empty($show_lang)) {
@@ -86,7 +86,8 @@ function webform_template_form_node_form_alter(&$form, &$form_state, $form_id) {
         '#type' => 'select',
         '#title' => t('Available webforms'),
         '#options' => $templates,
-        '#default_value' => 'none',
+        '#empty_option' => '- ' . t('none') . ' -',
+        '#default_value' => '',
         '#description' => t('Make a selection to copy the fields of the selected webform to this node.'),
       );
       if (!empty($form['nid']['#value'])) {
@@ -134,8 +135,15 @@ function webform_template_node_insert($node) {
     $webform = $template->webform;
     $node->webform = $webform;
     $node->webform['nid'] = $node->nid;
+
+    // Integration with other modules.
+    if (module_exists('webform_validation')) {
+      _webform_template_webform_validation_helper($node, $template);
+    }
+
     // Allow other modules to modify the webform.
     module_invoke_all('webform_template_insert', $node, $template);
+
     // Clean up session.
     unset($_SESSION['webform_template']);
   }
@@ -185,10 +193,43 @@ function webform_template_node_update($node) {
       }
     }
 
+    // Integration with other modules.
+    if (module_exists('webform_validation')) {
+      _webform_template_webform_validation_helper($node, $template, 'update');
+    }
+
     // Allow other modules to modify the webform.
     module_invoke_all('webform_template_update', $node, $template);
 
     // Clean up session.
     unset($_SESSION['webform_template']);
+  }
+}
+
+/**
+ * Helper function, integrates with webform_validation.module.
+ */
+function _webform_template_webform_validation_helper($node, $template, $op = 'insert') {
+  // When updating, delete the previous validation rules.
+  if ($op == 'update') {
+    $rules = webform_validation_get_node_rules($node->nid);
+    if ($rules) {
+      foreach (array_keys($rules) as $ruleid) {
+        webform_dynamic_delete_rule($ruleid);
+      }
+    }
+  }
+
+  $original_nid = $template->nid;
+  // Get existing rules for original node
+  $rules = webform_validation_get_node_rules($original_nid);
+  if ($rules) {
+    foreach ($rules as $orig_ruleid => $rule) {
+      unset($rule['ruleid']);
+      $rule['action'] = 'add';
+      $rule['nid'] = $node->nid; // attach existing rules to new node
+      $rule['rule_components'] = $rule['components'];
+      webform_validation_rule_save($rule);
+    }
   }
 }

@@ -11,11 +11,11 @@ function webform_template_i18n_webform_template_show_selection_alter(&$show, $co
   if (isset($form['#node']->translation_source)) {
     if ($form['#node']->translation_source->tnid > 0) {
       // There is already a translation set.
-      $conf = _webform_localization_get_config($form['#node']->translation_source->tnid);
+      $conf = webform_localization_get_config($form['#node']->translation_source->tnid);
     }
     else {
       // No translation set, we are creating the first translation.
-      $conf = _webform_localization_get_config($form['#node']->translation_source->nid);
+      $conf = webform_localization_get_config($form['#node']->translation_source->nid);
     }
     if ($conf['single_webform'] > 0) {
       $show = FALSE;
@@ -23,7 +23,7 @@ function webform_template_i18n_webform_template_show_selection_alter(&$show, $co
   }
   // In case a translation is edited.
   elseif (isset($form['#node']->tnid) && $form['#node']->nid != $form['#node']->tnid) {
-    $conf = _webform_localization_get_config($form['#node']->tnid);
+    $conf = webform_localization_get_config($form['#node']->tnid);
     if ($conf['single_webform'] > 0) {
       $show = FALSE;
     }
@@ -79,8 +79,8 @@ function webform_template_i18n_webform_template_update($node, $template) {
  * @param type $template
  */
 function _webform_template_i18n_attach($node, $template) {
-  $prev_options = _webform_localization_get_config($node->nid);
-  $template_options = _webform_localization_get_config($template->nid);
+  $prev_options = webform_localization_get_config($node->nid);
+  $template_options = webform_localization_get_config($template->nid);
   $webform_localization_options = array(
     'nid' => $node->nid,
     'expose_strings' => (int) $template_options['expose_strings'],

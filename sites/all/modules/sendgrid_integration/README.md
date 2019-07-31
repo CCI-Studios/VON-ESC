@@ -6,6 +6,9 @@ Use the issue tracker located at [Drupal.org](https://www.drupal.org/sendgrid_in
 for bug reports or questions about this module. If you want more info about
 SendGrid services, contact [SendGrid](https://sendgrid.com).
 
+This module uses a wrapper library for the SendGrid API. At the moment the
+wrapper library is for V2 of the API. V3 upgrade is being developed.
+
 FUNCTIONALITY
 --------------------------------------------------------------------------------
 This module overrides default email sending behaviour and sending emails through
@@ -19,9 +22,23 @@ run on a 60 minute interval.
 REQUIREMENTS
 --------------------------------------------------------------------------------
 Module dependencies:
+
+Mailsystem - A module to create an agnostic management layer for Mail. Very
+useful for controling the mail system on Drupal.
+
+This module requires that the SendGrid API Wrapper class is available. You may
+accomplish this with:
+
+* Composer Manager module (see below).
+* X Autoload module (see below).
+* Roll your own.
+
+
+COMPOSER MANAGER
+--------------------------------------------------------------------------------
 Composer Manager (https://www.drupal.org/project/composer_manager) - A Drupal
-module to faciltate the use of Composer (https://getcomposer.org) on a per-module
-basis.
+module to facilitate the use of Composer (https://getcomposer.org) on a 
+per-module basis.
 
 Composer is the definitive source for PHP dependencies, but implementing
 Composer in modules is difficult to say the least. Composer typically acts over
@@ -29,14 +46,21 @@ an entire project - in this case it would be your entire Drupal source code.
 Composer manager allows for modules to declare their own composer.json file
 rather than a project global composer.json.
 
-  Composer is being used because of the usefulness it offers:
-  https://www.acquia.com/blog/using-composer-manager-get-island-now
-
 Running Composer and composer manager will require command line access via
 DRUSH. There is no GUI for this tool.
 
-Mailsystem - A module to create an agnostic management layer for Mail. Very
-useful for controling the mail system on Drupal.
+X Autoload
+--------------------------------------------------------------------------------
+This method may not work if have another install of Guzzle in your
+codebase.
+
+1. Download and install [X Autoload module](https://www.drupal.org/project/xautoload).
+2. Install the libraries:
+
+```
+cd path/to/sendgrid_integration
+composer install
+```
 
 INSTALLATION
 --------------------------------------------------------------------------------
@@ -46,16 +70,18 @@ line and the use of Drush.
 1. Move this folder under modules directory of your installation,
    example sites/all/modules or sites/default/modules
 
-2. Install Dependencies which include Composer Manager. Use Drush to update
-   dependencies via composer `drush composer-manager update --no-dev`.
-   This will download the Sendgrid API. It is important to use the --no-dev option so you
-   do not download libraries that are used for development and testing only.
+2. Install Dependencies. 
+   * If you are using Composer manager: 
+   Use Drush to update dependencies via composer 
+   `drush composer-manager update --no-dev`.    This will download the Sendgrid 
+   API. It is important to use the --no-dev option so you do not download 
+   libraries that are used for development and testing only.
 
-2. Navigate to Modules and enable SendGrid Integration in the Mail category.
+3. Navigate to Modules and enable SendGrid Integration in the Mail category.
 
-3. Configure your SendGrid API-Key in admin/config/services/sendgrid
+4. Configure your SendGrid API-Key in admin/config/services/sendgrid
 
-4. Confirm that the mail system is setup to use Sendgrid for how you wish to run
+5. Confirm that the mail system is setup to use Sendgrid for how you wish to run
    you website. If you want it all to run through Sendgrid then you set the
    System-wide default MailSystemInterface class to "SendGridMailSystem". As an
    example, see this [image](https://www.drupal.org/files/issues/sengrid-integration-mailsystem-settings-example.png).

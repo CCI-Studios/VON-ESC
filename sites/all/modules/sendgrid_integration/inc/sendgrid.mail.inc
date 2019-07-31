@@ -10,6 +10,7 @@ class SendGridMailSystem implements MailSystemInterface {
    * Email formatting, example strip away html.
    *
    * @param array $message
+   *
    * @return array
    */
   public function format(array $message) {
@@ -24,6 +25,7 @@ class SendGridMailSystem implements MailSystemInterface {
    * Implement mail method to send mail via Sendgrid.
    *
    * @param array $message
+   *
    * @return bool
    */
   public function mail(array $message) {
@@ -31,7 +33,7 @@ class SendGridMailSystem implements MailSystemInterface {
     $key_secret = variable_get('sendgrid_integration_apikey', '');
     if (empty($key_secret)) {
       // Set a warning int he logs of there is no key.
-      watchdog('sendgrid_integration', t('No API Secret key has been set'), 'warning');
+      watchdog('SendGrid Integration', t('No API Secret key has been set'), [], WATCHDOG_ERRROR);
       // Return false to indicate message was not able to send.
       return FALSE;
     }
@@ -83,11 +85,6 @@ class SendGridMailSystem implements MailSystemInterface {
       $data['fromname'] = $sitename;
     }
 
-    // Check if $send is set to be true.
-    if ($message['send'] != 1) {
-      watchdog('SendGrid Integration', 'Email was not sent because send value was disabled', NULL, WATCHDOG_NOTICE, $link = NULL);
-      return TRUE;
-    }
     // Build the Sendgrid mail object.
     // The message MODULE and ID is used for the Category. Category is the only
     // thing in the Sendgrid UI you can use to sort mail.
@@ -134,6 +131,16 @@ class SendGridMailSystem implements MailSystemInterface {
     //Add cc and bcc in mail if they exist.
     $cc_bcc_keys = ['cc', 'bcc'];
     $address_cc_bcc = [];
+
+    // use Sendgrid Templates if they have been set
+    if (!empty($message['sendgrid']['template_id'])) {
+      $sendgrid_message->setTemplateId($message['sendgrid']['template_id']);
+    }
+
+    // use Sendgrid Substitutions if they have been set
+    if (!empty($message['sendgrid']['substitutions'])) {
+      $sendgrid_message->setSubstitutions($message['sendgrid']['substitutions']);
+    }
 
     // Beginning of consolidated header parsing.
     foreach ($message['headers'] as $key => $value) {
@@ -274,7 +281,10 @@ class SendGridMailSystem implements MailSystemInterface {
           break;
 
         case 'reply-to':
-          $sendgrid_message->setReplyTo($message['headers']['Reply-To']);
+          if (isset($message['headers']['reply-to']) || (isset($message['headers']['Reply-To']) && $message['headers']['reply-to'] = $message['headers']['Reply-To'])) {
+            $sendgrid_message->setReplyTo($message['headers']['reply-to']);
+          }
+
           break;
       }
 
@@ -326,7 +336,8 @@ class SendGridMailSystem implements MailSystemInterface {
         $record->subject = $sendgrid_message->getSubject();
         $record->header_from = $sendgrid_message->getFrom();
         // This returns an array of emails so we have to make a string.
-        $record->header_to = implode(',', $sendgrid_message->getTos());
+        // @TODO Restore this once the V3 wrapper is availble.
+        // $record->header_to = implode(',', $sendgrid_message->getTos());
         $record->header_reply_to = $sendgrid_message->getReplyTo();
         $record->header_all = serialize($message['headers']);
         $record->sent_date = REQUEST_TIME;
@@ -506,6 +517,7 @@ class SendGridMailSystem implements MailSystemInterface {
    *   A string containing the character just before the sought after text.
    * @param $ending_character
    *   A string containing the character just after the sought after text.
+   *
    * @return string
    *   A string with the text found between the $beginning_character and the
    *   $ending_character.
@@ -534,6 +546,7 @@ class SendGridMailSystem implements MailSystemInterface {
    *   A string containing the body text to parse.
    * @param boundary
    *   A string with the boundary string to parse on.
+   *
    * @return array
    *   An array containing the resulting mime parts
    */
@@ -562,6 +575,7 @@ class SendGridMailSystem implements MailSystemInterface {
    *
    * @param string $input
    *   A string containing the body part to strip.
+   *
    * @return string
    *   A string with the stripped body part.
    */
