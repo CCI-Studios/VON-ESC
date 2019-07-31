@@ -36,3 +36,4 @@ xmlrpc.php
 /themes
 
 *.scssc
+.DS_Store

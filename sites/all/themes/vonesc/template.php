@@ -16,11 +16,14 @@ function vonesc_form_alter(&$form, $form_state, $form_id) {
 		$form['#action'] = '';
 	}
 
-	foreach($form['submitted'] as $component_id=>$component)
+	if (isset($form['submitted']))
 	{
-		if ($form['submitted'][$component_id]['#required'])
+		foreach($form['submitted'] as $component_id=>$component)
 		{
-			$form['submitted'][$component_id]['#attributes']['aria-required'] = 'true';
+			if ($form['submitted'][$component_id]['#required'])
+			{
+				$form['submitted'][$component_id]['#attributes']['aria-required'] = 'true';
+			}
 		}
 	}
 }
