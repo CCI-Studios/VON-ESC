@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Montserrat:400,400i,600,800&display=swap');
+
 body
 {
-    font-family:"pragmatica-web", sans-serif;
+    font-family:"Montserrat", sans-serif;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:greyscale;
-    font-weight:300;
+    font-weight:400;
 }
 
-.font-condensed
+.alt-font
 {
-    font-family:"pragmatica-web-condensed", sans-serif;
-    letter-spacing:-0.5px;
+    font-family:"Arvo", serif;
 }
