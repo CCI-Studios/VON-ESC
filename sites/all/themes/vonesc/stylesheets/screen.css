@@ -18,7 +18,7 @@ body {
   -moz-osx-font-smoothing: greyscale;
   font-weight: 400; }
 
-.alt-font {
+.alt-font, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2 {
   font-family: "Arvo", serif; }
 
 body {
@@ -377,9 +377,8 @@ tbody {
     max-width: 100%; }
 
 #first-widgets, body.node-type-location #main-wrapper {
-  border: solid #233d81;
+  border: solid #2aa1d9;
   border-width: 5px 0;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   color: white;
   padding: 0; }
   #first-widgets > div, body.node-type-location #main-wrapper > div {
@@ -389,40 +388,9 @@ tbody {
     max-width: none;
     margin: 0; }
     #first-widgets > div > div, body.node-type-location #main-wrapper > div > div {
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
       background: #152b5c;
       position: relative;
       padding: 0; }
-      #first-widgets > div > div:before, body.node-type-location #main-wrapper > div > div:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 150px;
-        z-index: 0;
-        background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, transparent));
-        background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, transparent 100%); }
-      #first-widgets > div > div:after, body.node-type-location #main-wrapper > div > div:after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 150px;
-        z-index: 0;
-        background-image: -ms-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: -moz-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: -o-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 471, color-stop(0, #1B5186), color-stop(1, transparent));
-        background-image: -webkit-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, transparent 100%);
-        background-image: radial-gradient(ellipse farthest-side at center bottom, #1B5186 0%, transparent 100%); }
       #first-widgets > div > div > div, body.node-type-location #main-wrapper > div > div > div {
         max-width: 980px;
         width: 100%;
@@ -1237,7 +1205,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   body.front #first-widgets .block#block-block-4, body.front body.node-type-location #main-wrapper .block#block-block-4, body.node-type-location body.front #main-wrapper .block#block-block-4 {
     margin: 0 5%; }
   body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2 {
-    text-transform: uppercase;
+    font-size: 28px;
     margin-bottom: 5px;
     padding-top: 170px;
     background-repeat: no-repeat;
