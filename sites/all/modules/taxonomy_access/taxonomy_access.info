@@ -6,9 +6,9 @@ configure = admin/config/people/taxonomy_access
 
 files[] = taxonomy_access.test
 
-; Information added by drupal.org packaging script on 2013-10-18
-version = "7.x-1.0-rc1+51-dev"
+; Information added by Drupal.org packaging script on 2015-09-19
+version = "7.x-1.0"
 core = "7.x"
 project = "taxonomy_access"
-datestamp = "1382134821"
+datestamp = "1442635740"
 

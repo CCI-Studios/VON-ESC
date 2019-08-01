@@ -6,9 +6,9 @@ package = Webform
 dependencies[] = webform
 configure = admin/config/content/webform_template
 files[] = webform_template.module
-; Information added by Drupal.org packaging script on 2014-03-12
-version = "7.x-1.3"
+; Information added by Drupal.org packaging script on 2015-09-15
+version = "7.x-1.5"
 core = "7.x"
 project = "webform_template"
-datestamp = "1394645612"
+datestamp = "1442331846"
 

@@ -18,6 +18,11 @@ a
 p
 {
     margin-bottom:0.75em;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
 }
 
 hr
@@ -81,14 +86,14 @@ tbody
 #logo
 {
     display: block;
-    padding-top:10px;
+    padding-top:20px;
     float: left;
     position: relative;
     z-index: 1;
 
     img
     {
-        width:208px;
+        width:120px;
         height: auto;
         display: block;
     }
@@ -97,7 +102,7 @@ tbody
 #navigation
 {
     background:$navy;
-    border-bottom:5px solid $blue;
+    border-bottom:5px solid $lightblue;
     box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
 
     & > div
@@ -120,17 +125,15 @@ tbody
 
     #block-system-main-menu .content
     {
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing:-0.5px;
+        font-weight: 600;
         text-shadow:1px 1px 0 black;
-        @extend .font-condensed;
 
         & > ul
         {
             list-style:none;
             margin: 0;
             padding: 0;
+            text-align: right;
 
             & > li
             {
@@ -145,7 +148,7 @@ tbody
                     display: block;
                     color:$lightblue;
                     text-decoration:none;
-                    padding:45px 12px 16px 12px;
+                    padding:45px 14px 16px 14px;
                     line-height:100%;
                     background-repeat:no-repeat;
                     background-position:center 10px;
@@ -287,6 +290,7 @@ tbody
 #secondary-navigation
 {
     padding:16px 0;
+    border-bottom: 5px solid $lightblue;
 
     & > div
     {
@@ -432,20 +436,20 @@ tbody
 
     #block-block-1
     {
-        @extend .font-condensed;
-        color:$orange;
+        color:$lightblue;
         font-weight:bold;
         clear: right;
         padding:45px 0 0 80px;
         overflow: hidden;
-        font-size:0.95em;
+        font-size:20px;
+        text-align: right;
     }
 }
 
 #header
 {
     clear: both;
-    padding-top:8px;
+    padding-top:5px;
     padding-bottom: 10px;
 
     & > div
@@ -600,9 +604,8 @@ tbody
 
 #first-widgets
 {
-    border:solid $blue;
+    border:solid $lightblue;
     border-width:5px 0;
-    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
     color:white;
     padding: 0;
 
@@ -616,49 +619,9 @@ tbody
 
         & > div
         {
-            box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
             background:$navy;
             position: relative;
             padding: 0;
-
-            &:before
-            {
-                content:"";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 150px;
-                z-index: 0;
-
-                $color2: transparent;
-                background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, $color2));
-                background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, $color2 100%);
-            }
-            &:after
-            {
-                content:"";
-                display: block;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 150px;
-                z-index: 0;
-
-                $color2: transparent;
-                background-image: -ms-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: -moz-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: -o-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 471, color-stop(0, #1B5186), color-stop(1, $color2));
-                background-image: -webkit-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-                background-image: radial-gradient(ellipse farthest-side at center bottom, #1B5186 0%, $color2 100%);
-            }
 
             & > div
             {
