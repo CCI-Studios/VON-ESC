@@ -14,7 +14,7 @@ body.front
             width: 30%;
             float: left;
             text-align: center;
-            font-size:0.9em;
+            font-size:13px;
             text-shadow:1px 1px 0 rgba(0,0,0,0.75);
             position: relative;
 
@@ -28,7 +28,7 @@ body.front
                 @extend .alt-font;
                 font-size: 28px;
                 margin-bottom: 5px;
-                padding-top: 170px;
+                padding-top: 135px;
                 background-repeat:no-repeat;
                 background-position:center top;
             }
@@ -43,6 +43,62 @@ body.front
             &#block-block-5 > div > h2
             {
                 background-image:url(../images/icon-contact-us-large.png);
+            }
+        }
+    }
+}
+#block-views-header-slideshow-block-homepage
+{
+    padding: 5px 0;
+}
+
+.block--home-header
+{
+    position: relative;
+    margin: 5px 0;
+
+    &:after
+    {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .image
+    {
+        width: 60%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .title
+    {
+        width: 40%;
+        float: right;
+        background: url(../images/bg-pattern.png) repeat;
+        background-size: 850px 100%;
+        position: relative;
+        height: 560px;
+
+        h1
+        {
+            @extend .alt-font;
+            color: white;
+            line-height: 1;
+            position: absolute;
+            left: 0;
+            padding-left: 15%;
+            width: 100px;
+            font-size: 72px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media (max-width: 800px)
+            {
+                font-size: 48px;
             }
         }
     }

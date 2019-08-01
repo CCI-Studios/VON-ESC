@@ -6,7 +6,7 @@ body
 
 a
 {
-    color:$lightorange;
+    color:$lightblue;
     text-decoration: none;
     
     &:hover
@@ -40,37 +40,27 @@ tbody
 .button
 {
     display: inline-block;
-    background:#f48800;
+    background:$lightblue;
     overflow: hidden;
-    box-shadow:2px 2px 5px rgba(0,0,0,0.3);
     color:white;
     text-decoration: none;
-    font-weight: bold;
-    line-height: 100%;
-    padding:8px 13px;
-    text-shadow:1px 1px 0 rgba(0,0,0,0.35);
-    font-size:13px;
-    letter-spacing:-0.5px;
-    border-radius:7px;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    padding:0 12px;
+    font-size:16px;
+    border-radius:5px;
     cursor:pointer;
     border:0;
-
-    $color1: #ffa700;
-    $color2: #e96900;
-    background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
-    background: -webkit-linear-gradient(top, $color1 0%,$color2 100%);
-    background: -o-linear-gradient(top, $color1 0%,$color2 100%);
-    background: -ms-linear-gradient(top, $color1 0%,$color2 100%);
-    background: linear-gradient(to bottom, $color1 0%,$color2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa700', endColorstr='#e96900',GradientType=0 );
+    font-weight: 700;
+    min-width: 200px;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
 
     &:hover
     {
-        background:white;
-        color:$orange;
-        text-shadow:none;
-        filter:none;
+        background:$blue;
+        text-decoration: none;
     }
 }
 
@@ -103,7 +93,6 @@ tbody
 {
     background:$navy;
     border-bottom:5px solid $lightblue;
-    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
 
     & > div
     {
@@ -126,7 +115,6 @@ tbody
     #block-system-main-menu .content
     {
         font-weight: 600;
-        text-shadow:1px 1px 0 black;
 
         & > ul
         {
@@ -148,7 +136,7 @@ tbody
                     display: block;
                     color:$lightblue;
                     text-decoration:none;
-                    padding:45px 14px 16px 14px;
+                    padding:45px 14px 9px 14px;
                     line-height:100%;
                     background-repeat:no-repeat;
                     background-position:center 10px;
@@ -165,29 +153,31 @@ tbody
                         &:hover,
                         &:after
                         {
-                            background-image:url(../images/icon-ck-orange-small.png);
+                            background-image:url(../images/icon-ck-blue-small.png);
                         }
                     }
 
                     &.sarnia-lambton
                     {
                         background-image:url(../images/icon-sl-white-small.png);
+                        background-position: center 14px;
 
                         &:hover,
                         &:after
                         {
-                            background-image:url(../images/icon-sl-orange-small.png);
+                            background-image:url(../images/icon-sl-blue-small.png);
                         }
                     }
 
                     &.windsor-essex
                     {
                         background-image:url(../images/icon-we-white-small.png);
+                        background-position: center 14px;
 
                         &:hover,
                         &:after
                         {
-                            background-image:url(../images/icon-we-orange-small.png);
+                            background-image:url(../images/icon-we-blue-small.png);
                         }
                     }
 
@@ -198,18 +188,19 @@ tbody
                         &:hover,
                         &:after
                         {
-                            background-image:url(../images/icon-br-orange-small.png);
+                            background-image:url(../images/icon-br-blue-small.png);
                         }
                     }
 
                     &.pelee-island
                     {
                         background-image:url(../images/icon-pi-white-small.png);
+                        background-position: center 14px;
 
                         &:hover,
                         &:after
                         {
-                            background-image:url(../images/icon-pi-orange-small.png);
+                            background-image:url(../images/icon-pi-blue-small.png);
                         }
                     }
 
@@ -226,7 +217,8 @@ tbody
                 {
                     position: absolute;
                     left: 0;
-                    border:3px solid $blue;
+                    border:3px solid $navy;
+                    border-top: 0;
                     background: white;
                     list-style:none;
                     margin:0;
@@ -250,13 +242,11 @@ tbody
                             line-height:100%;
                             padding:8px 28px 7px 6px;
                             text-align:left;
-                            text-shadow:1px 1px 0 rgba(0,0,0,0.2);
 
                             &:hover
                             {
                                 background:$navy;
                                 color:white;
-                                text-shadow:1px 1px 0 black;
                             }
                         }
 
@@ -449,20 +439,6 @@ tbody
 #header
 {
     clear: both;
-    padding-top:5px;
-    padding-bottom: 10px;
-
-    & > div
-    {
-        width: 100%;
-        max-width: 980px;
-        margin: 0 auto;
-
-        & > div
-        {
-            padding: 0 20px;
-        }
-    }
 }
 
 .region-content
@@ -495,8 +471,7 @@ tbody
 #footer
 {
     clear: both;
-    border-top:5px solid $blue;
-    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    border-top:5px solid $lightblue;
     color:white;
     text-align: center;
     background:$navy;
@@ -509,12 +484,12 @@ tbody
 
         & > div
         {
-            background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
-            background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
-            background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
-            background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, $navy));
-            background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $navy 100%);
-            background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, $navy 100%);
+            background-image: -ms-radial-gradient(center top, ellipse farthest-side, $blue 0%, $navy 100%);
+            background-image: -moz-radial-gradient(center top, ellipse farthest-side, $blue 0%, $navy 100%);
+            background-image: -o-radial-gradient(center top, ellipse farthest-side, $blue 0%, $navy 100%);
+            background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, $blue), color-stop(1, $navy));
+            background-image: -webkit-radial-gradient(center top, ellipse farthest-side, $blue 0%, $navy 100%);
+            background-image: radial-gradient(ellipse farthest-side at center top, $blue 0%, $navy 100%);
 
             min-height:205px;
 
@@ -540,11 +515,12 @@ tbody
     {
         list-style:none;
         margin: 0;
-        padding: 26px 0 75px 0;
+        padding: 30px 0 35px 0;
         text-align: center;
         font-size:0.8em;
         line-height:100%;
-        background:url(../images/bg-footer.png) no-repeat center 70%;
+        margin: 0 30px 35px 30px;
+        border-bottom: 1px solid #455d85;
 
         li
         {
@@ -553,7 +529,7 @@ tbody
             padding:0;
             display: inline-block;
             padding:0 14px;
-            border-right:2px solid white;
+            border-right:1px solid white;
 
             &.last
             {
@@ -563,7 +539,6 @@ tbody
             a
             {
                 display: block;
-                font-weight: bold;
             }
         }
     }
@@ -572,6 +547,14 @@ tbody
     #site-by-cci
     {
         font-size:0.7em;
+        opacity: 0.5;
+        display: inline-block;
+    }
+    #copyright
+    {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid white;
     }
 }
 #main-wrapper
@@ -604,22 +587,19 @@ tbody
 
 #first-widgets
 {
-    border:solid $lightblue;
-    border-width:5px 0;
+    border-top:5px solid $lightblue;
     color:white;
     padding: 0;
 
     & > div
     {
-        border:solid white;
-        border-width:5px 0;
         width: auto;
         max-width: none;
         margin: 0;
 
         & > div
         {
-            background:$navy;
+            background:$blue;
             position: relative;
             padding: 0;
 
@@ -643,65 +623,80 @@ tbody
 
 #second-widgets
 {
-    max-width:980px;
-    width: 100%;
-    margin: 0 auto;
-    padding:30px 0;
+    clear: both;
+}
+.block--locations-map
+{
+    float: left;
+    width: 50%;
 
-    & > div
+    .map
     {
-        padding:0 20px;
-    }
+        position: relative;
 
-    #block-block-2
-    {
-        float: left;
-        width: 50%;
-
-        .content
+        img
         {
-            img
-            {
-                display: block;
-                border:1px solid #ccc;
-                border-radius:2px;
-                box-shadow:0 13px 10px -10px rgba(0,0,0,0.5);
-                height:auto !important;
-                width:100% !important;
-            }
-
-            p
-            {
-                color:$navy;
-                font-weight:bold;
-                padding-bottom:10px;
-                font-size:0.925em;
-            }
+            display: block;
+            width: 100%;
+            height: auto;
         }
-    }
-
-    .block.view-news-container
-    {
-        width: 50%;
-        float: left;
-        text-shadow:1px 1px 5px rgba(0,0,0,0.2);
-
-        & > div
+        a
         {
-            padding:20px 0 0 15px;
-            position: relative;
-
-            & > h2
-            {
-                text-align: center;
-                padding-bottom:15px;
-                background:url(../images/news-line.png) repeat-x left bottom;
-                text-transform: uppercase;
-                color:$navy;
-            }
+            font-size: 0;
+            position: absolute;
+            width: 16.5%;
+            height: 15%;
+        }
+        .sl
+        {
+            left: 47%;
+            top: 15%;
+        }
+        .ck
+        {
+            left: 54.5%;
+            top: 42%;
+        }
+        .br
+        {
+            left: 40.7%;
+            top: 53%;
+            width: 12%;
+        }
+        .we
+        {
+            left: 24%;
+            top: 50%;
+        }
+        .pi
+        {
+            left: 36%;
+            top: 77.5%;
         }
     }
 }
+.block--news-teasers
+{
+    width: 50%;
+    float: left;
+    max-width: 520px;
+    position: relative;
+
+    & > div
+    {
+        padding: 30px;
+    }
+    h2
+    {
+        @extend .alt-font;
+        text-align: left;
+        font-size: 28px;
+        padding-bottom:15px;
+        background:url(../images/news-line.png) repeat-x left bottom;
+        color:$navy;
+    }
+}
+
 #sidebar
 {
     #block-views-news-block,
@@ -725,27 +720,19 @@ ul.locations-dropdown
     display: inline-block;
     list-style:none;
     width: 200px;
-    border-radius:10px;
-    background:#f48800;
+    border-radius:6px;
+    background:#304888;
     text-align: left;
-    font-size:14px;
+    font-size:16px;
     overflow: hidden;
     position: absolute;
     z-index: 99;
     left: 50%;
     margin-left: -100px;
     max-height:40px;
-    box-shadow:2px 2px 5px rgba(0,0,0,0.3);
-
-    $color1: #ffa700;
-    $color2: #e96900;
-    background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
-    background: -webkit-linear-gradient(top, $color1 0%,$color2 100%);
-    background: -o-linear-gradient(top, $color1 0%,$color2 100%);
-    background: -ms-linear-gradient(top, $color1 0%,$color2 100%);
-    background: linear-gradient(to bottom, $color1 0%,$color2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa700', endColorstr='#e96900',GradientType=0 );
+    box-sizing: border-box;
+    border: 1px solid white;
+    text-shadow: none;
 
     &.open
     {
@@ -764,9 +751,9 @@ ul.locations-dropdown
             display: block;
             position: absolute;
             top: -1px;
-            left: 3px;
-            right: 3px;
-            border-bottom:1px solid #e96900;
+            left: 0;
+            right: 0;
+            border-bottom:1px solid white;
         }
 
         &:first-child
@@ -787,10 +774,8 @@ ul.locations-dropdown
         display: block;
         color:white;
         text-decoration: none;
-        font-weight: bold;
-        line-height: 100%;
-        padding:13px 0 13px 36px;
-        text-shadow:1px 1px 0 rgba(0,0,0,0.35);
+        line-height: 1;
+        padding:11px 0 11px 36px;
         background-repeat:no-repeat;
         background-position:10px center;
 
@@ -798,7 +783,7 @@ ul.locations-dropdown
         &:focus
         {
             background-color:white;
-            color:#e96900;
+            color:$blue;
             text-shadow: none;
             outline:none;
         }
@@ -811,6 +796,10 @@ ul.locations-dropdown
             left: -99999px;
         }
     }
+    .select-city a
+    {
+        padding-left: 18px;
+    }
 
     a.open-btn
     {
@@ -818,7 +807,7 @@ ul.locations-dropdown
         color:transparent;
         display: block;
         width: 36px;
-        height: 40px;
+        height: 38px;
         background:url(../images/arrow-down.png) no-repeat center center;
         position: absolute;
         top: 0;
@@ -843,6 +832,7 @@ ul.locations-dropdown
     a.open-btn:after
     {
         background-image:url(../images/arrow-up.png);
+        background-color: transparent;
 
         &:hover, &:focus, &:before
         {
@@ -856,7 +846,7 @@ ul.locations-dropdown
 
         &:hover, &:focus, &:before
         {
-            background-image:url(../images/icon-br-m-hover.png);
+            background-image:url(../images/icon-br-m-blue.png);
         }
     }
     li.chatham-kent a
@@ -865,7 +855,7 @@ ul.locations-dropdown
 
         &:hover, &:focus, &:before
         {
-            background-image:url(../images/icon-ck-m-hover.png);
+            background-image:url(../images/icon-ck-m-blue.png);
         }
     }
     li.pelee-island a
@@ -874,7 +864,7 @@ ul.locations-dropdown
 
         &:hover, &:focus, &:before
         {
-            background-image:url(../images/icon-pi-m-hover.png);
+            background-image:url(../images/icon-pi-m-blue.png);
         }
     }
     li.sarnia-lambton a
@@ -883,7 +873,7 @@ ul.locations-dropdown
 
         &:hover, &:focus, &:before
         {
-            background-image:url(../images/icon-sl-m-hover.png);
+            background-image:url(../images/icon-sl-m-blue.png);
         }
     }
     li.windsor-essex a
@@ -892,7 +882,7 @@ ul.locations-dropdown
 
         &:hover, &:focus, &:before
         {
-            background-image:url(../images/icon-we-m-hover.png);
+            background-image:url(../images/icon-we-m-blue.png);
         }
     }
 }
@@ -917,76 +907,28 @@ ul.locations-dropdown.small
 
     li a
     {
-        padding:8px 0 8px 25px;
+        padding:5px 0 6px 25px;
         background-position:6px center;
+        background-size: 14px auto;
     }
 
     a.open-btn
     {
         width: 20px;
-        height: 27px;
-        background-image:url(../images/arrow-down-s.png);
+        height: 24px;
+        background-image:url(../images/arrow-down.png);
         background-position:5px center;
+        background-size: 9px auto;
 
         &:hover, &:before, &:focus
         {
-            background-image:url(../images/arrow-down-s-hover.png);
+            background-image:url(../images/arrow-down-hover.png);
         }
     }
     &.open a.open-btn
     {
-        background-image:url(../images/arrow-up-s.png);
-
-        &:hover, &:focus, &:before
-        {
-            background-image:url(../images/arrow-up-s-hover.png);
-        }
-    }
-
-    li.belle-river a
-    {
-        background-image:url(../images/icon-br-s.png);
-
-        &:hover, &:focus, &:before
-        {
-            background-image:url(../images/icon-br-s-hover.png);
-        }
-    }
-    li.chatham-kent a
-    {
-        background-image:url(../images/icon-ck-s.png);
-
-        &:hover, &:focus, &:before
-        {
-            background-image:url(../images/icon-ck-s-hover.png);
-        }
-    }
-    li.pelee-island a
-    {
-        background-image:url(../images/icon-pi-s.png);
-
-        &:hover, &:focus, &:before
-        {
-            background-image:url(../images/icon-pi-s-hover.png);
-        }
-    }
-    li.sarnia-lambton a
-    {
-        background-image:url(../images/icon-sl-s.png);
-
-        &:hover, &:focus, &:before
-        {
-            background-image:url(../images/icon-sl-s-hover.png);
-        }
-    }
-    li.windsor-essex a
-    {
-        background-image:url(../images/icon-we-s.png);
-
-        &:hover, &:focus, &:before
-        {
-            background-image:url(../images/icon-we-s-hover.png);
-        }
+        background-image:url(../images/arrow-up.png);
+        background-color: inherit;
     }
 }
 
@@ -1057,13 +999,14 @@ body.node-type-location
 
 #page-title h1
 {
+    @extend .alt-font;
     padding:35px 0 35px 24px;
     background-repeat:no-repeat;
     background-position:left center;
-    font-size:2.6em;
-    text-transform: uppercase;
+    font-size:60px;
     line-height:120%;
     text-shadow:1px 1px 1px rgba(0,0,0,0.75);
+    font-weight: normal;
 
 }
 #block-block-1 .content
@@ -1072,69 +1015,7 @@ body.node-type-location
     background-repeat:no-repeat;
     background-position:left center;
 }
-body
-{
-    #page-title h1
-    {
-        background-image: url(../images/icon-von-l.png);
-    }
 
-    &.chatham-kent
-    {
-        #page-title h1
-        {
-            background-image:url(../images/icon-ck-l.png);
-        }
-        #block-block-1 .content
-        {
-            background-image:url(../images/icon-ck-orange-small.png);
-        }
-    }
-    &.sarnia-lambton
-    {
-        #page-title h1
-        {
-            background-image:url(../images/icon-sl-l.png);
-        }
-        #block-block-1 .content
-        {
-            background-image:url(../images/icon-sl-orange-small.png);
-        }
-    }
-    &.windsor-essex
-    {
-        #page-title h1
-        {
-            background-image:url(../images/icon-we-l.png);
-        }
-        #block-block-1 .content
-        {
-            background-image:url(../images/icon-we-orange-small.png);
-        }
-    }
-    &.belle-river
-    {
-        #page-title h1
-        {
-            background-image:url(../images/icon-br-l.png);
-        }
-        #block-block-1 .content
-        {
-            background-image:url(../images/icon-br-orange-small.png);
-        }
-    }
-    &.pelee-island
-    {
-        #page-title h1
-        {
-            background-image:url(../images/icon-pi-l.png);
-        }
-        #block-block-1 .content
-        {
-            background-image:url(../images/icon-pi-orange-small.png);
-        }
-    }
-}
 body.location-inner
 {
     #main-wrapper > div > div > div
@@ -1147,42 +1028,7 @@ body.location-inner
             z-index: 1;
             min-height:300px;
         }
-
-        &:after
-        {
-            content:"";
-            display: block;
-            position: absolute;
-            bottom:-120px;
-            left:-170px;
-            background-repeat:no-repeat;
-            background-position:center bottom;
-            width: 341px;
-            height: 341px;
-        }
     }
-
-    &.chatham-kent #main-wrapper > div > div > div:after
-    {
-        background-image:url(../images/icon-ck-bg-semi.png);
-    }
-    &.sarnia-lambton #main-wrapper > div > div > div:after
-    {
-        background-image:url(../images/icon-sl-bg-semi.png);
-    }
-    &.windsor-essex #main-wrapper > div > div > div:after
-    {
-        background-image:url(../images/icon-we-bg-semi.png);
-    }
-    &.belle-river #main-wrapper > div > div > div:after
-    {
-        background-image:url(../images/icon-br-bg-semi.png);
-    }
-    &.pelee-island #main-wrapper > div > div > div:after
-    {
-        background-image:url(../images/icon-pi-bg-semi.png);
-    }
-
 }
 body.node-type-location
 {
@@ -1372,11 +1218,9 @@ body.not-front
 {
     #page-title
     {
-        box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
         background:$navy;
         position: relative;
         padding: 0;
-        border-top:5px solid $blue;
 
         &:after
         {
@@ -1401,13 +1245,10 @@ body.not-front
         & > div
         {
             border-top:5px solid white;
-            box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
             position: relative;
 
             & > div
             {
-                box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
-
                 & > div
                 {
                     max-width:980px;

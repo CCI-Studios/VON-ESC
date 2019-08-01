@@ -148,33 +148,44 @@
         min-height: 54px;
         background:url(../images/news-line.png) repeat-x left bottom;
 
+        &:after
+        {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
         .views-field-created
         {
             float: left;
             color:white;
-            width: 55px;
-            height: 46px;
-            line-height:100%;
-            padding-top:13px;
-            padding-right:3px;
+            width: 60px;
+            height: 44px;
+            line-height:0.9;
+            padding-top:16px;
             text-align: center;
-            background: url(../images/news-date-bg.png) no-repeat left top;
+            background: $lightblue;
             font-weight: bold;
-            text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+            border-radius: 100%;
 
             .month
             {
-                font-size:0.80em;
+                font-size:12px;
                 text-transform: uppercase;
+                font-weight: 400;
+            }
+            .day
+            {
+                font-size: 20px;
             }
         }
         .views-field-title
         {
-            padding-left:66px;
+            padding-left:80px;
 
             a
             {
-                color:$blue;
+                color:$lightblue;
                 text-decoration: none;
                 font-weight: bold;
                 font-size: 14px;
@@ -190,7 +201,7 @@
         {
             line-height: 120%;
             font-size:0.9em;
-            padding-left: 66px;
+            padding-left: 80px;
         }
     }
 
@@ -269,21 +280,6 @@
         padding-bottom: 10px;
         position: relative;
         padding:10px 0;
-
-        &:before
-        {
-            content:"";
-            display: block;
-            position: absolute;
-            left:-20px;
-            top: 50%;
-            margin-top: -21px;
-            width: 42px;
-            height: 42px;
-            z-index: -1;
-            background-repeat:no-repeat;
-            background-position:left center;
-        }
     }
 
     h3
@@ -335,11 +331,6 @@
 }
 body.belle-river .view-program
 {
-    h2:before
-    {
-        background-image:url(../images/icon-br-semi.png);
-    }
-
     .views-field-body ul, .views-field-body ul li
     {
         list-style:url(../images/icon-br-s-hover.png);
@@ -352,11 +343,6 @@ body.belle-river .view-program
 }
 body.chatham-kent .view-program
 {
-    h2:before
-    {
-        background-image:url(../images/icon-ck-semi.png);
-    }
-
     .views-field-body ul
     {
         list-style:url(../images/icon-ck-s-hover.png);
@@ -364,11 +350,6 @@ body.chatham-kent .view-program
 }
 body.pelee-island .view-program
 {
-    h2:before
-    {
-        background-image:url(../images/icon-pi-semi.png);
-    }
-
     .views-field-body ul
     {
         list-style:url(../images/icon-pi-s-hover.png);
@@ -376,11 +357,6 @@ body.pelee-island .view-program
 }
 body.sarnia-lambton .view-program
 {
-    h2:before
-    {
-        background-image:url(../images/icon-sl-semi.png);
-    }
-
     .views-field-body ul
     {
         list-style:url(../images/icon-sl-s-hover.png);
@@ -388,11 +364,6 @@ body.sarnia-lambton .view-program
 }
 body.windsor-essex .view-program
 {
-    h2:before
-    {
-        background-image:url(../images/icon-we-semi.png);
-    }
-
     .views-field-body ul
     {
         list-style:url(../images/icon-we-s-hover.png);
@@ -557,30 +528,6 @@ body.windsor-essex .view-program
         {
             float: left;
             padding-left: 75px;
-
-            a
-            {
-                text-align: left;
-                width: 145px;
-                position: relative;
-
-                &:after
-                {
-                    content:"";
-                    display: block;
-                    position: absolute;
-                    right:13px;
-                    top: 50%;
-                    margin-top: -5px;
-                    width: 9px;
-                    height: 9px;
-                    background:url(../images/arrow-right-s.png) no-repeat;
-                }
-                &:hover:after
-                {
-                    background-image:url(../images/arrow-right-s-hover.png);
-                }
-            }
         }
 
         .views-field-field-purchase-tickets-form

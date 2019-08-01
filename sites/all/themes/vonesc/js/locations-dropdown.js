@@ -33,7 +33,7 @@
         {
             maxHeight = "149px";
         }
-        $ul.addClass("open").animate({"max-height":maxHeight});
+        $ul.addClass("open").animate({"max-height":maxHeight}, 200);
     }
 
     function closeAll()
@@ -44,7 +44,7 @@
             {
                 maxHeight = "26px";
             }
-            $(this).removeClass("open").css("max-height",$(this).outerHeight()).animate({"max-height":maxHeight});
+            $(this).removeClass("open").css("max-height",$(this).outerHeight()).animate({"max-height":maxHeight}, 200);
         });
     }
 }(jQuery));

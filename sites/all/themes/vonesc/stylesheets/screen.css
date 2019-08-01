@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Montserrat:400,400i,600,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Montserrat:400,500,500i,600,800&display=swap");
 * {
   margin: 0;
   padding: 0; }
@@ -18,7 +18,7 @@ body {
   -moz-osx-font-smoothing: greyscale;
   font-weight: 400; }
 
-.alt-font, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2 {
+.alt-font, .block--news-teasers h2, #page-title h1, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1 {
   font-family: "Arvo", serif; }
 
 body {
@@ -26,7 +26,7 @@ body {
   color: #152b5c; }
 
 a {
-  color: #fc821c;
+  color: #2aa1d9;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -46,32 +46,25 @@ tbody {
 
 .button {
   display: inline-block;
-  background: #f48800;
+  background: #2aa1d9;
   overflow: hidden;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  line-height: 100%;
-  padding: 8px 13px;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
-  font-size: 13px;
-  letter-spacing: -0.5px;
-  border-radius: 7px;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 0 12px;
+  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
   border: 0;
-  background: -moz-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffa700), color-stop(100%, #e96900));
-  background: -webkit-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: -o-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: -ms-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: linear-gradient(to bottom, #ffa700 0%, #e96900 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa700', endColorstr='#e96900',GradientType=0 ); }
+  font-weight: 700;
+  min-width: 200px;
+  box-sizing: border-box;
+  transition: background-color 0.2s; }
   .button:hover {
-    background: white;
-    color: #ea6b00;
-    text-shadow: none;
-    filter: none; }
+    background: #233d81;
+    text-decoration: none; }
 
 #container {
   overflow: hidden; }
@@ -92,8 +85,7 @@ tbody {
 
 #navigation {
   background: #152b5c;
-  border-bottom: 5px solid #2aa1d9;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4); }
+  border-bottom: 5px solid #2aa1d9; }
   #navigation > div {
     border-bottom: 5px solid white;
     height: 70px; }
@@ -104,8 +96,7 @@ tbody {
       #navigation > div > div > div {
         padding: 0 20px; }
   #navigation #block-system-main-menu .content {
-    font-weight: 600;
-    text-shadow: 1px 1px 0 black; }
+    font-weight: 600; }
     #navigation #block-system-main-menu .content > ul {
       list-style: none;
       margin: 0;
@@ -121,7 +112,7 @@ tbody {
           display: block;
           color: #2aa1d9;
           text-decoration: none;
-          padding: 45px 14px 16px 14px;
+          padding: 45px 14px 9px 14px;
           line-height: 100%;
           background-repeat: no-repeat;
           background-position: center 10px; }
@@ -130,23 +121,26 @@ tbody {
           #navigation #block-system-main-menu .content > ul > li > a.chatham-kent {
             background-image: url(../images/icon-ck-white-small.png); }
             #navigation #block-system-main-menu .content > ul > li > a.chatham-kent:hover, #navigation #block-system-main-menu .content > ul > li > a.chatham-kent:after {
-              background-image: url(../images/icon-ck-orange-small.png); }
+              background-image: url(../images/icon-ck-blue-small.png); }
           #navigation #block-system-main-menu .content > ul > li > a.sarnia-lambton {
-            background-image: url(../images/icon-sl-white-small.png); }
+            background-image: url(../images/icon-sl-white-small.png);
+            background-position: center 14px; }
             #navigation #block-system-main-menu .content > ul > li > a.sarnia-lambton:hover, #navigation #block-system-main-menu .content > ul > li > a.sarnia-lambton:after {
-              background-image: url(../images/icon-sl-orange-small.png); }
+              background-image: url(../images/icon-sl-blue-small.png); }
           #navigation #block-system-main-menu .content > ul > li > a.windsor-essex {
-            background-image: url(../images/icon-we-white-small.png); }
+            background-image: url(../images/icon-we-white-small.png);
+            background-position: center 14px; }
             #navigation #block-system-main-menu .content > ul > li > a.windsor-essex:hover, #navigation #block-system-main-menu .content > ul > li > a.windsor-essex:after {
-              background-image: url(../images/icon-we-orange-small.png); }
+              background-image: url(../images/icon-we-blue-small.png); }
           #navigation #block-system-main-menu .content > ul > li > a.belle-river {
             background-image: url(../images/icon-br-white-small.png); }
             #navigation #block-system-main-menu .content > ul > li > a.belle-river:hover, #navigation #block-system-main-menu .content > ul > li > a.belle-river:after {
-              background-image: url(../images/icon-br-orange-small.png); }
+              background-image: url(../images/icon-br-blue-small.png); }
           #navigation #block-system-main-menu .content > ul > li > a.pelee-island {
-            background-image: url(../images/icon-pi-white-small.png); }
+            background-image: url(../images/icon-pi-white-small.png);
+            background-position: center 14px; }
             #navigation #block-system-main-menu .content > ul > li > a.pelee-island:hover, #navigation #block-system-main-menu .content > ul > li > a.pelee-island:after {
-              background-image: url(../images/icon-pi-orange-small.png); }
+              background-image: url(../images/icon-pi-blue-small.png); }
           #navigation #block-system-main-menu .content > ul > li > a:after {
             content: "";
             display: block;
@@ -155,7 +149,8 @@ tbody {
         #navigation #block-system-main-menu .content > ul > li > ul {
           position: absolute;
           left: 0;
-          border: 3px solid #233d81;
+          border: 3px solid #152b5c;
+          border-top: 0;
           background: white;
           list-style: none;
           margin: 0;
@@ -174,12 +169,10 @@ tbody {
               text-decoration: none;
               line-height: 100%;
               padding: 8px 28px 7px 6px;
-              text-align: left;
-              text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2); }
+              text-align: left; }
               #navigation #block-system-main-menu .content > ul > li > ul > li > a:hover {
                 background: #152b5c;
-                color: white;
-                text-shadow: 1px 1px 0 black; }
+                color: white; }
             #navigation #block-system-main-menu .content > ul > li > ul > li:after {
               content: "";
               display: block;
@@ -287,15 +280,7 @@ tbody {
     text-align: right; }
 
 #header {
-  clear: both;
-  padding-top: 5px;
-  padding-bottom: 10px; }
-  #header > div {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto; }
-    #header > div > div {
-      padding: 0 20px; }
+  clear: both; }
 
 .region-content ul, .region-content ol {
   margin: 0 0 0.8em 20px; }
@@ -313,8 +298,7 @@ tbody {
 
 #footer {
   clear: both;
-  border-top: 5px solid #233d81;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  border-top: 5px solid #2aa1d9;
   color: white;
   text-align: center;
   background: #152b5c;
@@ -323,12 +307,12 @@ tbody {
   #footer > div {
     border-top: 5px solid white; }
     #footer > div > div {
-      background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, #152b5c 100%);
-      background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, #152b5c 100%);
-      background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, #152b5c 100%);
-      background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, #152b5c));
-      background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, #152b5c 100%);
-      background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, #152b5c 100%);
+      background-image: -ms-radial-gradient(center top, ellipse farthest-side, #233d81 0%, #152b5c 100%);
+      background-image: -moz-radial-gradient(center top, ellipse farthest-side, #233d81 0%, #152b5c 100%);
+      background-image: -o-radial-gradient(center top, ellipse farthest-side, #233d81 0%, #152b5c 100%);
+      background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #233d81), color-stop(1, #152b5c));
+      background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #233d81 0%, #152b5c 100%);
+      background-image: radial-gradient(ellipse farthest-side at center top, #233d81 0%, #152b5c 100%);
       min-height: 205px; }
       #footer > div > div > div {
         padding-bottom: 30px; }
@@ -340,26 +324,32 @@ tbody {
   #footer #block-menu-menu-footer-menu .content ul {
     list-style: none;
     margin: 0;
-    padding: 26px 0 75px 0;
+    padding: 30px 0 35px 0;
     text-align: center;
     font-size: 0.8em;
     line-height: 100%;
-    background: url(../images/bg-footer.png) no-repeat center 70%; }
+    margin: 0 30px 35px 30px;
+    border-bottom: 1px solid #455d85; }
     #footer #block-menu-menu-footer-menu .content ul li {
       list-style: none;
       margin: 10px 0;
       padding: 0;
       display: inline-block;
       padding: 0 14px;
-      border-right: 2px solid white; }
+      border-right: 1px solid white; }
       #footer #block-menu-menu-footer-menu .content ul li.last {
         border-right: 0; }
       #footer #block-menu-menu-footer-menu .content ul li a {
-        display: block;
-        font-weight: bold; }
+        display: block; }
   #footer #copyright,
   #footer #site-by-cci {
-    font-size: 0.7em; }
+    font-size: 0.7em;
+    opacity: 0.5;
+    display: inline-block; }
+  #footer #copyright {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid white; }
 
 #main-wrapper {
   padding: 25px 0;
@@ -377,18 +367,15 @@ tbody {
     max-width: 100%; }
 
 #first-widgets, body.node-type-location #main-wrapper {
-  border: solid #2aa1d9;
-  border-width: 5px 0;
+  border-top: 5px solid #2aa1d9;
   color: white;
   padding: 0; }
   #first-widgets > div, body.node-type-location #main-wrapper > div {
-    border: solid white;
-    border-width: 5px 0;
     width: auto;
     max-width: none;
     margin: 0; }
     #first-widgets > div > div, body.node-type-location #main-wrapper > div > div {
-      background: #152b5c;
+      background: #233d81;
       position: relative;
       padding: 0; }
       #first-widgets > div > div > div, body.node-type-location #main-wrapper > div > div > div {
@@ -402,40 +389,52 @@ tbody {
           z-index: 1; }
 
 #second-widgets {
-  max-width: 980px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 30px 0; }
-  #second-widgets > div {
-    padding: 0 20px; }
-  #second-widgets #block-block-2 {
-    float: left;
-    width: 50%; }
-    #second-widgets #block-block-2 .content img {
+  clear: both; }
+
+.block--locations-map {
+  float: left;
+  width: 50%; }
+  .block--locations-map .map {
+    position: relative; }
+    .block--locations-map .map img {
       display: block;
-      border: 1px solid #ccc;
-      border-radius: 2px;
-      box-shadow: 0 13px 10px -10px rgba(0, 0, 0, 0.5);
-      height: auto !important;
-      width: 100% !important; }
-    #second-widgets #block-block-2 .content p {
-      color: #152b5c;
-      font-weight: bold;
-      padding-bottom: 10px;
-      font-size: 0.925em; }
-  #second-widgets .block.view-news-container {
-    width: 50%;
-    float: left;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
-    #second-widgets .block.view-news-container > div {
-      padding: 20px 0 0 15px;
-      position: relative; }
-      #second-widgets .block.view-news-container > div > h2 {
-        text-align: center;
-        padding-bottom: 15px;
-        background: url(../images/news-line.png) repeat-x left bottom;
-        text-transform: uppercase;
-        color: #152b5c; }
+      width: 100%;
+      height: auto; }
+    .block--locations-map .map a {
+      font-size: 0;
+      position: absolute;
+      width: 16.5%;
+      height: 15%; }
+    .block--locations-map .map .sl {
+      left: 47%;
+      top: 15%; }
+    .block--locations-map .map .ck {
+      left: 54.5%;
+      top: 42%; }
+    .block--locations-map .map .br {
+      left: 40.7%;
+      top: 53%;
+      width: 12%; }
+    .block--locations-map .map .we {
+      left: 24%;
+      top: 50%; }
+    .block--locations-map .map .pi {
+      left: 36%;
+      top: 77.5%; }
+
+.block--news-teasers {
+  width: 50%;
+  float: left;
+  max-width: 520px;
+  position: relative; }
+  .block--news-teasers > div {
+    padding: 30px; }
+  .block--news-teasers h2 {
+    text-align: left;
+    font-size: 28px;
+    padding-bottom: 15px;
+    background: url(../images/news-line.png) repeat-x left bottom;
+    color: #152b5c; }
 
 #sidebar #block-views-news-block > div > h2,
 #sidebar #block-views-news-block-belle-river > div > h2,
@@ -451,24 +450,19 @@ ul.locations-dropdown {
   display: inline-block;
   list-style: none;
   width: 200px;
-  border-radius: 10px;
-  background: #f48800;
+  border-radius: 6px;
+  background: #304888;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   overflow: hidden;
   position: absolute;
   z-index: 99;
   left: 50%;
   margin-left: -100px;
   max-height: 40px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  background: -moz-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffa700), color-stop(100%, #e96900));
-  background: -webkit-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: -o-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: -ms-linear-gradient(top, #ffa700 0%, #e96900 100%);
-  background: linear-gradient(to bottom, #ffa700 0%, #e96900 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa700', endColorstr='#e96900',GradientType=0 ); }
+  box-sizing: border-box;
+  border: 1px solid white;
+  text-shadow: none; }
   ul.locations-dropdown.open {
     z-index: 999; }
   ul.locations-dropdown li {
@@ -480,9 +474,9 @@ ul.locations-dropdown {
       display: block;
       position: absolute;
       top: -1px;
-      left: 3px;
-      right: 3px;
-      border-bottom: 1px solid #e96900; }
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid white; }
     ul.locations-dropdown li:first-child {
       margin-top: 0;
       margin-right: 36px;
@@ -493,15 +487,13 @@ ul.locations-dropdown {
     display: block;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    line-height: 100%;
-    padding: 13px 0 13px 36px;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+    line-height: 1;
+    padding: 11px 0 11px 36px;
     background-repeat: no-repeat;
     background-position: 10px center; }
     ul.locations-dropdown li a:hover, ul.locations-dropdown li a:focus {
       background-color: white;
-      color: #e96900;
+      color: #233d81;
       text-shadow: none;
       outline: none; }
     ul.locations-dropdown li a:before {
@@ -509,12 +501,14 @@ ul.locations-dropdown {
       display: block;
       position: absolute;
       left: -99999px; }
+  ul.locations-dropdown .select-city a {
+    padding-left: 18px; }
   ul.locations-dropdown a.open-btn {
     font-size: 0;
     color: transparent;
     display: block;
     width: 36px;
-    height: 40px;
+    height: 38px;
     background: url(../images/arrow-down.png) no-repeat center center;
     position: absolute;
     top: 0;
@@ -530,7 +524,8 @@ ul.locations-dropdown {
       left: -99999px; }
   ul.locations-dropdown.open a.open-btn,
   ul.locations-dropdown a.open-btn:after {
-    background-image: url(../images/arrow-up.png); }
+    background-image: url(../images/arrow-up.png);
+    background-color: transparent; }
     ul.locations-dropdown.open a.open-btn:hover, ul.locations-dropdown.open a.open-btn:focus, ul.locations-dropdown.open a.open-btn:before,
     ul.locations-dropdown a.open-btn:after:hover,
     ul.locations-dropdown a.open-btn:after:focus,
@@ -539,23 +534,23 @@ ul.locations-dropdown {
   ul.locations-dropdown li.belle-river a {
     background-image: url(../images/icon-br-m.png); }
     ul.locations-dropdown li.belle-river a:hover, ul.locations-dropdown li.belle-river a:focus, ul.locations-dropdown li.belle-river a:before {
-      background-image: url(../images/icon-br-m-hover.png); }
+      background-image: url(../images/icon-br-m-blue.png); }
   ul.locations-dropdown li.chatham-kent a {
     background-image: url(../images/icon-ck-m.png); }
     ul.locations-dropdown li.chatham-kent a:hover, ul.locations-dropdown li.chatham-kent a:focus, ul.locations-dropdown li.chatham-kent a:before {
-      background-image: url(../images/icon-ck-m-hover.png); }
+      background-image: url(../images/icon-ck-m-blue.png); }
   ul.locations-dropdown li.pelee-island a {
     background-image: url(../images/icon-pi-m.png); }
     ul.locations-dropdown li.pelee-island a:hover, ul.locations-dropdown li.pelee-island a:focus, ul.locations-dropdown li.pelee-island a:before {
-      background-image: url(../images/icon-pi-m-hover.png); }
+      background-image: url(../images/icon-pi-m-blue.png); }
   ul.locations-dropdown li.sarnia-lambton a {
     background-image: url(../images/icon-sl-m.png); }
     ul.locations-dropdown li.sarnia-lambton a:hover, ul.locations-dropdown li.sarnia-lambton a:focus, ul.locations-dropdown li.sarnia-lambton a:before {
-      background-image: url(../images/icon-sl-m-hover.png); }
+      background-image: url(../images/icon-sl-m-blue.png); }
   ul.locations-dropdown li.windsor-essex a {
     background-image: url(../images/icon-we-m.png); }
     ul.locations-dropdown li.windsor-essex a:hover, ul.locations-dropdown li.windsor-essex a:focus, ul.locations-dropdown li.windsor-essex a:before {
-      background-image: url(../images/icon-we-m-hover.png); }
+      background-image: url(../images/icon-we-m-blue.png); }
 
 div.locations-dropdown-placeholder {
   height: 47px; }
@@ -596,39 +591,20 @@ body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar
   ul.locations-dropdown.small li:first-child, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-donate ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-programs ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-events ul.locations-dropdown li:first-child, #sidebar #block-block-3 ul.locations-dropdown li:first-child, #sidebar #block-block-4 ul.locations-dropdown li:first-child, #sidebar #block-block-6 ul.locations-dropdown li:first-child, #sidebar #block-block-7 ul.locations-dropdown li:first-child, #sidebar #block-block-8 ul.locations-dropdown li:first-child, #sidebar #block-block-9 ul.locations-dropdown li:first-child, #sidebar #block-block-10 ul.locations-dropdown li:first-child, #sidebar #block-block-11 ul.locations-dropdown li:first-child, #sidebar #block-block-12 ul.locations-dropdown li:first-child, #sidebar #block-block-13 ul.locations-dropdown li:first-child, #sidebar #block-block-14 ul.locations-dropdown li:first-child, #sidebar #block-block-15 ul.locations-dropdown li:first-child, #sidebar #block-block-16 ul.locations-dropdown li:first-child, #sidebar #block-block-22 ul.locations-dropdown li:first-child, #sidebar #block-block-23 ul.locations-dropdown li:first-child, #sidebar #block-block-24 ul.locations-dropdown li:first-child, #sidebar #block-block-25 ul.locations-dropdown li:first-child, #sidebar #block-block-27 ul.locations-dropdown li:first-child, #sidebar #block-block-28 ul.locations-dropdown li:first-child, #sidebar #block-block-29 ul.locations-dropdown li:first-child, #sidebar #block-block-30 ul.locations-dropdown li:first-child, #sidebar #block-block-31 ul.locations-dropdown li:first-child {
     margin-right: 20px; }
   ul.locations-dropdown.small li a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li a, body.node-type-location .field-name-field-donate ul.locations-dropdown li a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li a, body.node-type-location .field-name-field-programs ul.locations-dropdown li a, body.node-type-location .field-name-field-events ul.locations-dropdown li a, #sidebar #block-block-3 ul.locations-dropdown li a, #sidebar #block-block-4 ul.locations-dropdown li a, #sidebar #block-block-6 ul.locations-dropdown li a, #sidebar #block-block-7 ul.locations-dropdown li a, #sidebar #block-block-8 ul.locations-dropdown li a, #sidebar #block-block-9 ul.locations-dropdown li a, #sidebar #block-block-10 ul.locations-dropdown li a, #sidebar #block-block-11 ul.locations-dropdown li a, #sidebar #block-block-12 ul.locations-dropdown li a, #sidebar #block-block-13 ul.locations-dropdown li a, #sidebar #block-block-14 ul.locations-dropdown li a, #sidebar #block-block-15 ul.locations-dropdown li a, #sidebar #block-block-16 ul.locations-dropdown li a, #sidebar #block-block-22 ul.locations-dropdown li a, #sidebar #block-block-23 ul.locations-dropdown li a, #sidebar #block-block-24 ul.locations-dropdown li a, #sidebar #block-block-25 ul.locations-dropdown li a, #sidebar #block-block-27 ul.locations-dropdown li a, #sidebar #block-block-28 ul.locations-dropdown li a, #sidebar #block-block-29 ul.locations-dropdown li a, #sidebar #block-block-30 ul.locations-dropdown li a, #sidebar #block-block-31 ul.locations-dropdown li a {
-    padding: 8px 0 8px 25px;
-    background-position: 6px center; }
+    padding: 5px 0 6px 25px;
+    background-position: 6px center;
+    background-size: 14px auto; }
   ul.locations-dropdown.small a.open-btn, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn, #sidebar #block-block-3 ul.locations-dropdown a.open-btn, #sidebar #block-block-4 ul.locations-dropdown a.open-btn, #sidebar #block-block-6 ul.locations-dropdown a.open-btn, #sidebar #block-block-7 ul.locations-dropdown a.open-btn, #sidebar #block-block-8 ul.locations-dropdown a.open-btn, #sidebar #block-block-9 ul.locations-dropdown a.open-btn, #sidebar #block-block-10 ul.locations-dropdown a.open-btn, #sidebar #block-block-11 ul.locations-dropdown a.open-btn, #sidebar #block-block-12 ul.locations-dropdown a.open-btn, #sidebar #block-block-13 ul.locations-dropdown a.open-btn, #sidebar #block-block-14 ul.locations-dropdown a.open-btn, #sidebar #block-block-15 ul.locations-dropdown a.open-btn, #sidebar #block-block-16 ul.locations-dropdown a.open-btn, #sidebar #block-block-22 ul.locations-dropdown a.open-btn, #sidebar #block-block-23 ul.locations-dropdown a.open-btn, #sidebar #block-block-24 ul.locations-dropdown a.open-btn, #sidebar #block-block-25 ul.locations-dropdown a.open-btn, #sidebar #block-block-27 ul.locations-dropdown a.open-btn, #sidebar #block-block-28 ul.locations-dropdown a.open-btn, #sidebar #block-block-29 ul.locations-dropdown a.open-btn, #sidebar #block-block-30 ul.locations-dropdown a.open-btn, #sidebar #block-block-31 ul.locations-dropdown a.open-btn {
     width: 20px;
-    height: 27px;
-    background-image: url(../images/arrow-down-s.png);
-    background-position: 5px center; }
+    height: 24px;
+    background-image: url(../images/arrow-down.png);
+    background-position: 5px center;
+    background-size: 9px auto; }
     ul.locations-dropdown.small a.open-btn:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:hover, ul.locations-dropdown.small a.open-btn:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn:before, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:before, ul.locations-dropdown.small a.open-btn:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:focus {
-      background-image: url(../images/arrow-down-s-hover.png); }
+      background-image: url(../images/arrow-down-hover.png); }
   ul.locations-dropdown.small.open a.open-btn, body.node-type-location .field-name-field-get-involved ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-donate ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-contact-us ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-sponsors ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-programs ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-events ul.open.locations-dropdown a.open-btn, #sidebar #block-block-3 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-4 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-6 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-7 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-8 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-9 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-10 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-11 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-12 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-13 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-14 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-15 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-16 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-22 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-23 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-24 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-25 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-27 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-28 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-29 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-30 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-31 ul.open.locations-dropdown a.open-btn {
-    background-image: url(../images/arrow-up-s.png); }
-    ul.locations-dropdown.small.open a.open-btn:hover, body.node-type-location .field-name-field-get-involved ul.open.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-donate ul.open.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-contact-us ul.open.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-sponsors ul.open.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-programs ul.open.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-events ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-3 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-4 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-6 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-7 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-8 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-9 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-10 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-11 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-12 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-13 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-14 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-15 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-16 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-22 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-23 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-24 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-25 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-27 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-28 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-29 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-30 ul.open.locations-dropdown a.open-btn:hover, #sidebar #block-block-31 ul.open.locations-dropdown a.open-btn:hover, ul.locations-dropdown.small.open a.open-btn:focus, body.node-type-location .field-name-field-get-involved ul.open.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-donate ul.open.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-contact-us ul.open.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-sponsors ul.open.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-programs ul.open.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-events ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-3 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-4 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-6 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-7 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-8 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-9 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-10 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-11 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-12 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-13 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-14 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-15 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-16 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-22 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-23 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-24 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-25 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-27 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-28 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-29 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-30 ul.open.locations-dropdown a.open-btn:focus, #sidebar #block-block-31 ul.open.locations-dropdown a.open-btn:focus, ul.locations-dropdown.small.open a.open-btn:before, body.node-type-location .field-name-field-get-involved ul.open.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-donate ul.open.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-contact-us ul.open.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-sponsors ul.open.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-programs ul.open.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-events ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-3 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-4 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-6 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-7 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-8 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-9 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-10 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-11 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-12 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-13 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-14 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-15 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-16 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-22 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-23 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-24 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-25 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-27 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-28 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-29 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-30 ul.open.locations-dropdown a.open-btn:before, #sidebar #block-block-31 ul.open.locations-dropdown a.open-btn:before {
-      background-image: url(../images/arrow-up-s-hover.png); }
-  ul.locations-dropdown.small li.belle-river a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.belle-river a, body.node-type-location .field-name-field-donate ul.locations-dropdown li.belle-river a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.belle-river a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.belle-river a, body.node-type-location .field-name-field-programs ul.locations-dropdown li.belle-river a, body.node-type-location .field-name-field-events ul.locations-dropdown li.belle-river a, #sidebar #block-block-3 ul.locations-dropdown li.belle-river a, #sidebar #block-block-4 ul.locations-dropdown li.belle-river a, #sidebar #block-block-6 ul.locations-dropdown li.belle-river a, #sidebar #block-block-7 ul.locations-dropdown li.belle-river a, #sidebar #block-block-8 ul.locations-dropdown li.belle-river a, #sidebar #block-block-9 ul.locations-dropdown li.belle-river a, #sidebar #block-block-10 ul.locations-dropdown li.belle-river a, #sidebar #block-block-11 ul.locations-dropdown li.belle-river a, #sidebar #block-block-12 ul.locations-dropdown li.belle-river a, #sidebar #block-block-13 ul.locations-dropdown li.belle-river a, #sidebar #block-block-14 ul.locations-dropdown li.belle-river a, #sidebar #block-block-15 ul.locations-dropdown li.belle-river a, #sidebar #block-block-16 ul.locations-dropdown li.belle-river a, #sidebar #block-block-22 ul.locations-dropdown li.belle-river a, #sidebar #block-block-23 ul.locations-dropdown li.belle-river a, #sidebar #block-block-24 ul.locations-dropdown li.belle-river a, #sidebar #block-block-25 ul.locations-dropdown li.belle-river a, #sidebar #block-block-27 ul.locations-dropdown li.belle-river a, #sidebar #block-block-28 ul.locations-dropdown li.belle-river a, #sidebar #block-block-29 ul.locations-dropdown li.belle-river a, #sidebar #block-block-30 ul.locations-dropdown li.belle-river a, #sidebar #block-block-31 ul.locations-dropdown li.belle-river a {
-    background-image: url(../images/icon-br-s.png); }
-    ul.locations-dropdown.small li.belle-river a:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.belle-river a:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown li.belle-river a:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.belle-river a:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.belle-river a:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown li.belle-river a:hover, body.node-type-location .field-name-field-events ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-3 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-4 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-6 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-7 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-8 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-9 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-10 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-11 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-12 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-13 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-14 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-15 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-16 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-22 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-23 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-24 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-25 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-27 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-28 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-29 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-30 ul.locations-dropdown li.belle-river a:hover, #sidebar #block-block-31 ul.locations-dropdown li.belle-river a:hover, ul.locations-dropdown.small li.belle-river a:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.belle-river a:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown li.belle-river a:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.belle-river a:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.belle-river a:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown li.belle-river a:focus, body.node-type-location .field-name-field-events ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-3 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-4 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-6 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-7 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-8 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-9 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-10 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-11 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-12 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-13 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-14 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-15 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-16 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-22 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-23 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-24 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-25 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-27 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-28 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-29 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-30 ul.locations-dropdown li.belle-river a:focus, #sidebar #block-block-31 ul.locations-dropdown li.belle-river a:focus, ul.locations-dropdown.small li.belle-river a:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.belle-river a:before, body.node-type-location .field-name-field-donate ul.locations-dropdown li.belle-river a:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.belle-river a:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.belle-river a:before, body.node-type-location .field-name-field-programs ul.locations-dropdown li.belle-river a:before, body.node-type-location .field-name-field-events ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-3 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-4 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-6 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-7 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-8 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-9 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-10 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-11 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-12 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-13 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-14 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-15 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-16 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-22 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-23 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-24 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-25 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-27 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-28 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-29 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-30 ul.locations-dropdown li.belle-river a:before, #sidebar #block-block-31 ul.locations-dropdown li.belle-river a:before {
-      background-image: url(../images/icon-br-s-hover.png); }
-  ul.locations-dropdown.small li.chatham-kent a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.chatham-kent a, body.node-type-location .field-name-field-donate ul.locations-dropdown li.chatham-kent a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.chatham-kent a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.chatham-kent a, body.node-type-location .field-name-field-programs ul.locations-dropdown li.chatham-kent a, body.node-type-location .field-name-field-events ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-3 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-4 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-6 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-7 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-8 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-9 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-10 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-11 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-12 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-13 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-14 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-15 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-16 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-22 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-23 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-24 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-25 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-27 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-28 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-29 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-30 ul.locations-dropdown li.chatham-kent a, #sidebar #block-block-31 ul.locations-dropdown li.chatham-kent a {
-    background-image: url(../images/icon-ck-s.png); }
-    ul.locations-dropdown.small li.chatham-kent a:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.chatham-kent a:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown li.chatham-kent a:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.chatham-kent a:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.chatham-kent a:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown li.chatham-kent a:hover, body.node-type-location .field-name-field-events ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-3 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-4 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-6 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-7 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-8 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-9 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-10 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-11 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-12 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-13 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-14 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-15 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-16 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-22 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-23 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-24 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-25 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-27 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-28 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-29 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-30 ul.locations-dropdown li.chatham-kent a:hover, #sidebar #block-block-31 ul.locations-dropdown li.chatham-kent a:hover, ul.locations-dropdown.small li.chatham-kent a:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.chatham-kent a:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown li.chatham-kent a:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.chatham-kent a:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.chatham-kent a:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown li.chatham-kent a:focus, body.node-type-location .field-name-field-events ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-3 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-4 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-6 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-7 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-8 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-9 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-10 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-11 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-12 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-13 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-14 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-15 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-16 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-22 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-23 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-24 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-25 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-27 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-28 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-29 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-30 ul.locations-dropdown li.chatham-kent a:focus, #sidebar #block-block-31 ul.locations-dropdown li.chatham-kent a:focus, ul.locations-dropdown.small li.chatham-kent a:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.chatham-kent a:before, body.node-type-location .field-name-field-donate ul.locations-dropdown li.chatham-kent a:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.chatham-kent a:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.chatham-kent a:before, body.node-type-location .field-name-field-programs ul.locations-dropdown li.chatham-kent a:before, body.node-type-location .field-name-field-events ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-3 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-4 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-6 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-7 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-8 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-9 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-10 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-11 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-12 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-13 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-14 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-15 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-16 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-22 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-23 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-24 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-25 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-27 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-28 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-29 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-30 ul.locations-dropdown li.chatham-kent a:before, #sidebar #block-block-31 ul.locations-dropdown li.chatham-kent a:before {
-      background-image: url(../images/icon-ck-s-hover.png); }
-  ul.locations-dropdown.small li.pelee-island a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.pelee-island a, body.node-type-location .field-name-field-donate ul.locations-dropdown li.pelee-island a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.pelee-island a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.pelee-island a, body.node-type-location .field-name-field-programs ul.locations-dropdown li.pelee-island a, body.node-type-location .field-name-field-events ul.locations-dropdown li.pelee-island a, #sidebar #block-block-3 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-4 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-6 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-7 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-8 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-9 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-10 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-11 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-12 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-13 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-14 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-15 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-16 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-22 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-23 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-24 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-25 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-27 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-28 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-29 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-30 ul.locations-dropdown li.pelee-island a, #sidebar #block-block-31 ul.locations-dropdown li.pelee-island a {
-    background-image: url(../images/icon-pi-s.png); }
-    ul.locations-dropdown.small li.pelee-island a:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.pelee-island a:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown li.pelee-island a:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.pelee-island a:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.pelee-island a:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown li.pelee-island a:hover, body.node-type-location .field-name-field-events ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-3 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-4 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-6 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-7 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-8 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-9 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-10 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-11 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-12 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-13 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-14 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-15 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-16 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-22 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-23 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-24 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-25 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-27 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-28 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-29 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-30 ul.locations-dropdown li.pelee-island a:hover, #sidebar #block-block-31 ul.locations-dropdown li.pelee-island a:hover, ul.locations-dropdown.small li.pelee-island a:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.pelee-island a:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown li.pelee-island a:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.pelee-island a:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.pelee-island a:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown li.pelee-island a:focus, body.node-type-location .field-name-field-events ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-3 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-4 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-6 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-7 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-8 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-9 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-10 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-11 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-12 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-13 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-14 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-15 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-16 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-22 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-23 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-24 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-25 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-27 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-28 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-29 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-30 ul.locations-dropdown li.pelee-island a:focus, #sidebar #block-block-31 ul.locations-dropdown li.pelee-island a:focus, ul.locations-dropdown.small li.pelee-island a:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.pelee-island a:before, body.node-type-location .field-name-field-donate ul.locations-dropdown li.pelee-island a:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.pelee-island a:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.pelee-island a:before, body.node-type-location .field-name-field-programs ul.locations-dropdown li.pelee-island a:before, body.node-type-location .field-name-field-events ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-3 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-4 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-6 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-7 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-8 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-9 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-10 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-11 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-12 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-13 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-14 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-15 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-16 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-22 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-23 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-24 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-25 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-27 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-28 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-29 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-30 ul.locations-dropdown li.pelee-island a:before, #sidebar #block-block-31 ul.locations-dropdown li.pelee-island a:before {
-      background-image: url(../images/icon-pi-s-hover.png); }
-  ul.locations-dropdown.small li.sarnia-lambton a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.sarnia-lambton a, body.node-type-location .field-name-field-donate ul.locations-dropdown li.sarnia-lambton a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.sarnia-lambton a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.sarnia-lambton a, body.node-type-location .field-name-field-programs ul.locations-dropdown li.sarnia-lambton a, body.node-type-location .field-name-field-events ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-3 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-4 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-6 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-7 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-8 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-9 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-10 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-11 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-12 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-13 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-14 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-15 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-16 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-22 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-23 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-24 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-25 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-27 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-28 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-29 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-30 ul.locations-dropdown li.sarnia-lambton a, #sidebar #block-block-31 ul.locations-dropdown li.sarnia-lambton a {
-    background-image: url(../images/icon-sl-s.png); }
-    ul.locations-dropdown.small li.sarnia-lambton a:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.sarnia-lambton a:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown li.sarnia-lambton a:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.sarnia-lambton a:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.sarnia-lambton a:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown li.sarnia-lambton a:hover, body.node-type-location .field-name-field-events ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-3 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-4 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-6 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-7 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-8 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-9 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-10 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-11 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-12 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-13 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-14 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-15 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-16 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-22 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-23 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-24 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-25 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-27 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-28 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-29 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-30 ul.locations-dropdown li.sarnia-lambton a:hover, #sidebar #block-block-31 ul.locations-dropdown li.sarnia-lambton a:hover, ul.locations-dropdown.small li.sarnia-lambton a:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.sarnia-lambton a:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown li.sarnia-lambton a:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.sarnia-lambton a:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.sarnia-lambton a:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown li.sarnia-lambton a:focus, body.node-type-location .field-name-field-events ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-3 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-4 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-6 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-7 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-8 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-9 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-10 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-11 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-12 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-13 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-14 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-15 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-16 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-22 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-23 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-24 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-25 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-27 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-28 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-29 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-30 ul.locations-dropdown li.sarnia-lambton a:focus, #sidebar #block-block-31 ul.locations-dropdown li.sarnia-lambton a:focus, ul.locations-dropdown.small li.sarnia-lambton a:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.sarnia-lambton a:before, body.node-type-location .field-name-field-donate ul.locations-dropdown li.sarnia-lambton a:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.sarnia-lambton a:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.sarnia-lambton a:before, body.node-type-location .field-name-field-programs ul.locations-dropdown li.sarnia-lambton a:before, body.node-type-location .field-name-field-events ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-3 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-4 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-6 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-7 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-8 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-9 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-10 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-11 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-12 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-13 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-14 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-15 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-16 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-22 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-23 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-24 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-25 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-27 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-28 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-29 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-30 ul.locations-dropdown li.sarnia-lambton a:before, #sidebar #block-block-31 ul.locations-dropdown li.sarnia-lambton a:before {
-      background-image: url(../images/icon-sl-s-hover.png); }
-  ul.locations-dropdown.small li.windsor-essex a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.windsor-essex a, body.node-type-location .field-name-field-donate ul.locations-dropdown li.windsor-essex a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.windsor-essex a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.windsor-essex a, body.node-type-location .field-name-field-programs ul.locations-dropdown li.windsor-essex a, body.node-type-location .field-name-field-events ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-3 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-4 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-6 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-7 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-8 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-9 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-10 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-11 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-12 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-13 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-14 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-15 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-16 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-22 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-23 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-24 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-25 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-27 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-28 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-29 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-30 ul.locations-dropdown li.windsor-essex a, #sidebar #block-block-31 ul.locations-dropdown li.windsor-essex a {
-    background-image: url(../images/icon-we-s.png); }
-    ul.locations-dropdown.small li.windsor-essex a:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.windsor-essex a:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown li.windsor-essex a:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.windsor-essex a:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.windsor-essex a:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown li.windsor-essex a:hover, body.node-type-location .field-name-field-events ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-3 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-4 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-6 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-7 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-8 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-9 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-10 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-11 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-12 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-13 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-14 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-15 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-16 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-22 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-23 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-24 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-25 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-27 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-28 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-29 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-30 ul.locations-dropdown li.windsor-essex a:hover, #sidebar #block-block-31 ul.locations-dropdown li.windsor-essex a:hover, ul.locations-dropdown.small li.windsor-essex a:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.windsor-essex a:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown li.windsor-essex a:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.windsor-essex a:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.windsor-essex a:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown li.windsor-essex a:focus, body.node-type-location .field-name-field-events ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-3 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-4 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-6 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-7 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-8 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-9 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-10 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-11 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-12 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-13 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-14 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-15 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-16 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-22 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-23 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-24 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-25 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-27 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-28 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-29 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-30 ul.locations-dropdown li.windsor-essex a:focus, #sidebar #block-block-31 ul.locations-dropdown li.windsor-essex a:focus, ul.locations-dropdown.small li.windsor-essex a:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li.windsor-essex a:before, body.node-type-location .field-name-field-donate ul.locations-dropdown li.windsor-essex a:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li.windsor-essex a:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li.windsor-essex a:before, body.node-type-location .field-name-field-programs ul.locations-dropdown li.windsor-essex a:before, body.node-type-location .field-name-field-events ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-3 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-4 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-6 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-7 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-8 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-9 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-10 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-11 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-12 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-13 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-14 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-15 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-16 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-22 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-23 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-24 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-25 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-27 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-28 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-29 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-30 ul.locations-dropdown li.windsor-essex a:before, #sidebar #block-block-31 ul.locations-dropdown li.windsor-essex a:before {
-      background-image: url(../images/icon-we-s-hover.png); }
+    background-image: url(../images/arrow-up.png);
+    background-color: inherit; }
 
 body.node-type-location #first-widgets, body.node-type-location #main-wrapper {
   display: none; }
@@ -670,48 +646,15 @@ body.node-type-location #page-title:before {
   padding: 35px 0 35px 24px;
   background-repeat: no-repeat;
   background-position: left center;
-  font-size: 2.6em;
-  text-transform: uppercase;
+  font-size: 60px;
   line-height: 120%;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75); }
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  font-weight: normal; }
 
 #block-block-1 .content {
   padding-left: 42px;
   background-repeat: no-repeat;
   background-position: left center; }
-
-body #page-title h1 {
-  background-image: url(../images/icon-von-l.png); }
-
-body.chatham-kent #page-title h1 {
-  background-image: url(../images/icon-ck-l.png); }
-
-body.chatham-kent #block-block-1 .content {
-  background-image: url(../images/icon-ck-orange-small.png); }
-
-body.sarnia-lambton #page-title h1 {
-  background-image: url(../images/icon-sl-l.png); }
-
-body.sarnia-lambton #block-block-1 .content {
-  background-image: url(../images/icon-sl-orange-small.png); }
-
-body.windsor-essex #page-title h1 {
-  background-image: url(../images/icon-we-l.png); }
-
-body.windsor-essex #block-block-1 .content {
-  background-image: url(../images/icon-we-orange-small.png); }
-
-body.belle-river #page-title h1 {
-  background-image: url(../images/icon-br-l.png); }
-
-body.belle-river #block-block-1 .content {
-  background-image: url(../images/icon-br-orange-small.png); }
-
-body.pelee-island #page-title h1 {
-  background-image: url(../images/icon-pi-l.png); }
-
-body.pelee-island #block-block-1 .content {
-  background-image: url(../images/icon-pi-orange-small.png); }
 
 body.location-inner #main-wrapper > div > div > div {
   position: relative; }
@@ -719,31 +662,6 @@ body.location-inner #main-wrapper > div > div > div {
     position: relative;
     z-index: 1;
     min-height: 300px; }
-  body.location-inner #main-wrapper > div > div > div:after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -120px;
-    left: -170px;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    width: 341px;
-    height: 341px; }
-
-body.location-inner.chatham-kent #main-wrapper > div > div > div:after {
-  background-image: url(../images/icon-ck-bg-semi.png); }
-
-body.location-inner.sarnia-lambton #main-wrapper > div > div > div:after {
-  background-image: url(../images/icon-sl-bg-semi.png); }
-
-body.location-inner.windsor-essex #main-wrapper > div > div > div:after {
-  background-image: url(../images/icon-we-bg-semi.png); }
-
-body.location-inner.belle-river #main-wrapper > div > div > div:after {
-  background-image: url(../images/icon-br-bg-semi.png); }
-
-body.location-inner.pelee-island #main-wrapper > div > div > div:after {
-  background-image: url(../images/icon-pi-bg-semi.png); }
 
 body.node-type-location .node {
   text-align: center; }
@@ -918,11 +836,9 @@ body.location-inner #content {
   float: left; }
 
 body.not-front #page-title {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   background: #152b5c;
   position: relative;
-  padding: 0;
-  border-top: 5px solid #233d81; }
+  padding: 0; }
   body.not-front #page-title:after {
     content: "";
     display: block;
@@ -940,21 +856,18 @@ body.not-front #page-title {
     background-image: radial-gradient(ellipse farthest-side at center bottom, #1B5186 0%, transparent 100%); }
   body.not-front #page-title > div {
     border-top: 5px solid white;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     position: relative; }
-    body.not-front #page-title > div > div {
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4); }
-      body.not-front #page-title > div > div > div {
-        max-width: 980px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 30px 0; }
-        body.not-front #page-title > div > div > div > div {
-          padding: 0 20px;
-          position: relative;
-          z-index: 1; }
-          body.not-front #page-title > div > div > div > div h1 {
-            color: white; }
+    body.not-front #page-title > div > div > div {
+      max-width: 980px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 0; }
+      body.not-front #page-title > div > div > div > div {
+        padding: 0 20px;
+        position: relative;
+        z-index: 1; }
+        body.not-front #page-title > div > div > div > div h1 {
+          color: white; }
 
 #block-block-26 {
   display: none; }
@@ -1199,7 +1112,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   width: 30%;
   float: left;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 13px;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
   position: relative; }
   body.front #first-widgets .block#block-block-4, body.front body.node-type-location #main-wrapper .block#block-block-4, body.node-type-location body.front #main-wrapper .block#block-block-4 {
@@ -1207,7 +1120,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2 {
     font-size: 28px;
     margin-bottom: 5px;
-    padding-top: 170px;
+    padding-top: 135px;
     background-repeat: no-repeat;
     background-position: center top; }
   body.front #first-widgets .block#block-block-3 > div > h2, body.front body.node-type-location #main-wrapper .block#block-block-3 > div > h2, body.node-type-location body.front #main-wrapper .block#block-block-3 > div > h2 {
@@ -1216,6 +1129,46 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     background-image: url(../images/icon-donate-large.png); }
   body.front #first-widgets .block#block-block-5 > div > h2, body.front body.node-type-location #main-wrapper .block#block-block-5 > div > h2, body.node-type-location body.front #main-wrapper .block#block-block-5 > div > h2 {
     background-image: url(../images/icon-contact-us-large.png); }
+
+#block-views-header-slideshow-block-homepage {
+  padding: 5px 0; }
+
+.block--home-header {
+  position: relative;
+  margin: 5px 0; }
+  .block--home-header:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .block--home-header .image {
+    width: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .block--home-header .title {
+    width: 40%;
+    float: right;
+    background: url(../images/bg-pattern.png) repeat;
+    background-size: 850px 100%;
+    position: relative;
+    height: 560px; }
+    .block--home-header .title h1 {
+      color: white;
+      line-height: 1;
+      position: absolute;
+      left: 0;
+      padding-left: 15%;
+      width: 100px;
+      font-size: 72px;
+      top: 50%;
+      transform: translateY(-50%); }
+      @media (max-width: 800px) {
+        .block--home-header .title h1 {
+          font-size: 48px; } }
 
 .view-header-slideshow .view-content,
 .view-header-slideshow-location- .view-content {
@@ -1324,25 +1277,31 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     padding: 15px 0;
     min-height: 54px;
     background: url(../images/news-line.png) repeat-x left bottom; }
+    .view-news .views-row:after {
+      content: "";
+      display: block;
+      clear: both; }
     .view-news .views-row .views-field-created {
       float: left;
       color: white;
-      width: 55px;
-      height: 46px;
-      line-height: 100%;
-      padding-top: 13px;
-      padding-right: 3px;
+      width: 60px;
+      height: 44px;
+      line-height: 0.9;
+      padding-top: 16px;
       text-align: center;
-      background: url(../images/news-date-bg.png) no-repeat left top;
+      background: #2aa1d9;
       font-weight: bold;
-      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35); }
+      border-radius: 100%; }
       .view-news .views-row .views-field-created .month {
-        font-size: 0.80em;
-        text-transform: uppercase; }
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 400; }
+      .view-news .views-row .views-field-created .day {
+        font-size: 20px; }
     .view-news .views-row .views-field-title {
-      padding-left: 66px; }
+      padding-left: 80px; }
       .view-news .views-row .views-field-title a {
-        color: #233d81;
+        color: #2aa1d9;
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
@@ -1352,7 +1311,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     .view-news .views-row .views-field-body {
       line-height: 120%;
       font-size: 0.9em;
-      padding-left: 66px; }
+      padding-left: 80px; }
   .view-news .view-footer {
     text-align: center;
     padding-top: 15px; }
@@ -1401,18 +1360,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     padding-bottom: 10px;
     position: relative;
     padding: 10px 0; }
-    .view-program h2:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: -20px;
-      top: 50%;
-      margin-top: -21px;
-      width: 42px;
-      height: 42px;
-      z-index: -1;
-      background-repeat: no-repeat;
-      background-position: left center; }
   .view-program h3 {
     font-size: 1.25em; }
   .view-program .views-field-field-image {
@@ -1439,35 +1386,20 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       .view-program .views-field-body ul li {
         margin-bottom: 10px; }
 
-body.belle-river .view-program h2:before {
-  background-image: url(../images/icon-br-semi.png); }
-
 body.belle-river .view-program .views-field-body ul, body.belle-river .view-program .views-field-body ul li {
   list-style: url(../images/icon-br-s-hover.png); }
 
 body.belle-river .view-program .back.button {
   display: none; }
 
-body.chatham-kent .view-program h2:before {
-  background-image: url(../images/icon-ck-semi.png); }
-
 body.chatham-kent .view-program .views-field-body ul {
   list-style: url(../images/icon-ck-s-hover.png); }
-
-body.pelee-island .view-program h2:before {
-  background-image: url(../images/icon-pi-semi.png); }
 
 body.pelee-island .view-program .views-field-body ul {
   list-style: url(../images/icon-pi-s-hover.png); }
 
-body.sarnia-lambton .view-program h2:before {
-  background-image: url(../images/icon-sl-semi.png); }
-
 body.sarnia-lambton .view-program .views-field-body ul {
   list-style: url(../images/icon-sl-s-hover.png); }
-
-body.windsor-essex .view-program h2:before {
-  background-image: url(../images/icon-we-semi.png); }
 
 body.windsor-essex .view-program .views-field-body ul {
   list-style: url(../images/icon-we-s-hover.png); }
@@ -1599,31 +1531,6 @@ body.windsor-essex .view-program .views-field-body ul {
     .view-volunteer-opportunity .views-row .views-field-path {
       float: left;
       padding-left: 75px; }
-      .view-events .views-row .views-field-path a,
-      .view-event .views-row .views-field-path a,
-      .view-volunteer-opportunities .views-row .views-field-path a,
-      .view-volunteer-opportunity .views-row .views-field-path a {
-        text-align: left;
-        width: 145px;
-        position: relative; }
-        .view-events .views-row .views-field-path a:after,
-        .view-event .views-row .views-field-path a:after,
-        .view-volunteer-opportunities .views-row .views-field-path a:after,
-        .view-volunteer-opportunity .views-row .views-field-path a:after {
-          content: "";
-          display: block;
-          position: absolute;
-          right: 13px;
-          top: 50%;
-          margin-top: -5px;
-          width: 9px;
-          height: 9px;
-          background: url(../images/arrow-right-s.png) no-repeat; }
-        .view-events .views-row .views-field-path a:hover:after,
-        .view-event .views-row .views-field-path a:hover:after,
-        .view-volunteer-opportunities .views-row .views-field-path a:hover:after,
-        .view-volunteer-opportunity .views-row .views-field-path a:hover:after {
-          background-image: url(../images/arrow-right-s-hover.png); }
     .view-events .views-row .views-field-field-purchase-tickets-form,
     .view-event .views-row .views-field-field-purchase-tickets-form,
     .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form,
