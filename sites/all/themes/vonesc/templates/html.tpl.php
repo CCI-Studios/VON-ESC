@@ -54,8 +54,6 @@ $head_title = preg_replace('`\[[^\]]*\]\s*\|`','',$head_title);
   <meta property="og:site_name" content="VON Erie St. Clair | Community Health Care"/>
   <meta property="og:description" content="VON is a not-for-profit, national health care organization and registered charity that offers a wide range of community health care solutions and services to meet the needs of the local community. VON cares for all ages and stages of life and believes that all people have the right to quality health care regardless of their ability to pay."/>
   <title><?php print $head_title; ?></title>
-  <script type="text/javascript" src="//use.typekit.net/ecs4tbm.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>

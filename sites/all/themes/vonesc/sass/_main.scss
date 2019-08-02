@@ -25,6 +25,14 @@ p
     }
 }
 
+h1
+{
+    @extend .alt-font;
+    margin-bottom: 0.25em;
+    font-weight: normal;
+    font-size: 40px;
+}
+
 hr
 {
     border-color:$navy;
@@ -455,7 +463,6 @@ tbody
     width: 230px;
     margin-left:25px;
     position: relative;
-    text-align: center;
     color:$navy;
 
     .block-views
@@ -464,6 +471,58 @@ tbody
         {
             text-transform: uppercase;
             font-size:1.35em;
+        }
+    }
+}
+.block--sidebar
+{
+    .content ul
+    {
+        list-style: none;
+        margin: 0;
+
+        li
+        {
+            list-style: none;
+            display: block;
+            border-bottom: 1px solid #0a1a3c;
+
+            &:last-child
+            {
+                border-bottom: 0;
+            }
+        }
+        a
+        {
+            display: block;
+            color: $navy;
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 55px auto;
+            padding: 40px 0 40px 80px;
+            text-decoration: none;
+            font-weight: 700;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+        .programs a
+        {
+            background-image: url(../images/icon-programs-large.png);
+        }
+        .donate a
+        {
+            background-image: url(../images/icon-donate-large.png);
+        }
+        .get-involved a
+        {
+            background-image: url(../images/icon-get-involved-large.png);
+        }
+        .events a
+        {
+            background-image: url(../images/icon-events-large.png);
         }
     }
 }
@@ -939,11 +998,17 @@ body.node-type-location
     {
         display: none;
     }
+    #page-title
+    {
+        display: none;
+    }
     #main-wrapper
     {
         @extend #first-widgets;
         display: block;
         border-top:0;
+        background: url(../images/bg-pattern.png) repeat top left;
+        background-size: auto 100%;
 
         & > div
         {
@@ -951,7 +1016,7 @@ body.node-type-location
 
             & > div
             {
-                box-shadow:none;
+                background: none;
 
                 &:before
                 {
@@ -962,37 +1027,9 @@ body.node-type-location
                 {
                     position: relative;
                     z-index: 1;
-                    padding-top: 0;
+                    max-width: 1140px;
                 }
             }
-        }
-    }
-
-    #page-title
-    {
-        &:after
-        {
-            display: none!important;
-        }
-
-        &:before
-        {
-            content:"";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            z-index: 0;
-
-            $color2: transparent;
-            background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, $color2));
-            background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, $color2 100%);
         }
     }
 }
@@ -1035,14 +1072,24 @@ body.node-type-location
     .node
     {
         text-align: center;
+        font-size: 0;
     }
     
     .field-name-body
     {
+        float: left;
         padding-bottom: 30px;
-        font-size:0.9em;
-        width: 45%;
+        width: 50%;
         text-align: left;
+        font-size: 16px;
+        margin-bottom: 40px;
+        line-height: 1.5;
+
+        a
+        {
+            color: white;
+            text-decoration: underline;
+        }
     }
 
     .field-name-field-get-involved,
@@ -1053,60 +1100,69 @@ body.node-type-location
     .field-name-field-events
     {
         display: inline-block;
-        width: 16.6%;
+        font-size: 16px;
+        position: relative;
+        width: 20%;
         text-align: center;
         background-repeat:no-repeat;
         background-position:center top;
+        background-size: 100px auto;
         position: relative;
         padding-top: 115px;
         padding-bottom: 10px;
-        margin: 0 2px -2px;
+        margin-bottom: 30px;
 
-        .field-label
+        a
         {
-            text-transform: uppercase;
-            padding-bottom: 8px;
-        }
-
-        ul.locations-dropdown
-        {
-            @extend ul.locations-dropdown.small;
+            font-size: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     }
     .field-name-field-get-involved
     {
-        background-image:url(../images/icon-get-involved-m.png);
+        background-image:url(../images/icon-get-involved-large.png);
     }
     .field-name-field-donate
     {
-        background-image:url(../images/icon-donate-m.png);
+        background-image:url(../images/icon-donate-large.png);
     }
     .field-name-field-contact-us
     {
-        background-image:url(../images/icon-contact-us-m.png);
+        background-image:url(../images/icon-contact-us-large.png);
     }
     .field-name-field-sponsors
     {
-        background-image:url(../images/icon-sponsors-m.png);
+        background-image:url(../images/icon-sponsors-large.png);
     }
     .field-name-field-programs
     {
-        background-image:url(../images/icon-programs-m.png);
+        background-image:url(../images/icon-programs-large.png);
     }
     .field-name-field-events
     {
-        background-image:url(../images/icon-events-m.png);
+        background-image:url(../images/icon-events-large.png);
     }
 
-    .field-name-field-image img
+    .field-name-field-image
     {
-        position: absolute;
-        top:-179px;
-        left:50%;
-        opacity:0.75;
-        z-index: -1;
-        width: 430px;
-        height: auto;
+        &:after
+        {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        img
+        {
+            float: right;
+            margin-top: -30px;
+            margin-bottom: 40px;
+            width: 430px;
+            height: auto;
+        }
     }
 }
 

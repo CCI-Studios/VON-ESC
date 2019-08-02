@@ -18,7 +18,7 @@ body {
   -moz-osx-font-smoothing: greyscale;
   font-weight: 400; }
 
-.alt-font, .block--news-teasers h2, #page-title h1, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1 {
+.alt-font, h1, .block--news-teasers h2, #page-title h1, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1 {
   font-family: "Arvo", serif; }
 
 body {
@@ -35,6 +35,11 @@ p {
   margin-bottom: 0.75em; }
   p:last-child {
     margin-bottom: 0; }
+
+h1 {
+  margin-bottom: 0.25em;
+  font-weight: normal;
+  font-size: 40px; }
 
 hr {
   border-color: #152b5c;
@@ -290,11 +295,39 @@ tbody {
   width: 230px;
   margin-left: 25px;
   position: relative;
-  text-align: center;
   color: #152b5c; }
   #sidebar .block-views h2 {
     text-transform: uppercase;
     font-size: 1.35em; }
+
+.block--sidebar .content ul {
+  list-style: none;
+  margin: 0; }
+  .block--sidebar .content ul li {
+    list-style: none;
+    display: block;
+    border-bottom: 1px solid #0a1a3c; }
+    .block--sidebar .content ul li:last-child {
+      border-bottom: 0; }
+  .block--sidebar .content ul a {
+    display: block;
+    color: #152b5c;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 55px auto;
+    padding: 40px 0 40px 80px;
+    text-decoration: none;
+    font-weight: 700; }
+    .block--sidebar .content ul a:hover {
+      text-decoration: underline; }
+  .block--sidebar .content ul .programs a {
+    background-image: url(../images/icon-programs-large.png); }
+  .block--sidebar .content ul .donate a {
+    background-image: url(../images/icon-donate-large.png); }
+  .block--sidebar .content ul .get-involved a {
+    background-image: url(../images/icon-get-involved-large.png); }
+  .block--sidebar .content ul .events a {
+    background-image: url(../images/icon-events-large.png); }
 
 #footer {
   clear: both;
@@ -555,12 +588,7 @@ ul.locations-dropdown {
 div.locations-dropdown-placeholder {
   height: 47px; }
 
-ul.locations-dropdown.small, body.node-type-location .field-name-field-get-involved ul.locations-dropdown,
-body.node-type-location .field-name-field-donate ul.locations-dropdown,
-body.node-type-location .field-name-field-contact-us ul.locations-dropdown,
-body.node-type-location .field-name-field-sponsors ul.locations-dropdown,
-body.node-type-location .field-name-field-programs ul.locations-dropdown,
-body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar #block-block-3 ul.locations-dropdown,
+ul.locations-dropdown.small, #sidebar #block-block-3 ul.locations-dropdown,
 #sidebar #block-block-4 ul.locations-dropdown,
 #sidebar #block-block-6 ul.locations-dropdown,
 #sidebar #block-block-7 ul.locations-dropdown,
@@ -588,59 +616,45 @@ body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar
   width: 152px;
   margin-left: -77px;
   max-height: 26px; }
-  ul.locations-dropdown.small li:first-child, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-donate ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-programs ul.locations-dropdown li:first-child, body.node-type-location .field-name-field-events ul.locations-dropdown li:first-child, #sidebar #block-block-3 ul.locations-dropdown li:first-child, #sidebar #block-block-4 ul.locations-dropdown li:first-child, #sidebar #block-block-6 ul.locations-dropdown li:first-child, #sidebar #block-block-7 ul.locations-dropdown li:first-child, #sidebar #block-block-8 ul.locations-dropdown li:first-child, #sidebar #block-block-9 ul.locations-dropdown li:first-child, #sidebar #block-block-10 ul.locations-dropdown li:first-child, #sidebar #block-block-11 ul.locations-dropdown li:first-child, #sidebar #block-block-12 ul.locations-dropdown li:first-child, #sidebar #block-block-13 ul.locations-dropdown li:first-child, #sidebar #block-block-14 ul.locations-dropdown li:first-child, #sidebar #block-block-15 ul.locations-dropdown li:first-child, #sidebar #block-block-16 ul.locations-dropdown li:first-child, #sidebar #block-block-22 ul.locations-dropdown li:first-child, #sidebar #block-block-23 ul.locations-dropdown li:first-child, #sidebar #block-block-24 ul.locations-dropdown li:first-child, #sidebar #block-block-25 ul.locations-dropdown li:first-child, #sidebar #block-block-27 ul.locations-dropdown li:first-child, #sidebar #block-block-28 ul.locations-dropdown li:first-child, #sidebar #block-block-29 ul.locations-dropdown li:first-child, #sidebar #block-block-30 ul.locations-dropdown li:first-child, #sidebar #block-block-31 ul.locations-dropdown li:first-child {
+  ul.locations-dropdown.small li:first-child, #sidebar #block-block-3 ul.locations-dropdown li:first-child, #sidebar #block-block-4 ul.locations-dropdown li:first-child, #sidebar #block-block-6 ul.locations-dropdown li:first-child, #sidebar #block-block-7 ul.locations-dropdown li:first-child, #sidebar #block-block-8 ul.locations-dropdown li:first-child, #sidebar #block-block-9 ul.locations-dropdown li:first-child, #sidebar #block-block-10 ul.locations-dropdown li:first-child, #sidebar #block-block-11 ul.locations-dropdown li:first-child, #sidebar #block-block-12 ul.locations-dropdown li:first-child, #sidebar #block-block-13 ul.locations-dropdown li:first-child, #sidebar #block-block-14 ul.locations-dropdown li:first-child, #sidebar #block-block-15 ul.locations-dropdown li:first-child, #sidebar #block-block-16 ul.locations-dropdown li:first-child, #sidebar #block-block-22 ul.locations-dropdown li:first-child, #sidebar #block-block-23 ul.locations-dropdown li:first-child, #sidebar #block-block-24 ul.locations-dropdown li:first-child, #sidebar #block-block-25 ul.locations-dropdown li:first-child, #sidebar #block-block-27 ul.locations-dropdown li:first-child, #sidebar #block-block-28 ul.locations-dropdown li:first-child, #sidebar #block-block-29 ul.locations-dropdown li:first-child, #sidebar #block-block-30 ul.locations-dropdown li:first-child, #sidebar #block-block-31 ul.locations-dropdown li:first-child {
     margin-right: 20px; }
-  ul.locations-dropdown.small li a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li a, body.node-type-location .field-name-field-donate ul.locations-dropdown li a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li a, body.node-type-location .field-name-field-programs ul.locations-dropdown li a, body.node-type-location .field-name-field-events ul.locations-dropdown li a, #sidebar #block-block-3 ul.locations-dropdown li a, #sidebar #block-block-4 ul.locations-dropdown li a, #sidebar #block-block-6 ul.locations-dropdown li a, #sidebar #block-block-7 ul.locations-dropdown li a, #sidebar #block-block-8 ul.locations-dropdown li a, #sidebar #block-block-9 ul.locations-dropdown li a, #sidebar #block-block-10 ul.locations-dropdown li a, #sidebar #block-block-11 ul.locations-dropdown li a, #sidebar #block-block-12 ul.locations-dropdown li a, #sidebar #block-block-13 ul.locations-dropdown li a, #sidebar #block-block-14 ul.locations-dropdown li a, #sidebar #block-block-15 ul.locations-dropdown li a, #sidebar #block-block-16 ul.locations-dropdown li a, #sidebar #block-block-22 ul.locations-dropdown li a, #sidebar #block-block-23 ul.locations-dropdown li a, #sidebar #block-block-24 ul.locations-dropdown li a, #sidebar #block-block-25 ul.locations-dropdown li a, #sidebar #block-block-27 ul.locations-dropdown li a, #sidebar #block-block-28 ul.locations-dropdown li a, #sidebar #block-block-29 ul.locations-dropdown li a, #sidebar #block-block-30 ul.locations-dropdown li a, #sidebar #block-block-31 ul.locations-dropdown li a {
+  ul.locations-dropdown.small li a, #sidebar #block-block-3 ul.locations-dropdown li a, #sidebar #block-block-4 ul.locations-dropdown li a, #sidebar #block-block-6 ul.locations-dropdown li a, #sidebar #block-block-7 ul.locations-dropdown li a, #sidebar #block-block-8 ul.locations-dropdown li a, #sidebar #block-block-9 ul.locations-dropdown li a, #sidebar #block-block-10 ul.locations-dropdown li a, #sidebar #block-block-11 ul.locations-dropdown li a, #sidebar #block-block-12 ul.locations-dropdown li a, #sidebar #block-block-13 ul.locations-dropdown li a, #sidebar #block-block-14 ul.locations-dropdown li a, #sidebar #block-block-15 ul.locations-dropdown li a, #sidebar #block-block-16 ul.locations-dropdown li a, #sidebar #block-block-22 ul.locations-dropdown li a, #sidebar #block-block-23 ul.locations-dropdown li a, #sidebar #block-block-24 ul.locations-dropdown li a, #sidebar #block-block-25 ul.locations-dropdown li a, #sidebar #block-block-27 ul.locations-dropdown li a, #sidebar #block-block-28 ul.locations-dropdown li a, #sidebar #block-block-29 ul.locations-dropdown li a, #sidebar #block-block-30 ul.locations-dropdown li a, #sidebar #block-block-31 ul.locations-dropdown li a {
     padding: 5px 0 6px 25px;
     background-position: 6px center;
     background-size: 14px auto; }
-  ul.locations-dropdown.small a.open-btn, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn, #sidebar #block-block-3 ul.locations-dropdown a.open-btn, #sidebar #block-block-4 ul.locations-dropdown a.open-btn, #sidebar #block-block-6 ul.locations-dropdown a.open-btn, #sidebar #block-block-7 ul.locations-dropdown a.open-btn, #sidebar #block-block-8 ul.locations-dropdown a.open-btn, #sidebar #block-block-9 ul.locations-dropdown a.open-btn, #sidebar #block-block-10 ul.locations-dropdown a.open-btn, #sidebar #block-block-11 ul.locations-dropdown a.open-btn, #sidebar #block-block-12 ul.locations-dropdown a.open-btn, #sidebar #block-block-13 ul.locations-dropdown a.open-btn, #sidebar #block-block-14 ul.locations-dropdown a.open-btn, #sidebar #block-block-15 ul.locations-dropdown a.open-btn, #sidebar #block-block-16 ul.locations-dropdown a.open-btn, #sidebar #block-block-22 ul.locations-dropdown a.open-btn, #sidebar #block-block-23 ul.locations-dropdown a.open-btn, #sidebar #block-block-24 ul.locations-dropdown a.open-btn, #sidebar #block-block-25 ul.locations-dropdown a.open-btn, #sidebar #block-block-27 ul.locations-dropdown a.open-btn, #sidebar #block-block-28 ul.locations-dropdown a.open-btn, #sidebar #block-block-29 ul.locations-dropdown a.open-btn, #sidebar #block-block-30 ul.locations-dropdown a.open-btn, #sidebar #block-block-31 ul.locations-dropdown a.open-btn {
+  ul.locations-dropdown.small a.open-btn, #sidebar #block-block-3 ul.locations-dropdown a.open-btn, #sidebar #block-block-4 ul.locations-dropdown a.open-btn, #sidebar #block-block-6 ul.locations-dropdown a.open-btn, #sidebar #block-block-7 ul.locations-dropdown a.open-btn, #sidebar #block-block-8 ul.locations-dropdown a.open-btn, #sidebar #block-block-9 ul.locations-dropdown a.open-btn, #sidebar #block-block-10 ul.locations-dropdown a.open-btn, #sidebar #block-block-11 ul.locations-dropdown a.open-btn, #sidebar #block-block-12 ul.locations-dropdown a.open-btn, #sidebar #block-block-13 ul.locations-dropdown a.open-btn, #sidebar #block-block-14 ul.locations-dropdown a.open-btn, #sidebar #block-block-15 ul.locations-dropdown a.open-btn, #sidebar #block-block-16 ul.locations-dropdown a.open-btn, #sidebar #block-block-22 ul.locations-dropdown a.open-btn, #sidebar #block-block-23 ul.locations-dropdown a.open-btn, #sidebar #block-block-24 ul.locations-dropdown a.open-btn, #sidebar #block-block-25 ul.locations-dropdown a.open-btn, #sidebar #block-block-27 ul.locations-dropdown a.open-btn, #sidebar #block-block-28 ul.locations-dropdown a.open-btn, #sidebar #block-block-29 ul.locations-dropdown a.open-btn, #sidebar #block-block-30 ul.locations-dropdown a.open-btn, #sidebar #block-block-31 ul.locations-dropdown a.open-btn {
     width: 20px;
     height: 24px;
     background-image: url(../images/arrow-down.png);
     background-position: 5px center;
     background-size: 9px auto; }
-    ul.locations-dropdown.small a.open-btn:hover, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn:hover, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:hover, ul.locations-dropdown.small a.open-btn:before, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn:before, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn:before, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:before, ul.locations-dropdown.small a.open-btn:focus, body.node-type-location .field-name-field-get-involved ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-donate ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-contact-us ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-sponsors ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-programs ul.locations-dropdown a.open-btn:focus, body.node-type-location .field-name-field-events ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:focus {
+    ul.locations-dropdown.small a.open-btn:hover, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:hover, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:hover, ul.locations-dropdown.small a.open-btn:before, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:before, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:before, ul.locations-dropdown.small a.open-btn:focus, #sidebar #block-block-3 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-4 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-6 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-7 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-8 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-9 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-10 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-11 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-12 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-13 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-14 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-15 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-16 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-22 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-23 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-24 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-25 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-27 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-28 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-29 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-30 ul.locations-dropdown a.open-btn:focus, #sidebar #block-block-31 ul.locations-dropdown a.open-btn:focus {
       background-image: url(../images/arrow-down-hover.png); }
-  ul.locations-dropdown.small.open a.open-btn, body.node-type-location .field-name-field-get-involved ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-donate ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-contact-us ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-sponsors ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-programs ul.open.locations-dropdown a.open-btn, body.node-type-location .field-name-field-events ul.open.locations-dropdown a.open-btn, #sidebar #block-block-3 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-4 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-6 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-7 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-8 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-9 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-10 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-11 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-12 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-13 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-14 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-15 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-16 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-22 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-23 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-24 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-25 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-27 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-28 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-29 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-30 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-31 ul.open.locations-dropdown a.open-btn {
+  ul.locations-dropdown.small.open a.open-btn, #sidebar #block-block-3 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-4 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-6 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-7 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-8 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-9 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-10 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-11 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-12 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-13 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-14 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-15 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-16 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-22 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-23 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-24 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-25 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-27 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-28 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-29 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-30 ul.open.locations-dropdown a.open-btn, #sidebar #block-block-31 ul.open.locations-dropdown a.open-btn {
     background-image: url(../images/arrow-up.png);
     background-color: inherit; }
 
 body.node-type-location #first-widgets, body.node-type-location #main-wrapper {
   display: none; }
 
+body.node-type-location #page-title {
+  display: none; }
+
 body.node-type-location #main-wrapper {
   display: block;
-  border-top: 0; }
+  border-top: 0;
+  background: url(../images/bg-pattern.png) repeat top left;
+  background-size: auto 100%; }
   body.node-type-location #main-wrapper > div {
     border-top: 0; }
     body.node-type-location #main-wrapper > div > div {
-      box-shadow: none; }
+      background: none; }
       body.node-type-location #main-wrapper > div > div:before {
         display: none; }
       body.node-type-location #main-wrapper > div > div > div {
         position: relative;
         z-index: 1;
-        padding-top: 0; }
-
-body.node-type-location #page-title:after {
-  display: none !important; }
-
-body.node-type-location #page-title:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  z-index: 0;
-  background-image: -ms-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-  background-image: -moz-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-  background-image: -o-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-  background-image: -webkit-gradient(radial, center top, 0, center top, 471, color-stop(0, #1B5186), color-stop(1, transparent));
-  background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #1B5186 0%, transparent 100%);
-  background-image: radial-gradient(ellipse farthest-side at center top, #1B5186 0%, transparent 100%); }
+        max-width: 1140px; }
 
 #page-title h1 {
   padding: 35px 0 35px 24px;
@@ -664,13 +678,20 @@ body.location-inner #main-wrapper > div > div > div {
     min-height: 300px; }
 
 body.node-type-location .node {
-  text-align: center; }
+  text-align: center;
+  font-size: 0; }
 
 body.node-type-location .field-name-body {
+  float: left;
   padding-bottom: 30px;
-  font-size: 0.9em;
-  width: 45%;
-  text-align: left; }
+  width: 50%;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.5; }
+  body.node-type-location .field-name-body a {
+    color: white;
+    text-decoration: underline; }
 
 body.node-type-location .field-name-field-get-involved,
 body.node-type-location .field-name-field-donate,
@@ -679,47 +700,57 @@ body.node-type-location .field-name-field-sponsors,
 body.node-type-location .field-name-field-programs,
 body.node-type-location .field-name-field-events {
   display: inline-block;
-  width: 16.6%;
+  font-size: 16px;
+  position: relative;
+  width: 20%;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: 100px auto;
   position: relative;
   padding-top: 115px;
   padding-bottom: 10px;
-  margin: 0 2px -2px; }
-  body.node-type-location .field-name-field-get-involved .field-label,
-  body.node-type-location .field-name-field-donate .field-label,
-  body.node-type-location .field-name-field-contact-us .field-label,
-  body.node-type-location .field-name-field-sponsors .field-label,
-  body.node-type-location .field-name-field-programs .field-label,
-  body.node-type-location .field-name-field-events .field-label {
-    text-transform: uppercase;
-    padding-bottom: 8px; }
+  margin-bottom: 30px; }
+  body.node-type-location .field-name-field-get-involved a,
+  body.node-type-location .field-name-field-donate a,
+  body.node-type-location .field-name-field-contact-us a,
+  body.node-type-location .field-name-field-sponsors a,
+  body.node-type-location .field-name-field-programs a,
+  body.node-type-location .field-name-field-events a {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
 
 body.node-type-location .field-name-field-get-involved {
-  background-image: url(../images/icon-get-involved-m.png); }
+  background-image: url(../images/icon-get-involved-large.png); }
 
 body.node-type-location .field-name-field-donate {
-  background-image: url(../images/icon-donate-m.png); }
+  background-image: url(../images/icon-donate-large.png); }
 
 body.node-type-location .field-name-field-contact-us {
-  background-image: url(../images/icon-contact-us-m.png); }
+  background-image: url(../images/icon-contact-us-large.png); }
 
 body.node-type-location .field-name-field-sponsors {
-  background-image: url(../images/icon-sponsors-m.png); }
+  background-image: url(../images/icon-sponsors-large.png); }
 
 body.node-type-location .field-name-field-programs {
-  background-image: url(../images/icon-programs-m.png); }
+  background-image: url(../images/icon-programs-large.png); }
 
 body.node-type-location .field-name-field-events {
-  background-image: url(../images/icon-events-m.png); }
+  background-image: url(../images/icon-events-large.png); }
+
+body.node-type-location .field-name-field-image:after {
+  content: "";
+  display: block;
+  clear: both; }
 
 body.node-type-location .field-name-field-image img {
-  position: absolute;
-  top: -179px;
-  left: 50%;
-  opacity: 0.75;
-  z-index: -1;
+  float: right;
+  margin-top: -30px;
+  margin-bottom: 40px;
   width: 430px;
   height: auto; }
 
@@ -2106,12 +2137,7 @@ body.windsor-essex .view-program .views-field-body ul {
     margin-left: auto;
     margin-right: auto;
     width: 90%; }
-  ul.locations-dropdown.small, body.node-type-location .field-name-field-get-involved ul.locations-dropdown,
-  body.node-type-location .field-name-field-donate ul.locations-dropdown,
-  body.node-type-location .field-name-field-contact-us ul.locations-dropdown,
-  body.node-type-location .field-name-field-sponsors ul.locations-dropdown,
-  body.node-type-location .field-name-field-programs ul.locations-dropdown,
-  body.node-type-location .field-name-field-events ul.locations-dropdown, #sidebar #block-block-3 ul.locations-dropdown,
+  ul.locations-dropdown.small, #sidebar #block-block-3 ul.locations-dropdown,
   #sidebar #block-block-4 ul.locations-dropdown,
   #sidebar #block-block-6 ul.locations-dropdown,
   #sidebar #block-block-7 ul.locations-dropdown,
@@ -2134,7 +2160,7 @@ body.windsor-essex .view-program .views-field-body ul {
   #sidebar #block-block-30 ul.locations-dropdown,
   #sidebar #block-block-31 ul.locations-dropdown {
     width: 152px; }
-    ul.locations-dropdown.small li a, body.node-type-location .field-name-field-get-involved ul.locations-dropdown li a, body.node-type-location .field-name-field-donate ul.locations-dropdown li a, body.node-type-location .field-name-field-contact-us ul.locations-dropdown li a, body.node-type-location .field-name-field-sponsors ul.locations-dropdown li a, body.node-type-location .field-name-field-programs ul.locations-dropdown li a, body.node-type-location .field-name-field-events ul.locations-dropdown li a, #sidebar #block-block-3 ul.locations-dropdown li a, #sidebar #block-block-4 ul.locations-dropdown li a, #sidebar #block-block-6 ul.locations-dropdown li a, #sidebar #block-block-7 ul.locations-dropdown li a, #sidebar #block-block-8 ul.locations-dropdown li a, #sidebar #block-block-9 ul.locations-dropdown li a, #sidebar #block-block-10 ul.locations-dropdown li a, #sidebar #block-block-11 ul.locations-dropdown li a, #sidebar #block-block-12 ul.locations-dropdown li a, #sidebar #block-block-13 ul.locations-dropdown li a, #sidebar #block-block-14 ul.locations-dropdown li a, #sidebar #block-block-15 ul.locations-dropdown li a, #sidebar #block-block-16 ul.locations-dropdown li a, #sidebar #block-block-22 ul.locations-dropdown li a, #sidebar #block-block-23 ul.locations-dropdown li a, #sidebar #block-block-24 ul.locations-dropdown li a, #sidebar #block-block-25 ul.locations-dropdown li a, #sidebar #block-block-27 ul.locations-dropdown li a, #sidebar #block-block-28 ul.locations-dropdown li a, #sidebar #block-block-29 ul.locations-dropdown li a, #sidebar #block-block-30 ul.locations-dropdown li a, #sidebar #block-block-31 ul.locations-dropdown li a {
+    ul.locations-dropdown.small li a, #sidebar #block-block-3 ul.locations-dropdown li a, #sidebar #block-block-4 ul.locations-dropdown li a, #sidebar #block-block-6 ul.locations-dropdown li a, #sidebar #block-block-7 ul.locations-dropdown li a, #sidebar #block-block-8 ul.locations-dropdown li a, #sidebar #block-block-9 ul.locations-dropdown li a, #sidebar #block-block-10 ul.locations-dropdown li a, #sidebar #block-block-11 ul.locations-dropdown li a, #sidebar #block-block-12 ul.locations-dropdown li a, #sidebar #block-block-13 ul.locations-dropdown li a, #sidebar #block-block-14 ul.locations-dropdown li a, #sidebar #block-block-15 ul.locations-dropdown li a, #sidebar #block-block-16 ul.locations-dropdown li a, #sidebar #block-block-22 ul.locations-dropdown li a, #sidebar #block-block-23 ul.locations-dropdown li a, #sidebar #block-block-24 ul.locations-dropdown li a, #sidebar #block-block-25 ul.locations-dropdown li a, #sidebar #block-block-27 ul.locations-dropdown li a, #sidebar #block-block-28 ul.locations-dropdown li a, #sidebar #block-block-29 ul.locations-dropdown li a, #sidebar #block-block-30 ul.locations-dropdown li a, #sidebar #block-block-31 ul.locations-dropdown li a {
       padding-left: 25px;
       background-position: 4px center; }
   .view-contact .views-row .views-field-field-phone,
