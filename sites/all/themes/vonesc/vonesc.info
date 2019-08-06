@@ -2,7 +2,6 @@ name = VON Erie St. Clair
 description = VON Erie St. Clair Custom
 core = 7.x
 
-scripts[] = js/slideshow.js
 scripts[] = js/locations-dropdown.js
 scripts[] = js/menu-btn.js
 scripts[] = js/maps.js

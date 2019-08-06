@@ -1037,14 +1037,13 @@ body.node-type-location
 #page-title h1
 {
     @extend .alt-font;
-    padding:35px 0 35px 24px;
-    background-repeat:no-repeat;
-    background-position:left center;
-    font-size:60px;
+    padding:35px 0;
+    margin: 0;
+    font-size:50px;
     line-height:120%;
     text-shadow:1px 1px 1px rgba(0,0,0,0.75);
     font-weight: normal;
-
+    text-align: center;
 }
 #block-block-1 .content
 {
@@ -1274,29 +1273,10 @@ body.not-front
 {
     #page-title
     {
-        background:$navy;
+        background: url(../images/bg-pattern.png) top left;
+        background-size: auto 300%;
         position: relative;
         padding: 0;
-
-        &:after
-        {
-            content:"";
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            z-index: 0;
-
-            $color2: transparent;
-            background-image: -ms-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: -moz-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: -o-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 471, color-stop(0, #1B5186), color-stop(1, $color2));
-            background-image: -webkit-radial-gradient(center bottom, ellipse farthest-side, #1B5186 0%, $color2 100%);
-            background-image: radial-gradient(ellipse farthest-side at center bottom, #1B5186 0%, $color2 100%);
-        }
 
         & > div
         {
@@ -1338,8 +1318,7 @@ body.not-front
 
 #gmap
 {
-    height: 280px;
-    border: 3px solid $blue;
+    height: 400px;
 }
 
 body.page-node-76,

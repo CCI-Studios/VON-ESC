@@ -1,36 +1,15 @@
-.view-header-slideshow,
 .view-header-slideshow-location-
 {
     .view-content
     {
         position: relative;
-        width: 100%;
-        height: 480px;
-        transition: height 0.4s;
-        border:1px solid #ccc;
-        border-radius:2px;
-        box-shadow:0 13px 10px -10px rgba(0,0,0,0.5);
+        background: $lightblue;
+        padding-bottom: 5px;
+        border-bottom: 5px solid white;
     }
 
     .views-row
     {
-        display: none;
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 480px;
-        transition: height 0.4s;
-
-        &.active
-        {
-            z-index:2;
-        }
-        &.outbound
-        {
-            z-index: 1;
-        }
-
         .views-field-field-image
         {
             img
@@ -43,97 +22,47 @@
 
         .views-field-nothing
         {
-            position: absolute;
-            bottom: 25px;
-            right: 0;
-            width: 410px;
-            padding: 25px;
-            background:rgb(234,107,0);
-            background:rgba(234,107,0,0.7);
-            color:white;
-            text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-            border-top-left-radius:9px;
-            border-bottom-left-radius:9px;
+            padding: 40px 30px;
+            background:#c5eafc;
+            color:$blue;
+
+            & > div
+            {
+                max-width: 1070px;
+                margin: 0 auto;
+                padding-right: 30px;
+                position: relative;
+            }
 
             .field-title
             {
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size:1.4em;
+                font-weight: 600;
+                font-size:32px;
             }
 
             .field-body
             {
                 line-height:120%;
                 padding-top:10px;
-            }
 
-            a
-            {
-                color:white;
-                font-weight: bold;
-                text-decoration: none;
-
-                &:hover
+                a
                 {
+                    color: $blue;
                     text-decoration: underline;
                 }
             }
-        }
-    }
 
-    .indicators
-    {
-        list-style:none;
-        margin:0;
-        padding: 8px 0;
-        text-align: center;
-
-        li
-        {
-            list-style:none;
-            display: inline-block;
-            margin: 0;
-            padding: 0 5px;
-
-            a
+            .field-link a
             {
-                display: block;
-                font-size:0;
-                color:transparent;
-                width: 11px;
-                height: 11px;
-                border-radius: 5px;
-                background-color: $blue;
-                transition:border-color 0.5s;
-                
-                &.btn-pause
-                {
-                    background-image: url(../images/btn-pause.png);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    
-                    &:hover,
-                    &.paused
-                    {
-                        background-color: $navy;
-                    }
-                }
-            }
-
-            &.active a
-            {
-                background-color:$navy;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 20px;
+                background: url(../images/arrow-right-blue.png) no-repeat right center;
+                font-size: 0;
             }
         }
-    }
-}
-.view-header-slideshow-location-
-{
-    .view-content,
-    .views-row
-    {
-        height: 305px;
     }
 }
 
@@ -274,12 +203,12 @@
         z-index: 1;
     }
 
-    h2
+    .views-field-title h2
     {
-        text-transform: uppercase;
-        padding-bottom: 10px;
-        position: relative;
-        padding:10px 0;
+        @extend .alt-font;
+        font-weight: normal;
+        font-size: 26px;
+        margin-bottom: 20px;
     }
 
     h3
@@ -289,14 +218,7 @@
 
     .views-field-field-image
     {
-        margin-bottom: 10px;
-        padding-top: 10px;
-        border-top: 1px solid $navy;
-
-        .field-content
-        {
-            border:3px solid $blue;
-        }
+        margin-bottom: 20px;
 
         img
         {
@@ -312,11 +234,7 @@
     }
     .views-field-body
     {
-        margin-top: 10px;
-        margin-bottom: 15px;
-        padding-top: 10px;
-        border-top: 1px solid $navy;
-        border-bottom: 1px solid $navy;
+        margin: 20px 0;
 
         ul
         {
@@ -327,46 +245,6 @@
                 margin-bottom:10px;
             }
         }
-    }
-}
-body.belle-river .view-program
-{
-    .views-field-body ul, .views-field-body ul li
-    {
-        list-style:url(../images/icon-br-s-hover.png);
-    }
-    
-    .back.button
-    {
-        display: none;
-    }
-}
-body.chatham-kent .view-program
-{
-    .views-field-body ul
-    {
-        list-style:url(../images/icon-ck-s-hover.png);
-    }
-}
-body.pelee-island .view-program
-{
-    .views-field-body ul
-    {
-        list-style:url(../images/icon-pi-s-hover.png);
-    }
-}
-body.sarnia-lambton .view-program
-{
-    .views-field-body ul
-    {
-        list-style:url(../images/icon-sl-s-hover.png);
-    }
-}
-body.windsor-essex .view-program
-{
-    .views-field-body ul
-    {
-        list-style:url(../images/icon-we-s-hover.png);
     }
 }
 
@@ -458,49 +336,48 @@ body.windsor-essex .view-program
 .view-volunteer-opportunities,
 .view-volunteer-opportunity
 {
-    max-width: 550px;
+    max-width: 640px;
 
     .views-row
     {
         clear: both;
-        border-bottom: 1px solid $navy;
         overflow: hidden;
-        padding-right:10px;
-        padding-bottom: 15px;
-        padding-top: 15px;
-
-        &.views-row-last
-        {
-            border-bottom: 0;
-        }
+        padding-right:20px;
+        margin-bottom: 30px;
 
         .views-field-field-date
         {
             float: left;
-            color:white;
-            width: 55px;
-            height: 46px;
-            line-height:100%;
-            padding-top:13px;
-            padding-right:3px;
-            text-align: center;
-            background: url(../images/news-date-bg.png) no-repeat left top;
-            font-weight: bold;
-            text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+            width: 60px;
+            height: 290px;
+            padding-top:25px;
+            margin-right: 30px;
+            background: url(../images/bg-pattern.png) no-repeat left top;
+            background-size: 600px 100%;
+            position: relative;
+            box-sizing: border-box;
 
-            .month
+            & > div
             {
-                font-size:0.80em;
-                text-transform: uppercase;
+                @extend .alt-font;
+                color:white;
+                position: absolute;
+                transform: rotate(-90deg);
+                line-height: 60px;
+                width: 265px;
+                font-size: 26px;
+                top: 0;
+                left: 0;
+                transform-origin: top left;
+                top: 100%;
+                text-align: right;  
             }
         }
 
         .views-field-title
         {
-            padding-left:75px;
-            text-transform: uppercase;
-            font-size:2em;
-            font-weight: bold;
+            @extend .alt-font;
+            font-size:32px;
             color:$blue;
             line-height: 100%;
 
@@ -519,15 +396,14 @@ body.windsor-essex .view-program
         .views-field-field-short-description,
         .views-field-body
         {
-            color:$navy;
-            padding-left: 75px;
-            padding-bottom: 10px;
+            color:#666666;
+            padding: 20px 0;
+            overflow: hidden;
         }
 
         .views-field-path
         {
             float: left;
-            padding-left: 75px;
         }
 
         .views-field-field-purchase-tickets-form
@@ -581,6 +457,15 @@ body.windsor-essex .view-program
 .view-event .view-footer
 {
     clear: both;
+}
+.view-events .views-row
+{
+    background-color: #f2fafe;
+
+    .views-field-title
+    {
+        padding-top: 30px;
+    }
 }
 
 .view-volunteer-opportunities,
