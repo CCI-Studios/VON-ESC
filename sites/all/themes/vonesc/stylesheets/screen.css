@@ -18,13 +18,21 @@ body {
   -moz-osx-font-smoothing: greyscale;
   font-weight: 400; }
 
-.alt-font, h1, .block--news-teasers h2, #page-title h1, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1, .view-program .views-field-title h2, .view-events .views-row .views-field-field-date > div,
+.alt-font, h1, .block--news-teasers h2, #page-title h1, .block--contact-form h2, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1, .view-programs-list .views-row a,
+.view-program-subcategories .views-row a, .view-program .views-field-title h2, .view-events .views-row .views-field-field-date > div,
+.view-events .views-row .views-field-created > div,
 .view-event .views-row .views-field-field-date > div,
+.view-event .views-row .views-field-created > div,
 .view-volunteer-opportunities .views-row .views-field-field-date > div,
-.view-volunteer-opportunity .views-row .views-field-field-date > div, .view-events .views-row .views-field-title,
+.view-volunteer-opportunities .views-row .views-field-created > div,
+.view-volunteer-opportunity .views-row .views-field-field-date > div,
+.view-volunteer-opportunity .views-row .views-field-created > div,
+.view-news-page .views-row .views-field-field-date > div,
+.view-news-page .views-row .views-field-created > div, .view-events .views-row .views-field-title,
 .view-event .views-row .views-field-title,
 .view-volunteer-opportunities .views-row .views-field-title,
-.view-volunteer-opportunity .views-row .views-field-title {
+.view-volunteer-opportunity .views-row .views-field-title,
+.view-news-page .views-row .views-field-title, .view-contact .views-row .views-field-title {
   font-family: "Arvo", serif; }
 
 body {
@@ -876,9 +884,11 @@ body.not-front #page-title {
   background: url(../images/bg-pattern.png) top left;
   background-size: auto 300%;
   position: relative;
-  padding: 0; }
+  padding: 0;
+  border-bottom: 5px solid #2aa1d9; }
   body.not-front #page-title > div {
     border-top: 5px solid white;
+    border-bottom: 5px solid white;
     position: relative; }
     body.not-front #page-title > div > div > div {
       max-width: 980px;
@@ -1008,6 +1018,15 @@ ul.primary {
   overflow: hidden;
   height: 1px; }
 
+.block--contact-form {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #152b5c; }
+  .block--contact-form h2 {
+    font-weight: normal;
+    margin-bottom: 0.5em;
+    font-size: 36px; }
+
 input[type=text],
 input[type=email],
 input[type=password],
@@ -1015,10 +1034,9 @@ input[type=number],
 input[type=phone],
 textarea {
   display: block;
-  padding: 8px 12px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5) inset;
-  border: 1px solid #b0b0b0;
-  border-radius: 10px;
+  padding: 14px 20px;
+  border: 1px solid #9a9a9a;
+  border-radius: 4px;
   outline: 0;
   font-size: 18px;
   font-weight: bold;
@@ -1230,18 +1248,18 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     background: url(../images/arrow-right-blue.png) no-repeat right center;
     font-size: 0; }
 
-.view-news {
+.block--news-teasers-all {
   color: #152b5c;
   text-align: left; }
-  .view-news .views-row {
+  .block--news-teasers-all .views-row {
     padding: 15px 0;
     min-height: 54px;
     background: url(../images/news-line.png) repeat-x left bottom; }
-    .view-news .views-row:after {
+    .block--news-teasers-all .views-row:after {
       content: "";
       display: block;
       clear: both; }
-    .view-news .views-row .views-field-created {
+    .block--news-teasers-all .views-row .views-field-created {
       float: left;
       color: white;
       width: 60px;
@@ -1252,37 +1270,34 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       background: #2aa1d9;
       font-weight: bold;
       border-radius: 100%; }
-      .view-news .views-row .views-field-created .month {
+      .block--news-teasers-all .views-row .views-field-created .month {
         font-size: 12px;
         text-transform: uppercase;
         font-weight: 400; }
-      .view-news .views-row .views-field-created .day {
+      .block--news-teasers-all .views-row .views-field-created .day {
         font-size: 20px; }
-    .view-news .views-row .views-field-title {
+    .block--news-teasers-all .views-row .views-field-title {
       padding-left: 80px; }
-      .view-news .views-row .views-field-title a {
+      .block--news-teasers-all .views-row .views-field-title a {
         color: #2aa1d9;
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
         display: block; }
-        .view-news .views-row .views-field-title a:hover {
+        .block--news-teasers-all .views-row .views-field-title a:hover {
           text-decoration: underline; }
-    .view-news .views-row .views-field-body {
+    .block--news-teasers-all .views-row .views-field-body {
       line-height: 120%;
       font-size: 0.9em;
       padding-left: 80px; }
-  .view-news .view-footer {
+  .block--news-teasers-all .view-footer {
     text-align: center;
     padding-top: 15px; }
-    .view-news .view-footer p {
+    .block--news-teasers-all .view-footer p {
       font-size: 0.9em; }
 
 #sidebar .view-news .view-footer p {
   font-size: 0.7em; }
-
-#block-system-main .view-news-container {
-  padding-bottom: 160px; }
 
 .view-programs-list,
 .view-program-subcategories {
@@ -1290,19 +1305,18 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   .view-programs-list .views-row,
   .view-program-subcategories .views-row {
     border-bottom: 1px solid #152b5c; }
-    .view-programs-list .views-row:hover,
-    .view-program-subcategories .views-row:hover {
-      background: url(../images/icon-dot.png) no-repeat left 16px; }
     .view-programs-list .views-row a,
     .view-program-subcategories .views-row a {
       color: #152b5c;
       text-decoration: none;
-      text-transform: uppercase;
-      font-size: 1.5em;
-      font-weight: bold;
-      padding: 15px 0 15px 40px;
+      font-size: 32px;
+      padding: 15px 0;
       display: block;
       line-height: 100%; }
+      .view-programs-list .views-row a:hover,
+      .view-program-subcategories .views-row a:hover {
+        color: #2aa1d9;
+        text-decoration: underline; }
 
 .view-program {
   margin: 0 auto;
@@ -1384,48 +1398,77 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
 .view-events,
 .view-event,
 .view-volunteer-opportunities,
-.view-volunteer-opportunity {
+.view-volunteer-opportunity,
+.view-news-page {
   max-width: 640px; }
   .view-events .views-row,
   .view-event .views-row,
   .view-volunteer-opportunities .views-row,
-  .view-volunteer-opportunity .views-row {
+  .view-volunteer-opportunity .views-row,
+  .view-news-page .views-row {
     clear: both;
-    overflow: hidden;
-    padding-right: 20px;
-    margin-bottom: 30px; }
+    padding: 25px 25px 25px 90px;
+    margin-bottom: 30px;
+    position: relative;
+    min-height: 220px;
+    background: #f2fafe;
+    box-sizing: border-box; }
     .view-events .views-row .views-field-field-date,
+    .view-events .views-row .views-field-created,
     .view-event .views-row .views-field-field-date,
+    .view-event .views-row .views-field-created,
     .view-volunteer-opportunities .views-row .views-field-field-date,
-    .view-volunteer-opportunity .views-row .views-field-field-date {
-      float: left;
+    .view-volunteer-opportunities .views-row .views-field-created,
+    .view-volunteer-opportunity .views-row .views-field-field-date,
+    .view-volunteer-opportunity .views-row .views-field-created,
+    .view-news-page .views-row .views-field-field-date,
+    .view-news-page .views-row .views-field-created {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: 60px;
-      height: 290px;
-      padding-top: 25px;
-      margin-right: 30px;
-      background: url(../images/bg-pattern.png) no-repeat left top;
-      background-size: 600px 100%;
-      position: relative;
+      background: url(../images/bg-pattern.png) repeat left top;
+      background-size: auto 150%;
       box-sizing: border-box; }
       .view-events .views-row .views-field-field-date > div,
+      .view-events .views-row .views-field-created > div,
       .view-event .views-row .views-field-field-date > div,
+      .view-event .views-row .views-field-created > div,
       .view-volunteer-opportunities .views-row .views-field-field-date > div,
-      .view-volunteer-opportunity .views-row .views-field-field-date > div {
+      .view-volunteer-opportunities .views-row .views-field-created > div,
+      .view-volunteer-opportunity .views-row .views-field-field-date > div,
+      .view-volunteer-opportunity .views-row .views-field-created > div,
+      .view-news-page .views-row .views-field-field-date > div,
+      .view-news-page .views-row .views-field-created > div {
         color: white;
         position: absolute;
         transform: rotate(-90deg);
         line-height: 60px;
-        width: 265px;
+        width: 200px;
         font-size: 26px;
-        top: 0;
         left: 0;
         transform-origin: top left;
-        top: 100%;
+        top: 220px;
         text-align: right; }
+    .view-events .views-row:hover .views-field-field-date,
+    .view-events .views-row:hover .views-field-created,
+    .view-event .views-row:hover .views-field-field-date,
+    .view-event .views-row:hover .views-field-created,
+    .view-volunteer-opportunities .views-row:hover .views-field-field-date,
+    .view-volunteer-opportunities .views-row:hover .views-field-created,
+    .view-volunteer-opportunity .views-row:hover .views-field-field-date,
+    .view-volunteer-opportunity .views-row:hover .views-field-created,
+    .view-news-page .views-row:hover .views-field-field-date,
+    .view-news-page .views-row:hover .views-field-created {
+      background-image: url(../images/bg-pattern-orange.png);
+      background-size: auto 115%;
+      background-repeat: repeat; }
     .view-events .views-row .views-field-title,
     .view-event .views-row .views-field-title,
     .view-volunteer-opportunities .views-row .views-field-title,
-    .view-volunteer-opportunity .views-row .views-field-title {
+    .view-volunteer-opportunity .views-row .views-field-title,
+    .view-news-page .views-row .views-field-title {
       font-size: 32px;
       color: #233d81;
       line-height: 100%; }
@@ -1436,14 +1479,23 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       .view-volunteer-opportunities .views-row .views-field-title h2,
       .view-volunteer-opportunities .views-row .views-field-title h2 a,
       .view-volunteer-opportunity .views-row .views-field-title h2,
-      .view-volunteer-opportunity .views-row .views-field-title h2 a {
+      .view-volunteer-opportunity .views-row .views-field-title h2 a,
+      .view-news-page .views-row .views-field-title h2,
+      .view-news-page .views-row .views-field-title h2 a {
         font-size: 32px; }
       .view-events .views-row .views-field-title a,
       .view-event .views-row .views-field-title a,
       .view-volunteer-opportunities .views-row .views-field-title a,
-      .view-volunteer-opportunity .views-row .views-field-title a {
+      .view-volunteer-opportunity .views-row .views-field-title a,
+      .view-news-page .views-row .views-field-title a {
         color: #233d81;
         text-decoration: none; }
+        .view-events .views-row .views-field-title a:hover,
+        .view-event .views-row .views-field-title a:hover,
+        .view-volunteer-opportunities .views-row .views-field-title a:hover,
+        .view-volunteer-opportunity .views-row .views-field-title a:hover,
+        .view-news-page .views-row .views-field-title a:hover {
+          text-decoration: underline; }
     .view-events .views-row .views-field-field-short-description,
     .view-events .views-row .views-field-body,
     .view-event .views-row .views-field-field-short-description,
@@ -1451,24 +1503,29 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     .view-volunteer-opportunities .views-row .views-field-field-short-description,
     .view-volunteer-opportunities .views-row .views-field-body,
     .view-volunteer-opportunity .views-row .views-field-field-short-description,
-    .view-volunteer-opportunity .views-row .views-field-body {
+    .view-volunteer-opportunity .views-row .views-field-body,
+    .view-news-page .views-row .views-field-field-short-description,
+    .view-news-page .views-row .views-field-body {
       color: #666666;
       padding: 20px 0;
       overflow: hidden; }
     .view-events .views-row .views-field-path,
     .view-event .views-row .views-field-path,
     .view-volunteer-opportunities .views-row .views-field-path,
-    .view-volunteer-opportunity .views-row .views-field-path {
+    .view-volunteer-opportunity .views-row .views-field-path,
+    .view-news-page .views-row .views-field-path {
       float: left; }
     .view-events .views-row .views-field-field-purchase-tickets-form,
     .view-event .views-row .views-field-field-purchase-tickets-form,
     .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form,
-    .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form {
+    .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form,
+    .view-news-page .views-row .views-field-field-purchase-tickets-form {
       float: right; }
       .view-events .views-row .views-field-field-purchase-tickets-form a,
       .view-event .views-row .views-field-field-purchase-tickets-form a,
       .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a,
-      .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a {
+      .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a,
+      .view-news-page .views-row .views-field-field-purchase-tickets-form a {
         text-align: left;
         width: 130px;
         position: relative;
@@ -1476,7 +1533,8 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
         .view-events .views-row .views-field-field-purchase-tickets-form a:before,
         .view-event .views-row .views-field-field-purchase-tickets-form a:before,
         .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:before,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:before {
+        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:before,
+        .view-news-page .views-row .views-field-field-purchase-tickets-form a:before {
           content: "";
           display: block;
           position: absolute;
@@ -1489,12 +1547,14 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
         .view-events .views-row .views-field-field-purchase-tickets-form a:hover:before,
         .view-event .views-row .views-field-field-purchase-tickets-form a:hover:before,
         .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:hover:before,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:hover:before {
+        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:hover:before,
+        .view-news-page .views-row .views-field-field-purchase-tickets-form a:hover:before {
           background-image: url(../images/tickets-hover.png); }
         .view-events .views-row .views-field-field-purchase-tickets-form a:after,
         .view-event .views-row .views-field-field-purchase-tickets-form a:after,
         .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:after,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:after {
+        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:after,
+        .view-news-page .views-row .views-field-field-purchase-tickets-form a:after {
           content: "";
           display: block;
           position: absolute;
@@ -1507,16 +1567,12 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
         .view-events .views-row .views-field-field-purchase-tickets-form a:hover:after,
         .view-event .views-row .views-field-field-purchase-tickets-form a:hover:after,
         .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:hover:after,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:hover:after {
+        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:hover:after,
+        .view-news-page .views-row .views-field-field-purchase-tickets-form a:hover:after {
           background-image: url(../images/arrow-right-s-hover.png); }
 
 .view-event .view-footer {
   clear: both; }
-
-.view-events .views-row {
-  background-color: #f2fafe; }
-  .view-events .views-row .views-field-title {
-    padding-top: 30px; }
 
 .view-volunteer-opportunities .views-row .views-field-title,
 .view-volunteer-opportunities .views-row .views-field-body,
@@ -1549,27 +1605,33 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
 .view-contact {
   overflow: hidden; }
   .view-contact .views-row {
-    margin-bottom: 1em;
-    padding-bottom: 1em;
-    padding-left: 30px;
-    border-bottom: 1px solid #152b5c;
-    color: #ea6b00;
-    font-weight: bold;
-    background-repeat: no-repeat;
-    background-position: left 4px;
-    overflow: hidden; }
+    margin-bottom: 40px; }
+    .view-contact .views-row:after {
+      content: "";
+      display: block;
+      clear: both; }
     .view-contact .views-row a {
-      color: #ea6b00;
+      color: #2aa1d9;
       text-decoration: none; }
+      .view-contact .views-row a:hover {
+        text-decoration: underline; }
+    .view-contact .views-row .views-field-title {
+      font-weight: normal;
+      font-size: 36px;
+      margin-bottom: 0.5em; }
     .view-contact .views-row .views-field-field-address {
-      padding-right: 20px; }
+      margin-bottom: 1em; }
+      .view-contact .views-row .views-field-field-address a {
+        color: #666666; }
     .view-contact .views-row .views-field-field-phone,
     .view-contact .views-row .views-field-field-fax {
       background-repeat: no-repeat;
       background-position: left center;
       margin-right: 5%;
       min-width: 30%;
-      float: left; }
+      float: left;
+      color: #2aa1d9;
+      padding: 3px 0; }
       .view-contact .views-row .views-field-field-phone > div,
       .view-contact .views-row .views-field-field-fax > div {
         padding-left: 30px; }
@@ -1579,16 +1641,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       background-image: url(../images/fax.png); }
     .view-contact .views-row .views-field-nothing {
       float: right; }
-    .view-contact .views-row.Chatham-Kent {
-      background-image: url(../images/icon-ck-mobile-orange.png); }
-    .view-contact .views-row.Sarnia-Lambton {
-      background-image: url(../images/icon-sl-mobile-orange.png); }
-    .view-contact .views-row.Windsor-Essex {
-      background-image: url(../images/icon-we-mobile-orange.png); }
-    .view-contact .views-row.Belle-River {
-      background-image: url(../images/icon-br-mobile-orange.png); }
-    .view-contact .views-row.Pelee-Island {
-      background-image: url(../images/icon-pi-mobile-orange.png); }
 
 .view-contact-people .views-row {
   margin-bottom: 1em;

@@ -1277,10 +1277,12 @@ body.not-front
         background-size: auto 300%;
         position: relative;
         padding: 0;
+        border-bottom: 5px solid $lightblue;
 
         & > div
         {
             border-top:5px solid white;
+            border-bottom: 5px solid white;
             position: relative;
 
             & > div
@@ -1421,4 +1423,19 @@ ul.primary
 
 .sr-only {
     @include sr-only;
+}
+
+.block--contact-form
+{
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $navy;
+
+    h2
+    {
+        @extend .alt-font;
+        font-weight: normal;
+        margin-bottom: 0.5em;
+        font-size: 36px;
+    }
 }

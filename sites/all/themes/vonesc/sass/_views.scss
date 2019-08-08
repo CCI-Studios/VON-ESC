@@ -66,7 +66,7 @@
     }
 }
 
-.view-news
+.block--news-teasers-all
 {
     color:$navy;
     text-align: left;
@@ -152,10 +152,6 @@
         font-size:0.7em;
     }
 }
-#block-system-main .view-news-container
-{
-    padding-bottom: 160px;
-}
 
 
 .view-programs-list,
@@ -167,21 +163,21 @@
     {
         border-bottom:1px solid $navy;
 
-        &:hover
-        {
-            background:url(../images/icon-dot.png) no-repeat left 16px;
-        }
-
         a
         {
+            @extend .alt-font;
             color:$navy;
             text-decoration: none;
-            text-transform: uppercase;
-            font-size:1.5em;
-            font-weight: bold;
-            padding: 15px 0 15px 40px;
+            font-size:32px;
+            padding: 16px 0;
             display: block;
             line-height:100%;
+
+            &:hover
+            {
+                color: $lightblue;
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -334,27 +330,31 @@
 .view-events,
 .view-event,
 .view-volunteer-opportunities,
-.view-volunteer-opportunity
+.view-volunteer-opportunity,
+.view-news-page
 {
     max-width: 640px;
 
     .views-row
     {
         clear: both;
-        overflow: hidden;
-        padding-right:20px;
+        padding: 25px 25px 25px 90px;
         margin-bottom: 30px;
+        position: relative;
+        min-height: 220px;
+        background: #f2fafe;
+        box-sizing: border-box;
 
-        .views-field-field-date
+        .views-field-field-date,
+        .views-field-created
         {
-            float: left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
             width: 60px;
-            height: 290px;
-            padding-top:25px;
-            margin-right: 30px;
-            background: url(../images/bg-pattern.png) no-repeat left top;
-            background-size: 600px 100%;
-            position: relative;
+            background: url(../images/bg-pattern.png) repeat left top;
+            background-size: auto 150%;
             box-sizing: border-box;
 
             & > div
@@ -364,13 +364,22 @@
                 position: absolute;
                 transform: rotate(-90deg);
                 line-height: 60px;
-                width: 265px;
+                width: 200px;
                 font-size: 26px;
-                top: 0;
                 left: 0;
                 transform-origin: top left;
-                top: 100%;
+                top: 220px;
                 text-align: right;  
+            }
+        }
+        &:hover
+        {
+            .views-field-field-date,
+            .views-field-created
+            {
+                background-image: url(../images/bg-pattern-orange.png);
+                background-size: auto 115%;
+                background-repeat: repeat;
             }
         }
 
@@ -390,6 +399,11 @@
             {
                 color:$blue;
                 text-decoration: none;
+
+                &:hover
+                {
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -458,15 +472,6 @@
 {
     clear: both;
 }
-.view-events .views-row
-{
-    background-color: #f2fafe;
-
-    .views-field-title
-    {
-        padding-top: 30px;
-    }
-}
 
 .view-volunteer-opportunities,
 .view-volunteer-opportunity
@@ -513,25 +518,42 @@
 
     .views-row
     {
-        margin-bottom: 1em;
-        padding-bottom: 1em;
-        padding-left: 30px;
-        border-bottom: 1px solid $navy;
-        color:$orange;
-        font-weight: bold;
-        background-repeat:no-repeat;
-        background-position:left 4px;
-        overflow: hidden;
+        margin-bottom: 40px;
+
+        &:after
+        {
+            content: "";
+            display: block;
+            clear: both;
+        }
 
         a
         {
-            color:$orange;
+            color:$lightblue;
             text-decoration: none;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+
+        .views-field-title
+        {
+            @extend .alt-font;
+            font-weight: normal;
+            font-size: 36px;
+            margin-bottom: 0.5em;
         }
 
         .views-field-field-address
         {
-            padding-right: 20px;
+            margin-bottom: 1em;
+
+            a
+            {
+                color: #666666;
+            }
         }
         
         .views-field-field-phone,
@@ -542,6 +564,8 @@
             margin-right: 5%;
             min-width: 30%;
             float: left;
+            color: $lightblue;
+            padding: 3px 0;
             
             & > div
             {
@@ -561,27 +585,6 @@
         .views-field-nothing
         {
             float: right;
-        }
-
-        &.Chatham-Kent
-        {
-            background-image:url(../images/icon-ck-mobile-orange.png);
-        }
-        &.Sarnia-Lambton
-        {
-            background-image:url(../images/icon-sl-mobile-orange.png);
-        }
-        &.Windsor-Essex
-        {
-            background-image:url(../images/icon-we-mobile-orange.png);
-        }
-        &.Belle-River
-        {
-            background-image:url(../images/icon-br-mobile-orange.png);
-        }
-        &.Pelee-Island
-        {
-            background-image:url(../images/icon-pi-mobile-orange.png);
         }
     }
 }
