@@ -14,6 +14,7 @@ regions[navigation] = Navigation
 regions[secondary_navigation] = Secondary Navigation
 regions[header] = Header
 regions[help] = Help
+regions[page_title] = Page Title
 regions[content] = Content
 regions[sidebar] = Sidebar
 regions[first_widgets] = First Widgets

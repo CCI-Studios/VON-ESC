@@ -25,11 +25,6 @@
         }
     }
 
-    #logo img
-    {
-        width: 175px;
-    }
-
     #secondary-navigation #block-block-1
     {
         padding: 30px 0 0 60px;
@@ -244,7 +239,7 @@
     #secondary-navigation #block-menu-menu-social-menu
     {
         float: none;
-        width: 182px;
+        width: 135px;
         margin: 0 auto;
 
         .content ul
@@ -479,7 +474,7 @@
 
 @media screen and (max-width:480px)
 {
-    #page-title h1
+    .page-title h1
     {
         font-size:2em;
     }

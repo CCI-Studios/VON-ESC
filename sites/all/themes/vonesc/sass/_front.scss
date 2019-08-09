@@ -1,7 +1,7 @@
 body.front
 {
     #main-wrapper,
-    #page-title
+    .page-title
     {
         @include sr-only;
     }
@@ -17,10 +17,21 @@ body.front
             font-size:13px;
             text-shadow:1px 1px 0 rgba(0,0,0,0.75);
             position: relative;
+            padding-bottom: 50px;
 
             &#block-block-4
             {
                 margin:0 5%;
+            }
+
+            .content
+            {
+                min-height: 90px;
+
+                @media (max-width: 640px)
+                {
+                    min-height: 0;
+                }
             }
 
             & > div > h2
@@ -43,6 +54,18 @@ body.front
             &#block-block-5 > div > h2
             {
                 background-image:url(../images/icon-contact-us-large.png);
+            }
+            .locations-dropdown
+            {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-top: -40px;
+                margin-left: -105px;
+            }
+            .locations-dropdown-placeholder
+            {
+                display: none;
             }
         }
     }

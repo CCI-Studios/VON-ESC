@@ -66,6 +66,7 @@
     }
 }
 
+.block--news-teasers,
 .block--news-teasers-all
 {
     color:$navy;
@@ -250,17 +251,16 @@
     .views-row
     {
         float: left;
-        margin:10px;
-        width: 199px;
+        width: 220px;
+        margin: 0 5px 5px 0;
+        position: relative;
 
         .views-field-field-photos
         {
             a
             {
                 display: block;
-                padding:12px;
-                box-shadow:0 0 5px rgba(0,0,0,0.5);
-                background:white;
+                position: relative;
 
                 img
                 {
@@ -275,12 +275,36 @@
             a
             {
                 display: block;
-                color: $navy;
+                color: white;
                 text-decoration: none;
-                text-transform: uppercase;
                 text-align: center;
-                padding:8px 0;
+                padding: 0 10px;
                 font-weight: bold;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                text-shadow: 1px 1px 3px black;
+            }
+        }
+        &:hover
+        {
+            .views-field-field-photos a:before
+            {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $lightblue;
+                opacity: 0.9;
+            }
+            .views-field-title a
+            {
+                text-shadow: none;
             }
         }
     }
@@ -290,17 +314,14 @@
     .views-row
     {
         float: left;
-        margin:10px;
-        width: 199px;
+        margin: 0 5px 5px 0;
+        width: 220px;
 
         .views-field-field-photos
         {
             a
             {
                 display: block;
-                padding:12px;
-                box-shadow:0 0 5px rgba(0,0,0,0.5);
-                background:white;
 
                 img
                 {
@@ -329,8 +350,6 @@
 
 .view-events,
 .view-event,
-.view-volunteer-opportunities,
-.view-volunteer-opportunity,
 .view-news-page
 {
     max-width: 640px;
@@ -473,41 +492,110 @@
     clear: both;
 }
 
+
+.view-volunteer-opportunities
+{
+    .view-header
+    {
+        background-color: #f2fafe;
+        color: $blue;
+        font-weight: bold;
+        font-size: 19px;
+        padding: 20px 25px;
+    }
+    .views-row
+    {
+        padding: 30px 0;
+        border-bottom: 1px solid $navy;
+        position: relative;
+
+        &:last-child
+        {
+            border-bottom: 0;
+        }
+        &
+        {
+            @media (min-width: 940px)
+            {
+                padding-right: 230px;
+            }
+        }
+    }
+    .views-field-path
+    {
+        margin-top: 30px;
+
+        &
+        {
+            @media (min-width: 940px)
+            {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+.view-volunteer-opportunity
+{
+    .button
+    {
+        margin-top: 20px;
+    }
+}
+
 .view-volunteer-opportunities,
 .view-volunteer-opportunity
 {
-    .views-row
+    color: #666666;
+
+    .views-field-title
     {
-        .views-field-title,
-        .views-field-body,
-        .views-field-field-short-description,
-        .views-field-path
+        @extend .alt-font;
+        margin-bottom: 15px;
+        font-size: 32px;
+        font-weight: normal;
+        color: $navy;
+
+        a
         {
-            padding-left: 0;
+            color: $navy;
+        }
+    }
+
+    .views-field-field-related-programs
+    {
+        font-size: 15px;
+        margin-top: 15px;
+
+        ul, li
+        {
+            list-style:none;
+            margin: 0;
+            padding: 0;
         }
 
-        .views-field-field-related-programs
+        a
         {
-            font-size: 14px;
-            padding-bottom: 10px;
+            color:$navy;
+            text-decoration: none;
 
-            ul, li
+            &:hover
             {
-                list-style:none;
-                margin: 0;
-                padding: 0;
+                text-decoration: underline;
             }
+        }
 
-            a
-            {
-                color:$navy;
-                text-decoration: none;
+        .views-label-field-related-programs
+        {
+            color: $lightblue;
+            font-weight: 700;
+            display: inline-block;
+        }
 
-                &:hover
-                {
-                    text-decoration: underline;
-                }
-            }
+        .views-field-field-related-programs li
+        {
+            display: inline;
         }
     }
 }

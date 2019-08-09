@@ -18,21 +18,16 @@ body {
   -moz-osx-font-smoothing: greyscale;
   font-weight: 400; }
 
-.alt-font, h1, .block--news-teasers h2, #page-title h1, .block--contact-form h2, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1, .view-programs-list .views-row a,
+.alt-font, h1, .block--news-teasers h2, .page-title h1, .block--contact-form h2, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1, .view-programs-list .views-row a,
 .view-program-subcategories .views-row a, .view-program .views-field-title h2, .view-events .views-row .views-field-field-date > div,
 .view-events .views-row .views-field-created > div,
 .view-event .views-row .views-field-field-date > div,
 .view-event .views-row .views-field-created > div,
-.view-volunteer-opportunities .views-row .views-field-field-date > div,
-.view-volunteer-opportunities .views-row .views-field-created > div,
-.view-volunteer-opportunity .views-row .views-field-field-date > div,
-.view-volunteer-opportunity .views-row .views-field-created > div,
 .view-news-page .views-row .views-field-field-date > div,
 .view-news-page .views-row .views-field-created > div, .view-events .views-row .views-field-title,
 .view-event .views-row .views-field-title,
-.view-volunteer-opportunities .views-row .views-field-title,
-.view-volunteer-opportunity .views-row .views-field-title,
-.view-news-page .views-row .views-field-title, .view-contact .views-row .views-field-title {
+.view-news-page .views-row .views-field-title, .view-volunteer-opportunities .views-field-title,
+.view-volunteer-opportunity .views-field-title, .view-contact .views-row .views-field-title {
   font-family: "Arvo", serif; }
 
 body {
@@ -494,15 +489,15 @@ tbody {
   border-bottom: 1px solid #152b5c; }
 
 ul.locations-dropdown {
+  position: absolute;
   display: inline-block;
   list-style: none;
-  width: 200px;
+  width: 210px;
   border-radius: 6px;
   background: #304888;
   text-align: left;
   font-size: 16px;
   overflow: hidden;
-  position: absolute;
   z-index: 99;
   left: 50%;
   margin-left: -100px;
@@ -651,7 +646,7 @@ ul.locations-dropdown.small, #sidebar #block-block-3 ul.locations-dropdown,
 body.node-type-location #first-widgets, body.node-type-location #main-wrapper {
   display: none; }
 
-body.node-type-location #page-title {
+body.node-type-location .page-title {
   display: none; }
 
 body.node-type-location #main-wrapper {
@@ -670,7 +665,7 @@ body.node-type-location #main-wrapper {
         z-index: 1;
         max-width: 1140px; }
 
-#page-title h1 {
+.page-title h1 {
   padding: 35px 0;
   margin: 0;
   font-size: 50px;
@@ -880,26 +875,26 @@ body.location-inner #content {
   width: calc(100% - 255px);
   float: left; }
 
-body.not-front #page-title {
+body.not-front .page-title {
   background: url(../images/bg-pattern.png) top left;
   background-size: auto 300%;
   position: relative;
   padding: 0;
   border-bottom: 5px solid #2aa1d9; }
-  body.not-front #page-title > div {
+  body.not-front .page-title > div {
     border-top: 5px solid white;
     border-bottom: 5px solid white;
     position: relative; }
-    body.not-front #page-title > div > div > div {
+    body.not-front .page-title > div .default-page-title-container > div {
       max-width: 980px;
       width: 100%;
       margin: 0 auto;
       padding: 30px 0; }
-      body.not-front #page-title > div > div > div > div {
+      body.not-front .page-title > div .default-page-title-container > div > div {
         padding: 0 20px;
         position: relative;
         z-index: 1; }
-        body.not-front #page-title > div > div > div > div h1 {
+        body.not-front .page-title > div .default-page-title-container > div > div h1 {
           color: white; }
 
 #block-block-26 {
@@ -1027,6 +1022,36 @@ ul.primary {
     margin-bottom: 0.5em;
     font-size: 36px; }
 
+.block--page-title {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+  .block--page-title h1 {
+    color: white;
+    padding: 65px 25px;
+    font-size: 60px;
+    line-height: 1.1; }
+  .block--page-title .small {
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: 600; }
+
+.block--page-title__donate {
+  background-image: url(../images/bg-title-donate.jpg); }
+
+.block--page-title__events {
+  background-image: url(../images/bg-title-events.jpg); }
+
+.block--page-title__news {
+  background-image: url(../images/bg-title-news.jpg); }
+
+.block--page-title__volunteer {
+  background-image: url(../images/bg-title-volunteer.jpg); }
+
+.region-page-title + .default-page-title-container {
+  display: none; }
+
 input[type=text],
 input[type=email],
 input[type=password],
@@ -1039,7 +1064,6 @@ textarea {
   border-radius: 4px;
   outline: 0;
   font-size: 18px;
-  font-weight: bold;
   width: 100%;
   box-sizing: border-box;
   color: #404040; }
@@ -1141,8 +1165,18 @@ form#webform-client-form-255 {
   form#webform-client-form-255 #webform-component-amount {
     width: 200px; }
 
+@media (min-width: 640px) {
+  .block--contact-form #webform-component-name {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 4%; }
+  .block--contact-form #webform-component-email {
+    float: left;
+    width: 48%; } }
+
 body.front #main-wrapper,
-body.front #page-title {
+body.front .page-title {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
@@ -1154,9 +1188,15 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   text-align: center;
   font-size: 13px;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
-  position: relative; }
+  position: relative;
+  padding-bottom: 50px; }
   body.front #first-widgets .block#block-block-4, body.front body.node-type-location #main-wrapper .block#block-block-4, body.node-type-location body.front #main-wrapper .block#block-block-4 {
     margin: 0 5%; }
+  body.front #first-widgets .block .content, body.front body.node-type-location #main-wrapper .block .content, body.node-type-location body.front #main-wrapper .block .content {
+    min-height: 90px; }
+    @media (max-width: 640px) {
+      body.front #first-widgets .block .content, body.front body.node-type-location #main-wrapper .block .content, body.node-type-location body.front #main-wrapper .block .content {
+        min-height: 0; } }
   body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2 {
     font-size: 28px;
     margin-bottom: 5px;
@@ -1169,6 +1209,14 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     background-image: url(../images/icon-donate-large.png); }
   body.front #first-widgets .block#block-block-5 > div > h2, body.front body.node-type-location #main-wrapper .block#block-block-5 > div > h2, body.node-type-location body.front #main-wrapper .block#block-block-5 > div > h2 {
     background-image: url(../images/icon-contact-us-large.png); }
+  body.front #first-widgets .block .locations-dropdown, body.front body.node-type-location #main-wrapper .block .locations-dropdown, body.node-type-location body.front #main-wrapper .block .locations-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -105px; }
+  body.front #first-widgets .block .locations-dropdown-placeholder, body.front body.node-type-location #main-wrapper .block .locations-dropdown-placeholder, body.node-type-location body.front #main-wrapper .block .locations-dropdown-placeholder {
+    display: none; }
 
 #block-views-header-slideshow-block-homepage {
   padding: 5px 0; }
@@ -1248,17 +1296,21 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     background: url(../images/arrow-right-blue.png) no-repeat right center;
     font-size: 0; }
 
+.block--news-teasers,
 .block--news-teasers-all {
   color: #152b5c;
   text-align: left; }
+  .block--news-teasers .views-row,
   .block--news-teasers-all .views-row {
     padding: 15px 0;
     min-height: 54px;
     background: url(../images/news-line.png) repeat-x left bottom; }
+    .block--news-teasers .views-row:after,
     .block--news-teasers-all .views-row:after {
       content: "";
       display: block;
       clear: both; }
+    .block--news-teasers .views-row .views-field-created,
     .block--news-teasers-all .views-row .views-field-created {
       float: left;
       color: white;
@@ -1270,29 +1322,37 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       background: #2aa1d9;
       font-weight: bold;
       border-radius: 100%; }
+      .block--news-teasers .views-row .views-field-created .month,
       .block--news-teasers-all .views-row .views-field-created .month {
         font-size: 12px;
         text-transform: uppercase;
         font-weight: 400; }
+      .block--news-teasers .views-row .views-field-created .day,
       .block--news-teasers-all .views-row .views-field-created .day {
         font-size: 20px; }
+    .block--news-teasers .views-row .views-field-title,
     .block--news-teasers-all .views-row .views-field-title {
       padding-left: 80px; }
+      .block--news-teasers .views-row .views-field-title a,
       .block--news-teasers-all .views-row .views-field-title a {
         color: #2aa1d9;
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
         display: block; }
+        .block--news-teasers .views-row .views-field-title a:hover,
         .block--news-teasers-all .views-row .views-field-title a:hover {
           text-decoration: underline; }
+    .block--news-teasers .views-row .views-field-body,
     .block--news-teasers-all .views-row .views-field-body {
       line-height: 120%;
       font-size: 0.9em;
       padding-left: 80px; }
+  .block--news-teasers .view-footer,
   .block--news-teasers-all .view-footer {
     text-align: center;
     padding-top: 15px; }
+    .block--news-teasers .view-footer p,
     .block--news-teasers-all .view-footer p {
       font-size: 0.9em; }
 
@@ -1310,7 +1370,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       color: #152b5c;
       text-decoration: none;
       font-size: 32px;
-      padding: 15px 0;
+      padding: 16px 0;
       display: block;
       line-height: 100%; }
       .view-programs-list .views-row a:hover,
@@ -1353,35 +1413,48 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
 
 .view-photo-galleries .views-row {
   float: left;
-  margin: 10px;
-  width: 199px; }
+  width: 220px;
+  margin: 0 5px 5px 0;
+  position: relative; }
   .view-photo-galleries .views-row .views-field-field-photos a {
     display: block;
-    padding: 12px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    background: white; }
+    position: relative; }
     .view-photo-galleries .views-row .views-field-field-photos a img {
       display: block;
       width: 100%;
       height: auto; }
   .view-photo-galleries .views-row .views-field-title a {
     display: block;
-    color: #152b5c;
+    color: white;
     text-decoration: none;
-    text-transform: uppercase;
     text-align: center;
-    padding: 8px 0;
-    font-weight: bold; }
+    padding: 0 10px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 1px 1px 3px black; }
+  .view-photo-galleries .views-row:hover .views-field-field-photos a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2aa1d9;
+    opacity: 0.9; }
+  .view-photo-galleries .views-row:hover .views-field-title a {
+    text-shadow: none; }
 
 .view-photo-gallery .views-row {
   float: left;
-  margin: 10px;
-  width: 199px; }
+  margin: 0 5px 5px 0;
+  width: 220px; }
   .view-photo-gallery .views-row .views-field-field-photos a {
-    display: block;
-    padding: 12px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    background: white; }
+    display: block; }
     .view-photo-gallery .views-row .views-field-field-photos a img {
       display: block;
       width: 100%;
@@ -1397,14 +1470,10 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
 
 .view-events,
 .view-event,
-.view-volunteer-opportunities,
-.view-volunteer-opportunity,
 .view-news-page {
   max-width: 640px; }
   .view-events .views-row,
   .view-event .views-row,
-  .view-volunteer-opportunities .views-row,
-  .view-volunteer-opportunity .views-row,
   .view-news-page .views-row {
     clear: both;
     padding: 25px 25px 25px 90px;
@@ -1417,10 +1486,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     .view-events .views-row .views-field-created,
     .view-event .views-row .views-field-field-date,
     .view-event .views-row .views-field-created,
-    .view-volunteer-opportunities .views-row .views-field-field-date,
-    .view-volunteer-opportunities .views-row .views-field-created,
-    .view-volunteer-opportunity .views-row .views-field-field-date,
-    .view-volunteer-opportunity .views-row .views-field-created,
     .view-news-page .views-row .views-field-field-date,
     .view-news-page .views-row .views-field-created {
       position: absolute;
@@ -1435,10 +1500,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       .view-events .views-row .views-field-created > div,
       .view-event .views-row .views-field-field-date > div,
       .view-event .views-row .views-field-created > div,
-      .view-volunteer-opportunities .views-row .views-field-field-date > div,
-      .view-volunteer-opportunities .views-row .views-field-created > div,
-      .view-volunteer-opportunity .views-row .views-field-field-date > div,
-      .view-volunteer-opportunity .views-row .views-field-created > div,
       .view-news-page .views-row .views-field-field-date > div,
       .view-news-page .views-row .views-field-created > div {
         color: white;
@@ -1455,10 +1516,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     .view-events .views-row:hover .views-field-created,
     .view-event .views-row:hover .views-field-field-date,
     .view-event .views-row:hover .views-field-created,
-    .view-volunteer-opportunities .views-row:hover .views-field-field-date,
-    .view-volunteer-opportunities .views-row:hover .views-field-created,
-    .view-volunteer-opportunity .views-row:hover .views-field-field-date,
-    .view-volunteer-opportunity .views-row:hover .views-field-created,
     .view-news-page .views-row:hover .views-field-field-date,
     .view-news-page .views-row:hover .views-field-created {
       background-image: url(../images/bg-pattern-orange.png);
@@ -1466,8 +1523,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       background-repeat: repeat; }
     .view-events .views-row .views-field-title,
     .view-event .views-row .views-field-title,
-    .view-volunteer-opportunities .views-row .views-field-title,
-    .view-volunteer-opportunity .views-row .views-field-title,
     .view-news-page .views-row .views-field-title {
       font-size: 32px;
       color: #233d81;
@@ -1476,34 +1531,22 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       .view-events .views-row .views-field-title h2 a,
       .view-event .views-row .views-field-title h2,
       .view-event .views-row .views-field-title h2 a,
-      .view-volunteer-opportunities .views-row .views-field-title h2,
-      .view-volunteer-opportunities .views-row .views-field-title h2 a,
-      .view-volunteer-opportunity .views-row .views-field-title h2,
-      .view-volunteer-opportunity .views-row .views-field-title h2 a,
       .view-news-page .views-row .views-field-title h2,
       .view-news-page .views-row .views-field-title h2 a {
         font-size: 32px; }
       .view-events .views-row .views-field-title a,
       .view-event .views-row .views-field-title a,
-      .view-volunteer-opportunities .views-row .views-field-title a,
-      .view-volunteer-opportunity .views-row .views-field-title a,
       .view-news-page .views-row .views-field-title a {
         color: #233d81;
         text-decoration: none; }
         .view-events .views-row .views-field-title a:hover,
         .view-event .views-row .views-field-title a:hover,
-        .view-volunteer-opportunities .views-row .views-field-title a:hover,
-        .view-volunteer-opportunity .views-row .views-field-title a:hover,
         .view-news-page .views-row .views-field-title a:hover {
           text-decoration: underline; }
     .view-events .views-row .views-field-field-short-description,
     .view-events .views-row .views-field-body,
     .view-event .views-row .views-field-field-short-description,
     .view-event .views-row .views-field-body,
-    .view-volunteer-opportunities .views-row .views-field-field-short-description,
-    .view-volunteer-opportunities .views-row .views-field-body,
-    .view-volunteer-opportunity .views-row .views-field-field-short-description,
-    .view-volunteer-opportunity .views-row .views-field-body,
     .view-news-page .views-row .views-field-field-short-description,
     .view-news-page .views-row .views-field-body {
       color: #666666;
@@ -1511,20 +1554,14 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       overflow: hidden; }
     .view-events .views-row .views-field-path,
     .view-event .views-row .views-field-path,
-    .view-volunteer-opportunities .views-row .views-field-path,
-    .view-volunteer-opportunity .views-row .views-field-path,
     .view-news-page .views-row .views-field-path {
       float: left; }
     .view-events .views-row .views-field-field-purchase-tickets-form,
     .view-event .views-row .views-field-field-purchase-tickets-form,
-    .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form,
-    .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form,
     .view-news-page .views-row .views-field-field-purchase-tickets-form {
       float: right; }
       .view-events .views-row .views-field-field-purchase-tickets-form a,
       .view-event .views-row .views-field-field-purchase-tickets-form a,
-      .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a,
-      .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a,
       .view-news-page .views-row .views-field-field-purchase-tickets-form a {
         text-align: left;
         width: 130px;
@@ -1532,8 +1569,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
         padding-left: 28px; }
         .view-events .views-row .views-field-field-purchase-tickets-form a:before,
         .view-event .views-row .views-field-field-purchase-tickets-form a:before,
-        .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:before,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:before,
         .view-news-page .views-row .views-field-field-purchase-tickets-form a:before {
           content: "";
           display: block;
@@ -1546,14 +1581,10 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
           background: url(../images/tickets.png) no-repeat; }
         .view-events .views-row .views-field-field-purchase-tickets-form a:hover:before,
         .view-event .views-row .views-field-field-purchase-tickets-form a:hover:before,
-        .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:hover:before,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:hover:before,
         .view-news-page .views-row .views-field-field-purchase-tickets-form a:hover:before {
           background-image: url(../images/tickets-hover.png); }
         .view-events .views-row .views-field-field-purchase-tickets-form a:after,
         .view-event .views-row .views-field-field-purchase-tickets-form a:after,
-        .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:after,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:after,
         .view-news-page .views-row .views-field-field-purchase-tickets-form a:after {
           content: "";
           display: block;
@@ -1566,41 +1597,77 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
           background: url(../images/arrow-right-s.png) no-repeat; }
         .view-events .views-row .views-field-field-purchase-tickets-form a:hover:after,
         .view-event .views-row .views-field-field-purchase-tickets-form a:hover:after,
-        .view-volunteer-opportunities .views-row .views-field-field-purchase-tickets-form a:hover:after,
-        .view-volunteer-opportunity .views-row .views-field-field-purchase-tickets-form a:hover:after,
         .view-news-page .views-row .views-field-field-purchase-tickets-form a:hover:after {
           background-image: url(../images/arrow-right-s-hover.png); }
 
 .view-event .view-footer {
   clear: both; }
 
-.view-volunteer-opportunities .views-row .views-field-title,
-.view-volunteer-opportunities .views-row .views-field-body,
-.view-volunteer-opportunities .views-row .views-field-field-short-description,
-.view-volunteer-opportunities .views-row .views-field-path,
-.view-volunteer-opportunity .views-row .views-field-title,
-.view-volunteer-opportunity .views-row .views-field-body,
-.view-volunteer-opportunity .views-row .views-field-field-short-description,
-.view-volunteer-opportunity .views-row .views-field-path {
-  padding-left: 0; }
+.view-volunteer-opportunities .view-header {
+  background-color: #f2fafe;
+  color: #233d81;
+  font-weight: bold;
+  font-size: 19px;
+  padding: 20px 25px; }
 
-.view-volunteer-opportunities .views-row .views-field-field-related-programs,
-.view-volunteer-opportunity .views-row .views-field-field-related-programs {
-  font-size: 14px;
-  padding-bottom: 10px; }
-  .view-volunteer-opportunities .views-row .views-field-field-related-programs ul, .view-volunteer-opportunities .views-row .views-field-field-related-programs li,
-  .view-volunteer-opportunity .views-row .views-field-field-related-programs ul,
-  .view-volunteer-opportunity .views-row .views-field-field-related-programs li {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-  .view-volunteer-opportunities .views-row .views-field-field-related-programs a,
-  .view-volunteer-opportunity .views-row .views-field-field-related-programs a {
-    color: #152b5c;
-    text-decoration: none; }
-    .view-volunteer-opportunities .views-row .views-field-field-related-programs a:hover,
-    .view-volunteer-opportunity .views-row .views-field-field-related-programs a:hover {
-      text-decoration: underline; }
+.view-volunteer-opportunities .views-row {
+  padding: 30px 0;
+  border-bottom: 1px solid #152b5c;
+  position: relative; }
+  .view-volunteer-opportunities .views-row:last-child {
+    border-bottom: 0; }
+  @media (min-width: 940px) {
+    .view-volunteer-opportunities .views-row {
+      padding-right: 230px; } }
+
+.view-volunteer-opportunities .views-field-path {
+  margin-top: 30px; }
+  @media (min-width: 940px) {
+    .view-volunteer-opportunities .views-field-path {
+      position: absolute;
+      top: 0;
+      right: 0; } }
+
+.view-volunteer-opportunity .button {
+  margin-top: 20px; }
+
+.view-volunteer-opportunities,
+.view-volunteer-opportunity {
+  color: #666666; }
+  .view-volunteer-opportunities .views-field-title,
+  .view-volunteer-opportunity .views-field-title {
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: normal;
+    color: #152b5c; }
+    .view-volunteer-opportunities .views-field-title a,
+    .view-volunteer-opportunity .views-field-title a {
+      color: #152b5c; }
+  .view-volunteer-opportunities .views-field-field-related-programs,
+  .view-volunteer-opportunity .views-field-field-related-programs {
+    font-size: 15px;
+    margin-top: 15px; }
+    .view-volunteer-opportunities .views-field-field-related-programs ul, .view-volunteer-opportunities .views-field-field-related-programs li,
+    .view-volunteer-opportunity .views-field-field-related-programs ul,
+    .view-volunteer-opportunity .views-field-field-related-programs li {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+    .view-volunteer-opportunities .views-field-field-related-programs a,
+    .view-volunteer-opportunity .views-field-field-related-programs a {
+      color: #152b5c;
+      text-decoration: none; }
+      .view-volunteer-opportunities .views-field-field-related-programs a:hover,
+      .view-volunteer-opportunity .views-field-field-related-programs a:hover {
+        text-decoration: underline; }
+    .view-volunteer-opportunities .views-field-field-related-programs .views-label-field-related-programs,
+    .view-volunteer-opportunity .views-field-field-related-programs .views-label-field-related-programs {
+      color: #2aa1d9;
+      font-weight: 700;
+      display: inline-block; }
+    .view-volunteer-opportunities .views-field-field-related-programs .views-field-field-related-programs li,
+    .view-volunteer-opportunity .views-field-field-related-programs .views-field-field-related-programs li {
+      display: inline; }
 
 .view-contact {
   overflow: hidden; }
@@ -1791,8 +1858,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     #navigation #block-system-main-menu .content > ul > li > a {
       padding-left: 5px;
       padding-right: 5px; }
-  #logo img {
-    width: 175px; }
   #secondary-navigation #block-block-1 {
     padding: 30px 0 0 60px; }
   #second-widgets .block.view-news-container {
@@ -1894,7 +1959,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     overflow: hidden; }
   #secondary-navigation #block-menu-menu-social-menu {
     float: none;
-    width: 182px;
+    width: 135px;
     margin: 0 auto; }
     #secondary-navigation #block-menu-menu-social-menu .content ul {
       margin: 0; }
@@ -2043,7 +2108,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     clear: left; } }
 
 @media screen and (max-width: 480px) {
-  #page-title h1 {
+  .page-title h1 {
     font-size: 2em; }
   body.node-type-location .field-name-field-get-involved,
   body.node-type-location .field-name-field-donate,

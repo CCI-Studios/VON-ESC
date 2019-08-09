@@ -92,7 +92,9 @@
     </div>
 
     <div role="main">
-      <div id="page-title"><div><div><div><div>
+      <div class="page-title"><div>
+        <?php print render($page['page_title']); ?>
+        <div class="default-page-title-container"><div><div>
           <?php print render($title_prefix); ?>
           <?php if ($title): ?><h1 id="article-label"><?php print $title; ?></h1><?php endif; ?>
           <?php print render($title_suffix); ?>
