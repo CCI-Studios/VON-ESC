@@ -81,7 +81,8 @@ tbody {
     text-decoration: none; }
 
 #container {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
 
 #page-wrapper {
   background: white; }
@@ -1878,7 +1879,7 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     font-size: 1em;
     position: absolute;
     right: 0;
-    top: 75px;
+    top: 70px;
     width: 200px;
     border-width: 3px 0 3px 3px;
     border-style: solid;
@@ -1886,7 +1887,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
     z-index: 999; }
     #navigation #block-system-main-menu .content > ul > li {
       display: block;
-      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
       border-bottom: 1px solid #152b5c;
       position: relative;
       text-align: right; }
@@ -1898,10 +1898,9 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       #navigation #block-system-main-menu .content > ul > li > a {
         display: block;
         background: white !important;
+        color: #233d81;
         padding: 12px 12px 12px 50px;
         border-bottom: 1px solid #152b5c; }
-        #navigation #block-system-main-menu .content > ul > li > a:hover {
-          background: #152b5c !important; }
         #navigation #block-system-main-menu .content > ul > li > a:before {
           content: "";
           display: block;
@@ -1912,26 +1911,18 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
           height: 40px;
           z-index: 1;
           background: no-repeat center center; }
+        #navigation #block-system-main-menu .content > ul > li > a:hover {
+          color: #2aa1d9; }
         #navigation #block-system-main-menu .content > ul > li > a.chatham-kent:before {
           background-image: url(../images/icon-ck-mobile-blue.png); }
-        #navigation #block-system-main-menu .content > ul > li > a.chatham-kent:hover:before {
-          background-image: url(../images/icon-ck-mobile-orange.png); }
         #navigation #block-system-main-menu .content > ul > li > a.sarnia-lambton:before {
           background-image: url(../images/icon-sl-mobile-blue.png); }
-        #navigation #block-system-main-menu .content > ul > li > a.sarnia-lambton:hover:before {
-          background-image: url(../images/icon-sl-mobile-orange.png); }
         #navigation #block-system-main-menu .content > ul > li > a.windsor-essex:before {
           background-image: url(../images/icon-we-mobile-blue.png); }
-        #navigation #block-system-main-menu .content > ul > li > a.windsor-essex:hover:before {
-          background-image: url(../images/icon-we-mobile-orange.png); }
         #navigation #block-system-main-menu .content > ul > li > a.belle-river:before {
           background-image: url(../images/icon-br-mobile-blue.png); }
-        #navigation #block-system-main-menu .content > ul > li > a.belle-river:hover:before {
-          background-image: url(../images/icon-br-mobile-orange.png); }
         #navigation #block-system-main-menu .content > ul > li > a.pelee-island:before {
           background-image: url(../images/icon-pi-mobile-blue.png); }
-        #navigation #block-system-main-menu .content > ul > li > a.pelee-island:hover:before {
-          background-image: url(../images/icon-pi-mobile-orange.png); }
       #navigation #block-system-main-menu .content > ul > li > ul {
         display: block;
         position: static;
@@ -1948,9 +1939,12 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   #logo {
     float: none; }
     #logo img {
-      margin: 0 auto; }
+      margin: 0 auto;
+      width: 100px; }
   #navigation {
-    margin-bottom: 120px; }
+    margin-bottom: 100px; }
+  #block-block-1 .content {
+    padding-left: 0; }
   #secondary-navigation #block-search-form {
     position: static;
     width: 192px;
@@ -1992,32 +1986,22 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
       padding: 10px; }
     #block-block-26 .content p {
       margin-bottom: 0; }
-  .view-header-slideshow .view-content,
-  .view-header-slideshow-location- .view-content {
-    padding: 0 20px;
-    left: -20px;
-    overflow: hidden;
-    box-shadow: none;
-    border: 0;
-    border-radius: 0; }
-  .view-header-slideshow .views-row .views-field-field-image,
-  .view-header-slideshow-location- .views-row .views-field-field-image {
-    border: 0;
-    border-radius: 0;
-    position: relative;
-    z-index: 1;
-    width: 100%; }
-    .view-header-slideshow .views-row .views-field-field-image img,
-    .view-header-slideshow-location- .views-row .views-field-field-image img {
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.35); }
-  .view-header-slideshow .views-row .views-field-nothing,
-  .view-header-slideshow-location- .views-row .views-field-nothing {
-    position: relative;
-    bottom: 0;
+  .block--home-header .image {
+    width: 100%;
+    position: static;
+    padding-bottom: 40%; }
+  .block--home-header .title {
     width: auto;
-    padding: 20px;
-    border-radius: 0;
-    background: #ef964b; }
+    float: none;
+    height: auto;
+    padding: 30px 25px;
+    background-size: 400px 100%; }
+    .block--home-header .title h1 {
+      position: static;
+      margin: 0 auto;
+      transform: none;
+      padding-left: 0;
+      width: 130px; }
   body.location-inner #content {
     width: auto;
     float: none; }
@@ -2118,26 +2102,6 @@ body.front #first-widgets .block, body.front body.node-type-location #main-wrapp
   body.node-type-location .field-name-field-events {
     width: 50%;
     padding-bottom: 20px; }
-  .view-events .views-row .views-field-title,
-  .view-event .views-row .views-field-title {
-    font-size: 2em; }
-  .view-events .views-row .views-field-path,
-  .view-events .views-row .views-field-field-purchase-tickets-form,
-  .view-event .views-row .views-field-path,
-  .view-event .views-row .views-field-field-purchase-tickets-form {
-    float: none;
-    margin-bottom: 6px; }
-  .view-events .views-row .views-field-title,
-  .view-events .views-row .views-field-field-short-description,
-  .view-events .views-row .views-field-path,
-  .view-events .views-row .views-field-field-purchase-tickets-form,
-  .view-events .views-row .views-field-body,
-  .view-event .views-row .views-field-title,
-  .view-event .views-row .views-field-field-short-description,
-  .view-event .views-row .views-field-path,
-  .view-event .views-row .views-field-field-purchase-tickets-form,
-  .view-event .views-row .views-field-body {
-    padding-left: 65px; }
   .view-volunteer-opportunities .views-row .views-field-title,
   .view-volunteer-opportunity .views-row .views-field-title {
     font-size: 2em; }
