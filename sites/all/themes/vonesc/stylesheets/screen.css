@@ -18,7 +18,8 @@ body {
   -moz-osx-font-smoothing: greyscale;
   font-weight: 400; }
 
-.alt-font, h1, .block--news-teasers h2, .page-title h1, .node-page h2, .block--contact-form h2, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1, .view-programs-list .views-row a,
+.alt-font, h1, .block--news-teasers h2, .page-title h1, .node-page h2,
+.view-program .views-field-body h2, .block--contact-form h2, body.front #first-widgets .block > div > h2, body.front body.node-type-location #main-wrapper .block > div > h2, body.node-type-location body.front #main-wrapper .block > div > h2, .block--home-header .title h1, .view-programs-list .views-row a,
 .view-program-subcategories .views-row a, .view-program .views-field-title h2, .view-events .views-row .views-field-field-date > div,
 .view-events .views-row .views-field-created > div,
 .view-event .views-row .views-field-field-date > div,
@@ -680,28 +681,35 @@ body.node-type-location #main-wrapper {
   background-repeat: no-repeat;
   background-position: left center; }
 
-.node-page {
+.node-page,
+.view-program .views-field-body {
   color: #666666; }
-  .node-page p {
+  .node-page p,
+  .view-program .views-field-body p {
     line-height: 1.5;
     margin-bottom: 1.5em; }
-    .node-page p:last-child {
+    .node-page p:last-child,
+    .view-program .views-field-body p:last-child {
       margin-bottom: 0; }
-  .node-page h2 {
+  .node-page h2,
+  .view-program .views-field-body h2 {
     color: #152b5c;
     font-size: 40px;
     font-weight: normal;
     margin-bottom: 0.5em; }
-  .node-page h3 {
+  .node-page h3,
+  .view-program .views-field-body h3 {
     color: #29a0d7;
     font-size: 20px;
     margin-bottom: 0.5em; }
-  .node-page hr {
+  .node-page hr,
+  .view-program .views-field-body hr {
     height: 0;
     border: 0;
     border-bottom: 1px solid #0a1a3c;
     margin: 2.5em 0; }
-  .node-page strong {
+  .node-page strong,
+  .view-program .views-field-body strong {
     color: #29a0d7; }
 
 body.location-inner #main-wrapper > div > div > div {
